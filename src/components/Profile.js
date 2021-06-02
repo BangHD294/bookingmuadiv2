@@ -842,7 +842,7 @@ const Profile = () => {
                               <td><a href=" " className="text-body font-weight-bold">#SK2543</a> </td>
                               <td>Barry Dick</td>
                               <td>
-                                05 Oct, 2019
+                                05 Oct, 2021
                             </td>
                               <td>
                                 $412
