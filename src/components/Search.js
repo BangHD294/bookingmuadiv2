@@ -11,7 +11,7 @@ import { clearMessage } from "../actions/message";
 import DatePicker from "react-datepicker";
 import { addMonths } from 'date-fns';
 import "react-datepicker/dist/react-datepicker.css";
-const Profile = () => {
+const Search = () => {
   const [startDate, setStartDate] = useState(new Date());
 
   const { user: currentUser } = useSelector((state) => state.auth);
@@ -257,7 +257,7 @@ const Profile = () => {
                 <div className="dropdown-menu dropdown-menu-right" >
                   {/* item*/}
                   <a className="dropdown-item" href=" "><i className="bx bx-user font-size-16 align-middle mr-1" />
-                  Profile</a>
+                  Search</a>
                   <a className="dropdown-item" href=" "><i className="bx bx-wallet font-size-16 align-middle mr-1" /> My Wallet</a>
                   <a className="dropdown-item d-block" href=" "><span className="badge badge-success float-right">11</span><i className="bx bx-wrench font-size-16 align-middle mr-1" /> Settings</a>
                   <a className="dropdown-item" href=" "><i className="bx bx-lock-open font-size-16 align-middle mr-1" /> Lock screen</a>
@@ -397,7 +397,7 @@ const Profile = () => {
                   <ul className="sub-menu" aria-expanded="false">
                     <li><a href="contacts-grid.html">User Grid</a></li>
                     <li><a href="contacts-list.html">User List</a></li>
-                    <li><a href="contacts-profile.html">Profile</a></li>
+                    <li><a href="contacts-profile.html">Search</a></li>
                   </ul>
                 </li>
                 <li className="menu-title">Pages</li>
@@ -1074,4 +1074,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default Search;
