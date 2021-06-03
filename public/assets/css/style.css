@@ -4136,7 +4136,6 @@
                 position: relative;
             }
         }
-
         .jss331 {
             width: 100%;
             display: flex;
@@ -4658,16 +4657,7 @@
             line-height: 1;
         }
 
-        .jss60 {
-            width: calc(85% - 24px);
-            padding: 0px 12px;
-        }
-
-        @media (min-width:1218px) {
-            .jss60 {
-                width: calc(100% - 24px);
-            }
-        }
+        
 
         .jss61 {
             cursor: pointer;
@@ -4836,14 +4826,7 @@
             }
         }
 
-        @media (min-width:1218px) {
-            .jss30 {
-                display: flex;
-                position: relative;
-                align-items: center;
-                justify-content: space-between;
-            }
-        }
+     
 
         .jss31 {
             border-bottom: 1px solid rgba(0, 0, 0, 0.12);
@@ -4938,19 +4921,7 @@
             }
         }
 
-        .jss40 {
-            background-color: #fff;
-        }
-
-        @media (min-width:1218px) {
-            .jss40 {
-                width: calc(35% - 6px);
-                display: flex;
-                overflow: hidden;
-                align-items: center;
-                border-radius: 20px;
-            }
-        }
+      
 
         @media (min-width:1218px) {
             .jss41 {
@@ -5087,4 +5058,41 @@
         .jss56 {
             border-color: #1A2B49;
             background-color: #EAF5FF;
+        }
+/*  */
+        @media (min-width:1218px) {
+            .jss30 {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                z-index: 600;
+            }
+        }
+
+        .jss40 {
+            background-color: #fff;
+        }
+
+        @media (min-width:1218px) {
+            .jss40 {
+                width: calc(35% - 6px);
+                display: flex;
+                overflow: hidden;
+                align-items: center;
+                border-radius: 20px;
+                z-index: 500;
+            }
+        }
+
+        .jss60 {
+            width: calc(85% - 24px);
+            padding: 0px 12px;
+            z-index: 400;
+        }
+
+        @media (min-width:1218px) {
+            .jss60 {
+                width: calc(100% - 24px);
+                z-index: 400;
+            }
         }

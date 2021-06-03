@@ -15,18 +15,18 @@ import "./menubar.css";
 import LeftSidebar from "./LeftSidebar";
 import FooterModal from "./FooterModal";
 import Logobar from "./Logobar";
+
 const DayPicker = () => {
   const [startDate, setStartDate] = useState(new Date());
-  return(
+  return (
     <DatePicker
-    selected={startDate}
-    onChange={(date) => setStartDate(date)}
-    monthsShown={2}
-  />
+      selected={startDate}
+      onChange={(date) => setStartDate(date)}
+      monthsShown={2}
+    />
   )
 }
 const Search = () => {
-  
 
   const { user: currentUser } = useSelector((state) => state.auth);
   // 
@@ -57,8 +57,9 @@ const Search = () => {
               </button>
               {/* App Search*/}
               <form className="app-search d-none d-lg-block">
-                <div className="position-relative">
+                <div className="position-relative"> 
                   <input type="text" className="form-control" placeholder="Search..." />
+                 
                   <span className="bx bx-search-alt" />
                 </div>
               </form>
@@ -338,8 +339,10 @@ const Search = () => {
                                           </svg></div>
                                           <div className="jss60">
                                             <label className="jss61">Ngày đi</label>
-                                            <p className="MuiTypography-root jss62 MuiTypography-body1 MuiTypography-noWrap">
-                                              <DayPicker/>
+                                            <p className="MuiTypography-root jss62 MuiTypography-body1 MuiTypography-noWrap no-css">
+                                              <div className="daypicker-1">
+                                                <DayPicker />
+                                              </div>  
                                             </p>
                                           </div>
                                         </div>
