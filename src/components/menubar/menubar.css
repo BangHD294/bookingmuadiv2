@@ -1,0 +1,31 @@
+.vertical-menu{
+    background: #2a3042;
+    width: 250px;
+    z-index: 1001;
+    bottom: 0;
+    margin-top: 0;
+    position: fixed;
+    top: 70px;
+    -webkit-box-shadow: 0 0.75rem 1.5rem rgb(18 38 63 / 3%);
+    box-shadow: 0 0.75rem 1.5rem rgb(18 38 63 / 3%);
+}
+.navbar-brand-box{
+    background: #2a3042;
+}
+#sidebar-menu ul li a {
+    display: block;
+    padding: .625rem 1.5rem;
+    color: #fff;
+    position: relative;
+    font-size: 13px;
+    -webkit-transition: all .4s;
+    transition: all .4s;
+}
+#sidebar-menu ul li ul.sub-menu li a {
+    padding: .4rem 1.5rem .4rem 3.5rem;
+    font-size: 13px;
+    color: #fff;
+}
+.menu-title{
+    color: #fff;
+}

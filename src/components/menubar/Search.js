@@ -2,17 +2,31 @@
 import { Redirect } from 'react-router-dom';
 import { useSelector } from "react-redux";
 
-import { logout } from "../actions/auth";
+import { logout } from "../../actions/auth";
 import { useDispatch } from "react-redux";
 import React, { useEffect, useState } from "react";
-import { history } from "../helpers/history";
-import { clearMessage } from "../actions/message";
-//
+import { history } from "../../helpers/history";
+import { clearMessage } from "../../actions/message";
+
 import DatePicker from "react-datepicker";
-import { addMonths } from 'date-fns';
+// import { addMonths } from 'date-fns';
 import "react-datepicker/dist/react-datepicker.css";
-const Search = () => {
+import "./menubar.css";
+import LeftSidebar from "./LeftSidebar";
+import FooterModal from "./FooterModal";
+import Logobar from "./Logobar";
+const DayPicker = () => {
   const [startDate, setStartDate] = useState(new Date());
+  return(
+    <DatePicker
+    selected={startDate}
+    onChange={(date) => setStartDate(date)}
+    monthsShown={2}
+  />
+  )
+}
+const Search = () => {
+  
 
   const { user: currentUser } = useSelector((state) => state.auth);
   // 
@@ -30,8 +44,6 @@ const Search = () => {
   if (!currentUser) {
     return <Redirect to="/login" />;
   }
-
-
   return (
     <bodys data-sidebar="dark">
       <div id="layout-wrapper">
@@ -39,24 +51,7 @@ const Search = () => {
           <div className="navbar-header">
             <div className="d-flex">
               {/* LOGO */}
-              <div className="navbar-brand-box">
-                <a href="index.html" className="logo logo-dark">
-                  <span className="logo-sm">
-                    <img src="assets\images\logomini.png" alt="" height={22} />
-                  </span>
-                  <span className="logo-lg">
-                    <img src="assets\images\logomini.png" alt="" height={17} />
-                  </span>
-                </a>
-                <a href="index.html" className="logo logo-light">
-                  <span className="logo-sm">
-                    <img src="assets\images\logo-light.svg" alt="" height={22} />
-                  </span>
-                  <span className="logo-lg">
-                    <img src="assets\images\logomini.png" alt="" height={19} />
-                  </span>
-                </a>
-              </div>
+              <Logobar />
               <button type="button" className="btn btn-sm px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn">
                 <i className="fa fa-fw fa-bars" />
               </button>
@@ -268,286 +263,7 @@ const Search = () => {
             </div>
           </div>
         </header> {/* ========== Left Sidebar Start ========== */}
-        <div className="vertical-menu">
-          <div data-simplebar className="h-100">
-            {/*- Sidemenu */}
-            <div id="sidebar-menu">
-              {/* Left Menu Start */}
-              <ul className="metismenu list-unstyled" id="side-menu">
-                <li className="menu-title">Menu</li>
-                <li>
-                  <a href=" " className="waves-effect">
-                    <i className="bx bx-home-circle" /><span className="badge badge-pill badge-info float-right">03</span>
-                    <span>Dashboards</span>
-                  </a>
-                  <ul className="sub-menu" aria-expanded="false">
-                    <li><a href="index.html">Default</a></li>
-                    <li><a href="dashboard-saas.html">Saas</a></li>
-                    <li><a href="dashboard-crypto.html">Crypto</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <a href=" " className="has-arrow waves-effect">
-                    <i className="bx bx-layout" />
-                    <span>Layouts</span>
-                  </a>
-                  <ul className="sub-menu" aria-expanded="false">
-                    <li><a href="layouts-horizontal.html">Horizontal</a></li>
-                    <li><a href="layouts-light-sidebar.html">Light Sidebar</a></li>
-                    <li><a href="layouts-compact-sidebar.html">Compact Sidebar</a></li>
-                    <li><a href="layouts-icon-sidebar.html">Icon Sidebar</a></li>
-                    <li><a href="layouts-boxed.html">Boxed Width</a></li>
-                    <li><a href="layouts-preloader.html">Preloader</a></li>
-                    <li><a href="layouts-colored-sidebar.html">Colored Sidebar</a></li>
-                  </ul>
-                </li>
-                <li className="menu-title">Apps</li>
-                <li>
-                  <a href="calendar.html" className=" waves-effect">
-                    <i className="bx bx-calendar" />
-                    <span>Calendar</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="chat.html" className=" waves-effect">
-                    <i className="bx bx-chat" />
-                    <span className="badge badge-pill badge-success float-right">New</span>
-                    <span>Chat</span>
-                  </a>
-                </li>
-                <li>
-                  <a href=" " className="has-arrow waves-effect">
-                    <i className="bx bx-store" />
-                    <span>Ecommerce</span>
-                  </a>
-                  <ul className="sub-menu" aria-expanded="false">
-                    <li><a href="ecommerce-products.html">Products</a></li>
-                    <li><a href="ecommerce-product-detail.html">Product Detail</a></li>
-                    <li><a href="ecommerce-orders.html">Orders</a></li>
-                    <li><a href="ecommerce-customers.html">Customers</a></li>
-                    <li><a href="ecommerce-cart.html">Cart</a></li>
-                    <li><a href="ecommerce-checkout.html">Checkout</a></li>
-                    <li><a href="ecommerce-shops.html">Shops</a></li>
-                    <li><a href="ecommerce-add-product.html">Add Product</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <a href=" " className="has-arrow waves-effect">
-                    <i className="bx bx-bitcoin" />
-                    <span>Crypto</span>
-                  </a>
-                  <ul className="sub-menu" aria-expanded="false">
-                    <li><a href="crypto-wallet.html">Wallet</a></li>
-                    <li><a href="crypto-buy-sell.html">Buy/Sell</a></li>
-                    <li><a href="crypto-exchange.html">Exchange</a></li>
-                    <li><a href="crypto-lending.html">Lending</a></li>
-                    <li><a href="crypto-orders.html">Orders</a></li>
-                    <li><a href="crypto-kyc-application.html">KYC Application</a></li>
-                    <li><a href="crypto-ico-landing.html">ICO Landing</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <a href=" " className="has-arrow waves-effect">
-                    <i className="bx bx-envelope" />
-                    <span>Email</span>
-                  </a>
-                  <ul className="sub-menu" aria-expanded="false">
-                    <li><a href="email-inbox.html">Inbox</a></li>
-                    <li><a href="email-read.html">Read Email</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <a href=" " className="has-arrow waves-effect">
-                    <i className="bx bx-receipt" />
-                    <span>Invoices</span>
-                  </a>
-                  <ul className="sub-menu" aria-expanded="false">
-                    <li><a href="invoices-list.html">Invoice List</a></li>
-                    <li><a href="invoices-detail.html">Invoice Detail</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <a href=" " className="has-arrow waves-effect">
-                    <i className="bx bx-briefcase-alt-2" />
-                    <span>Projects</span>
-                  </a>
-                  <ul className="sub-menu" aria-expanded="false">
-                    <li><a href="projects-grid.html">Projects Grid</a></li>
-                    <li><a href="projects-list.html">Projects List</a></li>
-                    <li><a href="projects-overview.html">Project Overview</a></li>
-                    <li><a href="projects-create.html">Create New</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <a href=" " className="has-arrow waves-effect">
-                    <i className="bx bx-task" />
-                    <span>Tasks</span>
-                  </a>
-                  <ul className="sub-menu" aria-expanded="false">
-                    <li><a href="tasks-list.html">Task List</a></li>
-                    <li><a href="tasks-kanban.html">Kanban Board</a></li>
-                    <li><a href="tasks-create.html">Create Task</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <a href=" " className="has-arrow waves-effect">
-                    <i className="bx bxs-user-detail" />
-                    <span>Contacts</span>
-                  </a>
-                  <ul className="sub-menu" aria-expanded="false">
-                    <li><a href="contacts-grid.html">User Grid</a></li>
-                    <li><a href="contacts-list.html">User List</a></li>
-                    <li><a href="contacts-profile.html">Search</a></li>
-                  </ul>
-                </li>
-                <li className="menu-title">Pages</li>
-                <li>
-                  <a href=" " className="has-arrow waves-effect">
-                    <i className="bx bx-user-circle" />
-                    <span>Authentication</span>
-                  </a>
-                  <ul className="sub-menu" aria-expanded="false">
-                    <li><a href="auth-login.html">Login</a></li>
-                    <li><a href="auth-register.html">Register</a></li>
-                    <li><a href="auth-recoverpw.html">Recover Password</a></li>
-                    <li><a href="auth-lock-screen.html">Lock Screen</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <a href=" " className="has-arrow waves-effect">
-                    <i className="bx bx-file" />
-                    <span>Utility</span>
-                  </a>
-                  <ul className="sub-menu" aria-expanded="false">
-                    <li><a href="pages-starter.html">Starter Page</a></li>
-                    <li><a href="pages-maintenance.html">Maintenance</a></li>
-                    <li><a href="pages-comingsoon.html">Coming Soon</a></li>
-                    <li><a href="pages-timeline.html">Timeline</a></li>
-                    <li><a href="pages-faqs.html">FAQs</a></li>
-                    <li><a href="pages-pricing.html">Pricing</a></li>
-                    <li><a href="pages-404.html">Error 404</a></li>
-                    <li><a href="pages-500.html">Error 500</a></li>
-                  </ul>
-                </li>
-                <li className="menu-title">Components</li>
-                <li>
-                  <a href=" " className="has-arrow waves-effect">
-                    <i className="bx bx-tone" />
-                    <span>UI Elements</span>
-                  </a>
-                  <ul className="sub-menu" aria-expanded="false">
-                    <li><a href="ui-alerts.html">Alerts</a></li>
-                    <li><a href="ui-buttons.html">Buttons</a></li>
-                    <li><a href="ui-cards.html">Cards</a></li>
-                    <li><a href="ui-carousel.html">Carousel</a></li>
-                    <li><a href="ui-dropdowns.html">Dropdowns</a></li>
-                    <li><a href="ui-grid.html">Grid</a></li>
-                    <li><a href="ui-images.html">Images</a></li>
-                    <li><a href="ui-lightbox.html">Lightbox</a></li>
-                    <li><a href="ui-modals.html">Modals</a></li>
-                    <li><a href="ui-rangeslider.html">Range Slider</a></li>
-                    <li><a href="ui-session-timeout.html">Session Timeout</a></li>
-                    <li><a href="ui-progressbars.html">Progress Bars</a></li>
-                    <li><a href="ui-sweet-alert.html">Sweet-Alert</a></li>
-                    <li><a href="ui-tabs-accordions.html">Tabs &amp; Accordions</a></li>
-                    <li><a href="ui-typography.html">Typography</a></li>
-                    <li><a href="ui-video.html">Video</a></li>
-                    <li><a href="ui-general.html">General</a></li>
-                    <li><a href="ui-colors.html">Colors</a></li>
-                    <li><a href="ui-rating.html">Rating</a></li>
-                    <li><a href="ui-notifications.html">Notifications</a></li>
-                    <li><a href="ui-image-cropper.html">Image Cropper</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <a href=" " className="waves-effect">
-                    <i className="bx bxs-eraser" />
-                    <span className="badge badge-pill badge-danger float-right">10</span>
-                    <span>Forms</span>
-                  </a>
-                  <ul className="sub-menu" aria-expanded="false">
-                    <li><a href="form-elements.html">Form Elements</a></li>
-                    <li><a href="form-layouts.html">Form Layouts</a></li>
-                    <li><a href="form-validation.html">Form Validation</a></li>
-                    <li><a href="form-advanced.html">Form Advanced</a></li>
-                    <li><a href="form-editors.html">Form Editors</a></li>
-                    <li><a href="form-uploads.html">Form File Upload</a></li>
-                    <li><a href="form-xeditable.html">Form Xeditable</a></li>
-                    <li><a href="form-repeater.html">Form Repeater</a></li>
-                    <li><a href="form-wizard.html">Form Wizard</a></li>
-                    <li><a href="form-mask.html">Form Mask</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <a href=" " className="has-arrow waves-effect">
-                    <i className="bx bx-list-ul" />
-                    <span>Tables</span>
-                  </a>
-                  <ul className="sub-menu" aria-expanded="false">
-                    <li><a href="tables-basic.html">Basic Tables</a></li>
-                    <li><a href="tables-datatable.html">Data Tables</a></li>
-                    <li><a href="tables-responsive.html">Responsive Table</a></li>
-                    <li><a href="tables-editable.html">Editable Table</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <a href=" " className="has-arrow waves-effect">
-                    <i className="bx bxs-bar-chart-alt-2" />
-                    <span>Charts</span>
-                  </a>
-                  <ul className="sub-menu" aria-expanded="false">
-                    <li><a href="charts-apex.html">Apex Charts</a></li>
-                    <li><a href="charts-echart.html">E Charts</a></li>
-                    <li><a href="charts-chartjs.html">Chartjs Chart</a></li>
-                    <li><a href="charts-flot.html">Flot Chart</a></li>
-                    <li><a href="charts-tui.html">Toast UI Chart</a></li>
-                    <li><a href="charts-knob.html">Jquery Knob Chart</a></li>
-                    <li><a href="charts-sparkline.html">Sparkline Chart</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <a href=" " className="has-arrow waves-effect">
-                    <i className="bx bx-aperture" />
-                    <span>Icons</span>
-                  </a>
-                  <ul className="sub-menu" aria-expanded="false">
-                    <li><a href="icons-boxicons.html">Boxicons</a></li>
-                    <li><a href="icons-materialdesign.html">Material Design</a></li>
-                    <li><a href="icons-dripicons.html">Dripicons</a></li>
-                    <li><a href="icons-fontawesome.html">Font awesome</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <a href=" " className="has-arrow waves-effect">
-                    <i className="bx bx-map" />
-                    <span>Maps</span>
-                  </a>
-                  <ul className="sub-menu" aria-expanded="false">
-                    <li><a href="maps-google.html">Google Maps</a></li>
-                    <li><a href="maps-vector.html">Vector Maps</a></li>
-                    <li><a href="maps-leaflet.html">Leaflet Maps</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <a href=" " className="has-arrow waves-effect">
-                    <i className="bx bx-share-alt" />
-                    <span>Multi Level</span>
-                  </a>
-                  <ul className="sub-menu" aria-expanded="true">
-                    <li><a href=" ">Level 1.1</a></li>
-                    <li><a href=" " className="has-arrow">Level 1.2</a>
-                      <ul className="sub-menu" aria-expanded="true">
-                        <li><a href=" ">Level 2.1</a></li>
-                        <li><a href=" ">Level 2.2</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </div>
-            {/* Sidebar */}
-          </div>
-        </div>
+        <LeftSidebar />
         <div className="main-content">
           <div className="page-content">
             <div className="container-fluid">
@@ -566,7 +282,8 @@ const Search = () => {
                 </div>
               </div>
               {/* end page title */}
-              {/*  */}
+
+              {/* search booking */}
               <div className="row">
                 <div className="col-lg-12">
                   <div className="">
@@ -619,16 +336,10 @@ const Search = () => {
                                               </path>
                                             </g>
                                           </svg></div>
-                                          <div className="jss60"><label className="jss61">Ngày
-                                            đi</label>
+                                          <div className="jss60">
+                                            <label className="jss61">Ngày đi</label>
                                             <p className="MuiTypography-root jss62 MuiTypography-body1 MuiTypography-noWrap">
-                                              <DatePicker
-                                                selected={startDate}
-                                                onChange={date => setStartDate(date)}
-                                                minDate={new Date()}
-                                                maxDate={addMonths(new Date(), 5)}
-                                                showDisabledMonthNavigation
-                                              />
+                                              <DayPicker/>
                                             </p>
                                           </div>
                                         </div>
@@ -719,15 +430,14 @@ const Search = () => {
                   </div>
                 </div>
               </div>
-              {/*  */}
-              {/*  search booking*/}
+              {/* end search booking*/}
 
               {/* end row */}
               <div className="row">
                 <div className="col-lg-12">
                   <div className="card">
                     <div className="card-body">
-                      <h4 className="card-title mb-4">Latest Transaction</h4>
+                      <h4 className="card-title mb-4">Search Booking</h4>
                       <div className="table-responsive">
                         <table className="table table-centered table-nowrap mb-0">
                           <thead className="thead-light">
@@ -1016,20 +726,9 @@ const Search = () => {
             </div>
           </div>
           {/* end modal */}
-          <footer className="footer">
-            <div className="container-fluid">
-              <div className="row">
-                <div className="col-sm-6">
-                  © Skote.
-              </div>
-                <div className="col-sm-6">
-                  <div className="text-sm-right d-none d-sm-block">
-                    Design &amp; Develop by Themesbrand
-                </div>
-                </div>
-              </div>
-            </div>
-          </footer>
+          {/* footer modal*/}
+          <FooterModal />
+          {/*end footer modal*/}
         </div>
         {/* end main content*/}
       </div>
