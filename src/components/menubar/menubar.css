@@ -29,3 +29,9 @@
 .menu-title{
     color: #fff;
 }
+.react-datepicker__input-container input {
+    border: none;
+    font-size: 1.125rem;
+    font-weight: bold;
+    color: #1A2B49;
+}

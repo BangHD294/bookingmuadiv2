@@ -8,10 +8,10 @@ import { Router, Switch, Route} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
-import Login from "./components/menubar/Search";
+import Login from "./components/Login";
 import Register from "./components/Register";
 // import Home from "./components/Home";
-import Search from "./components/menubar/Search";
+import Search from "./components/Search";
 import BoardUser from "./components/BoardUser";
 import BoardModerator from "./components/BoardModerator";
 import BoardAdmin from "./components/BoardAdmin";

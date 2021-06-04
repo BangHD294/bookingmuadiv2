@@ -12,7 +12,7 @@ const LeftSidebar = () => {
                         <li>
                             <a href=" " className="waves-effect">
                                 <i className="bx bx-home-circle" /><span className="badge badge-pill badge-info float-right">03</span>
-                                <span>Dashboards</span>
+                                <span>Tìm kiếm chuyến bay</span>
                             </a>
                             <ul className="sub-menu" aria-expanded="false">
                                 <li><a href="index.html">Default</a></li>

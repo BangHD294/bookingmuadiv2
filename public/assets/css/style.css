@@ -4643,7 +4643,7 @@
         .jss57 {
             cursor: pointer;
             padding: 12px 0px;
-            position: relative;
+            /* position: relative; */
             background-color: #FFF;
         }
 
@@ -4942,7 +4942,7 @@
         @media (min-width:1218px) {
             .jss43 {
                 padding: 8px 20px;
-                position: relative;
+                /* position: relative; */
                 border-top-right-radius: 20px;
                 border-bottom-right-radius: 20px;
             }
@@ -4952,7 +4952,7 @@
             color: rgba(0, 0, 0, 0.38);
             border: 1px solid rgba(0, 0, 0, 0.12);
             cursor: pointer;
-            height: 71.18px;
+            height: 88.18px;
             display: flex;
             font-size: 1rem;
             align-items: center;
@@ -4964,7 +4964,7 @@
 
         .jss45 {
             top: 8px;
-            right: 0;
+            right: 174px;
             position: absolute;
         }
 
@@ -5006,8 +5006,8 @@
         }
 
         .jss50 {
-            top: 10px;
-            right: 0;
+            top: 229px;
+            right: 13px;
             margin: 0;
             position: absolute;
         }
