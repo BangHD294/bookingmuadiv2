@@ -2,48 +2,31 @@
 import { Redirect } from 'react-router-dom';
 import { useSelector } from "react-redux";
 
-import { logout } from "../actions/auth";
+import { logout } from "../../actions/auth";
 import { useDispatch } from "react-redux";
 import React, { useEffect, useState } from "react";
-import { history } from "../helpers/history";
-import { clearMessage } from "../actions/message";
+import { history } from "../../helpers/history";
+import { clearMessage } from "../../actions/message";
 
 import DatePicker from "react-datepicker";
 // import { addMonths } from 'date-fns';
 import "react-datepicker/dist/react-datepicker.css";
-import "../components/menubar/menubar.css";
-import LeftSidebar from "..//components/menubar/LeftSidebar";
-import FooterModal from "../components/menubar/FooterModal";
-import Logobar from "../components/menubar/Logobar";
-import { addDays } from 'date-fns';
-import "../components/search/formSearch.css"
+import "./menubar.css";
+import LeftSidebar from "./LeftSidebar";
+import FooterModal from "./FooterModal";
+import Logobar from "./Logobar";
 
 const DayPicker = () => {
   const [startDate, setStartDate] = useState(new Date());
-  const months = ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12']
-  const days = ['T2', 'T3', 'T4', 'T5', 'T6', 'T7', 'CN']
-  const locale = {
-    localize: {
-      month: n => months[n],
-      day: n => days[n]
-    },
-    formatLong: {}
-  }
   return (
     <DatePicker
       selected={startDate}
       onChange={(date) => setStartDate(date)}
       monthsShown={2}
-      minDate={addDays(new Date(), 0)}
-      locale={locale}
     />
   )
 }
-
-
 const Search = () => {
-  const [isActive, setActive] = useState('false');
-  const [isActive1, setActive1] = useState('false');
 
   const { user: currentUser } = useSelector((state) => state.auth);
   // 
@@ -61,16 +44,6 @@ const Search = () => {
   if (!currentUser) {
     return <Redirect to="/login" />;
   }
-
-  //
-
-  const handleToggle = () => {
-    setActive(!isActive);
-  };
-  // click them so luong nguoi vao chuyen bay
-  const handleToggle1 = () => {
-    setActive1(!isActive1);
-  }
   return (
     <bodys data-sidebar="dark">
       <div id="layout-wrapper">
@@ -84,9 +57,9 @@ const Search = () => {
               </button>
               {/* App Search*/}
               <form className="app-search d-none d-lg-block">
-                <div className="position-relative">
+                <div className="position-relative"> 
                   <input type="text" className="form-control" placeholder="Search..." />
-
+                 
                   <span className="bx bx-search-alt" />
                 </div>
               </form>
@@ -299,10 +272,10 @@ const Search = () => {
               <div className="row">
                 <div className="col-12">
                   <div className="page-title-box d-flex align-items-center justify-content-between">
-                    <h4 className="mb-0 font-size-18">Tìm kiếm chuyến bay</h4>
+                    <h4 className="mb-0 font-size-18">Dashboard</h4>
                     <div className="page-title-right">
                       <ol className="breadcrumb m-0">
-                        <li className="breadcrumb-item"><a href=" ">Tìm kiếm chuyến bay</a></li>
+                        <li className="breadcrumb-item"><a href=" ">Dashboards</a></li>
                         <li className="breadcrumb-item active">Dashboard</li>
                       </ol>
                     </div>
@@ -355,7 +328,7 @@ const Search = () => {
                                       </div>
                                     </div>
                                     <div className="jss40">
-                                      <div className="jss57 jss31 jss41 " >
+                                      <div className="jss57 jss31 jss41 ">
                                         <div className="jss58">
                                           <div className="jss59"><svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="jss1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                             <g>
@@ -369,7 +342,7 @@ const Search = () => {
                                             <p className="MuiTypography-root jss62 MuiTypography-body1 MuiTypography-noWrap no-css">
                                               <div className="daypicker-1">
                                                 <DayPicker />
-                                              </div>
+                                              </div>  
                                             </p>
                                           </div>
                                         </div>
@@ -389,22 +362,18 @@ const Search = () => {
                                           </label>
                                         </div>
                                       </div>
-                                      {/* khu hoi */}
-
-                                      <div className="jss42" >
-                                        <div className="jss72" onClick={handleToggle}>
-                                          {/* <div className="MuiCollapse-container MuiCollapse-entered" style={{ minHeight: '0px' }}> */}
-                                          <div className={isActive ? "MuiCollapse-entered MuiCollapse-container" : "MuiCollapse-hidden MuiCollapse-container"}>
+                                      <div className="jss42">
+                                        <div className="jss72">
+                                          <div className="MuiCollapse-container MuiCollapse-entered" style={{ minHeight: '0px' }}>
                                             <div className="MuiCollapse-wrapper">
                                               <div className="MuiCollapse-wrapperInner">
-                                                <div className="jss44">+ Khứ hồi</div>
+                                                <div className="jss44">+ Khứ hồi
+                                              </div>
                                               </div>
                                             </div>
                                           </div>
                                         </div>
-
-                                        {/* <div className="MuiCollapse-container MuiCollapse-hidden" style={{ minHeight: '0px' }}> */}
-                                        <div className={isActive ? "MuiCollapse-hidden  MuiCollapse-container" : "MuiCollapse-entered  MuiCollapse-container"}>
+                                        <div className="MuiCollapse-container MuiCollapse-hidden" style={{ minHeight: '0px' }}>
                                           <div className="MuiCollapse-wrapper">
                                             <div className="MuiCollapse-wrapperInner">
                                               <div className="jss57 jss31 jss43 ">
@@ -417,35 +386,28 @@ const Search = () => {
                                                       </path>
                                                     </g>
                                                   </svg></div>
-                                                  <div className="jss60"><label className="jss61">Ngày về</label>
+                                                  <div className="jss60"><label className="jss61">Ngày
+                                                    về</label>
                                                     <p className="MuiTypography-root jss62 MuiTypography-body1 MuiTypography-noWrap">
-                                                      <DayPicker />
-                                                    </p>
+                                                      26/05/2021</p>
                                                   </div>
                                                 </div>
-                                                <div className="jss72" onClick={handleToggle}>
-                                                  <button className="MuiButtonBase-root MuiIconButton-root jss45 MuiIconButton-colorPrimary" tabIndex={0} type="button" >
-                                                    <span className="MuiIconButton-label">
-                                                      <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="jss1 jss46" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                                        <g>
-                                                          <path fill="none" d="M0 0h24v24H0z"></path>
-                                                          <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-11.414L9.172 7.757 7.757 9.172 10.586 12l-2.829 2.828 1.415 1.415L12 13.414l2.828 2.829 1.415-1.415L13.414 12l2.829-2.828-1.415-1.415L12 10.586z"></path>
-                                                        </g>
-                                                      </svg>
-                                                    </span>
-                                                  </button>
+                                                <div className="jss72"><button className="MuiButtonBase-root MuiIconButton-root jss45 MuiIconButton-colorPrimary" tabIndex={0} type="button"><span className="MuiIconButton-label"><svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="jss1 jss46" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                  <g>
+                                                    <path fill="none" d="M0 0h24v24H0z">
+                                                    </path>
+                                                    <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-11.414L9.172 7.757 7.757 9.172 10.586 12l-2.829 2.828 1.415 1.415L12 13.414l2.828 2.829 1.415-1.415L13.414 12l2.829-2.828-1.415-1.415L12 10.586z">
+                                                    </path>
+                                                  </g>
+                                                </svg></span></button>
                                                 </div>
                                               </div>
                                             </div>
                                           </div>
                                         </div>
-
                                       </div>
-
-                                      {/* end khu hoi */}
                                     </div>
-
-                                    <div className="jss57 jss31 jss47 " onClick={handleToggle1}>
+                                    <div className="jss57 jss31 jss47 ">
                                       <div className="jss58">
                                         <div className="jss59"><svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="jss1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                           <circle fill="none" cx={12} cy={7} r={3} />
@@ -459,11 +421,8 @@ const Search = () => {
                                       </div>
                                     </div>
                                   </div>
-                                  <div className="jss48">
-                                    <button className="MuiButtonBase-root MuiButton-root MuiButton-contained jss49 jss85 MuiButton-containedSecondary MuiButton-fullWidth" tabIndex={0} type="button">
-                                      <span className="MuiButton-label">Tìm chuyến bay</span>
-                                    </button>
-                                  </div>
+                                  <div className="jss48"><button className="MuiButtonBase-root MuiButton-root MuiButton-contained jss49 jss85 MuiButton-containedSecondary MuiButton-fullWidth" tabIndex={0} type="button"><span className="MuiButton-label">Tìm chuyến
+                                      bay</span></button></div>
                                 </div>
                               </div>
                             </div>
@@ -475,112 +434,6 @@ const Search = () => {
                 </div>
               </div>
               {/* end search booking*/}
-              {/* nguoi lon tre em */}
-              <div className={isActive1 ? " mudformHidden": "mudformShow"}>
-                <div className="mud52 mud55 mudform">
-                  <div className="mud374">
-                    <div className="mud387 mud375">
-                      <button className="MuiButtonBase-root MuiIconButton-root mud388  MuiIconButton-colorSecondary" tabIndex={0} type="button">
-                        <span className="MuiIconButton-label">
-                          <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="mud1 mud390 " height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
-                            </path>
-                          </svg>
-                        </span>
-                        <span className="MuiTouchRipple-root" />
-                      </button>
-                      <div className="mud389">Hành khách</div>
-                    </div>
-                    <div className="mud376">
-                      <h6 className="MuiTypography-root MuiTypography-subtitle2">Vui lòng chọn số lượng hành khách chính xác để xem được mức giá tốt nhất</h6>
-                      <div className="mud377">
-                        <div>
-                          <h6 className="MuiTypography-root MuiTypography-subtitle1">Người lớn</h6>
-                          <p className="MuiTypography-root mud378 MuiTypography-body2">từ 12 tuổi</p>
-                        </div>
-                        <div className="mud380">
-                          <button className="MuiButtonBase-root MuiIconButton-root mud381 mud382 MuiIconButton-colorSecondary Mui-disabled Mui-disabled" tabIndex={-1} type="button" disabled>
-                            <span className="MuiIconButton-label">
-                              <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="mud1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5 11H19V13H5z" />
-                              </svg>
-                            </span>
-                          </button>
-                          <p className="MuiTypography-root mud379 MuiTypography-body1">1</p>
-                          <button className="MuiButtonBase-root MuiIconButton-root mud381  MuiIconButton-colorSecondary" tabIndex={0} type="button">
-                            <span className="MuiIconButton-label">
-                              <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="mud1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M19 11L13 11 13 5 11 5 11 11 5 11 5 13 11 13 11 19 13 19 13 13 19 13z" />
-                              </svg>
-                            </span>
-                            <span className="MuiTouchRipple-root" />
-                          </button>
-                        </div>
-                      </div>
-                      <div className="mud377">
-                        <div>
-                          <h6 className="MuiTypography-root MuiTypography-subtitle1">Trẻ em</h6>
-                          <p className="MuiTypography-root mud378 MuiTypography-body2">2 - 12 tuổi</p>
-                        </div>
-                        <div className="mud380">
-                          <button className="MuiButtonBase-root MuiIconButton-root mud381 mud382 MuiIconButton-colorSecondary Mui-disabled Mui-disabled" tabIndex={-1} type="button" disabled>
-                            <span className="MuiIconButton-label">
-                              <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="mud1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5 11H19V13H5z" />
-                              </svg>
-                            </span>
-                          </button>
-                          <p className="MuiTypography-root mud379 MuiTypography-body1">0</p>
-                          <button className="MuiButtonBase-root MuiIconButton-root mud381  MuiIconButton-colorSecondary" tabIndex={0} type="button">
-                            <span className="MuiIconButton-label">
-                              <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="jss1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M19 11L13 11 13 5 11 5 11 11 5 11 5 13 11 13 11 19 13 19 13 13 19 13z" />
-                              </svg>
-                            </span>
-                            <span className="MuiTouchRipple-root" />
-                          </button>
-                        </div>
-                      </div>
-                      <div className="mud377">
-                        <div>
-                          <h6 className="MuiTypography-root MuiTypography-subtitle1">Em bé</h6>
-                          <p className="MuiTypography-root mud378 MuiTypography-body2">dưới 2 tuổi</p>
-                        </div>
-                        <div className="mud380">
-                          <button className="MuiButtonBase-root MuiIconButton-root mud381 mud382 MuiIconButton-colorSecondary Mui-disabled Mui-disabled" tabIndex={-1} type="button" disabled>
-                            <span className="MuiIconButton-label">
-                              <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="mud1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5 11H19V13H5z" />
-                              </svg>
-                            </span>
-                          </button>
-                          <p className="MuiTypography-root mud379 MuiTypography-body1">0</p>
-                          <button className="MuiButtonBase-root MuiIconButton-root mud381  MuiIconButton-colorSecondary" tabIndex={0} type="button">
-                            <span className="MuiIconButton-label">
-                              <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="jss1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M19 11L13 11 13 5 11 5 11 11 5 11 5 13 11 13 11 19 13 19 13 13 19 13z" />
-                              </svg>
-                            </span>
-                            <span className="MuiTouchRipple-root" />
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="mud383">
-                      <button className="MuiButtonBase-root MuiButton-root mud384 MuiButton-contained MuiButton-containedSecondary" tabIndex={0} type="button" onClick={handleToggle1}>
-                        <span className="MuiButton-label mud385">
-                          <p className="MuiTypography-root MuiTypography-body1">Hoàn thành</p>
-                          <p className="MuiTypography-root mud386 MuiTypography-body2">(1 người lớn)</p>
-                        </span>
-                        <span className="MuiTouchRipple-root" />
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* nguoi lon tre em */}
-
 
               {/* end row */}
               <div className="row">
