@@ -17,7 +17,7 @@ import FooterModal from "../components/menubar/FooterModal";
 import Logobar from "../components/menubar/Logobar";
 import { addDays } from 'date-fns';
 import "../components/search/formSearch.css"
-
+import "../components/search/PlaceSearch.css"
 const DayPicker = () => {
   const [startDate, setStartDate] = useState(new Date());
   const months = ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12']
@@ -44,7 +44,7 @@ const DayPicker = () => {
 const Search = () => {
   const [isActive, setActive] = useState('false');
   const [isActive1, setActive1] = useState('false');
-
+  const [isActivePlace, setActivePlace] = useState('false');
   const { user: currentUser } = useSelector((state) => state.auth);
   // 
   const dispatch = useDispatch();
@@ -70,6 +70,10 @@ const Search = () => {
   // click them so luong nguoi vao chuyen bay
   const handleToggle1 = () => {
     setActive1(!isActive1);
+  }
+  //them dia diem vao chuyen bay
+  const handlePlace = () => {
+    setActivePlace(!isActivePlace);
   }
   return (
     <bodys data-sidebar="dark">
@@ -325,7 +329,8 @@ const Search = () => {
                                 <div className="MuiPaper-root jss29 MuiPaper-elevation4 MuiPaper-rounded">
                                   <div className="jss30">
                                     <div className="jss32">
-                                      <div className="jss57 jss31 jss33 ">
+
+                                      <div className="jss57 jss31 jss33 " onClick={handlePlace}>
                                         <div className="jss58">
                                           <div className="jss59"><svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="jss1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm8.94 3c-.46-4.17-3.77-7.48-7.94-7.94V1h-2v2.06C6.83 3.52 3.52 6.83 3.06 11H1v2h2.06c.46 4.17 3.77 7.48 7.94 7.94V23h2v-2.06c4.17-.46 7.48-3.77 7.94-7.94H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z">
@@ -337,6 +342,7 @@ const Search = () => {
                                           </div>
                                         </div>
                                       </div>
+
                                       <div className="jss35">
                                         <button className="MuiButtonBase-root MuiIconButton-root jss36" tabIndex={0} type="button" aria-label="Đổi sân bay">
                                           <span className="MuiIconButton-label"><svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 1024 1024" className="jss1 jss39" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
@@ -345,7 +351,8 @@ const Search = () => {
                                           </svg></span>
                                         </button>
                                       </div>
-                                      <div className="jss57 jss31 jss34 ">
+
+                                      <div className="jss57 jss31 jss34 " onClick={handlePlace}>
                                         <div className="jss58">
                                           <div className="jss60"><label className="jss61">Đến</label>
                                             <p className="MuiTypography-root jss62 MuiTypography-body1 MuiTypography-noWrap">
@@ -353,6 +360,7 @@ const Search = () => {
                                           </div>
                                         </div>
                                       </div>
+
                                     </div>
                                     <div className="jss40">
                                       <div className="jss57 jss31 jss41 " >
@@ -476,7 +484,7 @@ const Search = () => {
               </div>
               {/* end search booking*/}
               {/* nguoi lon tre em */}
-              <div className={isActive1 ? " mudformHidden": "mudformShow"}>
+              <div className={isActive1 ? " mudformHidden" : "mudformShow"}>
                 <div className="mud52 mud55 mudform">
                   <div className="mud374">
                     <div className="mud387 mud375">
@@ -579,10 +587,308 @@ const Search = () => {
                 </div>
               </div>
 
-              {/* nguoi lon tre em */}
+              {/*end nguoi lon tre em */}
+              {/* place search */}
+              <div className={isActivePlace ? "placeHidden" : "placeShow" }>
+                <div className="muds52 muds53">
+                  <div className="muds405">
+                    <div className="muds414 ">
+                      <button className="mud1MuiButtonBase-root mud1MuiIconButton-root muds415  mud1MuiIconButton-colorSecondary" tabIndex={0} type="button">
+                        <span className="mud1MuiIconButton-label">
+                          <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="mud1 mud417 " height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+                            </path>
+                          </svg>
+                        </span>
+                        <span className="mud1MuiTouchRipple-root" />
+                      </button>
+                      <div className="muds416">
+                        <div className="muds406">
+                          <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 1024 1024" className="muds1 muds407" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M909.6 854.5L649.9 594.8C690.2 542.7 712 479 712 412c0-80.2-31.3-155.4-87.9-212.1-56.6-56.7-132-87.9-212.1-87.9s-155.5 31.3-212.1 87.9C143.2 256.5 112 331.8 112 412c0 80.1 31.3 155.5 87.9 212.1C256.5 680.8 331.8 712 412 712c67 0 130.6-21.8 182.7-62l259.7 259.6a8.2 8.2 0 0 0 11.6 0l43.6-43.5a8.2 8.2 0 0 0 0-11.6zM570.4 570.4C528 612.7 471.8 636 412 636s-116-23.3-158.4-65.6C211.3 528 188 471.8 188 412s23.3-116.1 65.6-158.4C296 211.3 352.2 188 412 188s116.1 23.2 158.4 65.6S636 352.2 636 412s-23.3 116.1-65.6 158.4z">
+                            </path>
+                          </svg>
+                          <div className="mud1MuiFormControl-root mud1MuiTextField-root muds408">
+                            <div className="mud1MuiInputBase-root mud1MuiInput-root mud1MuiInput-underline muds412 mud1MuiInputBase-formControl MuiInput-formControl">
+                              <input aria-invalid="false" placeholder="Tìm điểm đi" type="text" className="mud1MuiInputBase-input mud1MuiInput-input muds409" defaultValue />
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="muds413">
+                      <div className="muds418">
+                        <div className="muds419">
+                          <div className="muds421">
+                            <a role="button" className="mud1MuiChip-root muds422 mud1MuiChip-colorPrimary mud1MuiChip-clickableColorPrimary MuiChip-outlined mud1MuiChip-outlinedPrimary mud1MuiChip-clickable" tabIndex={0} href=" ">
+                              <span className="MuiChip-label">Việt Nam</span>
+                            </a>
+                            <a role="button" className="mud1MuiChip-root muds422 mud1MuiChip-outlined mud1MuiChip-clickable" tabIndex={0} href=" ">
+                              <span className="mud1MuiChip-label">Trung Quốc</span>
+                            </a>
+                            <a role="button" className="mud1MuiChip-root muds422 mud1MuiChip-outlined mud1MuiChip-clickable" tabIndex={0} href=" ">
+                              <span className="mud1MuiChip-label">Châu Á</span>
+                            </a>
+                            <a role="button" className="mud1MuiChip-root muds422 mud1MuiChip-outlined mud1MuiChip-clickable" tabIndex={0} href=" ">
+                              <span className="mud1MuiChip-label">Châu Âu</span>
+                            </a>
+                            <a role="button" className="mud1MuiChip-root muds422 mud1MuiChip-outlined mud1MuiChip-clickable" tabIndex={0} href=" ">
+                              <span className="mud1MuiChip-label">Châu Mỹ</span>
+                            </a>
+                            <a role="button" className="mud1MuiChip-root muds422 mud1MuiChip-outlined mud1MuiChip-clickable" tabIndex={0} href=" ">
+                              <span className="mud1MuiChip-label">Châu Úc</span>
+                            </a>
+                          </div>
+                        </div>
+                        <div className="muds420">
+                          <div className="muds423 ">
+                            <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M10.18 9" />
+                              <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
+                              </path>
+                            </svg>
+                            <div className="muds426">
+                              <div className="muds427">Hà Nội, Việt Nam (HAN)</div>
+                              <div className="muds428">Sân bay quốc tế Nội Bài</div>
+                            </div>
+                          </div>
+                          <div className="muds423 ">
+                            <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M10.18 9" />
+                              <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
+                              </path>
+                            </svg>
+                            <div className="muds426">
+                              <div className="muds427">Hải Phòng, Việt Nam (HPH)</div>
+                              <div className="muds428">Sân bay quốc tế Cát Bi</div>
+                            </div>
+                          </div>
+                          <div className="muds423 ">
+                            <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M10.18 9" />
+                              <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
+                              </path>
+                            </svg>
+                            <div className="muds426">
+                              <div className="muds427">Vân Đồn, Việt Nam (VDO)</div>
+                              <div className="muds428">Sân bay quốc tế Vân Đồn</div>
+                            </div>
+                          </div>
+                          <div className="muds423 ">
+                            <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M10.18 9" />
+                              <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
+                              </path>
+                            </svg>
+                            <div className="muds426">
+                              <div className="muds427">Điện Biên Phủ, Việt Nam (DIN)</div>
+                              <div className="muds428">Sân bay Điện Biên Phủ</div>
+                            </div>
+                          </div>
+                          <div className="muds423 ">
+                            <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M10.18 9" />
+                              <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
+                              </path>
+                            </svg>
+                            <div className="muds426">
+                              <div className="muds427">Thanh Hoá, Việt Nam (THD)</div>
+                              <div className="muds428">Sân bay Thọ Xuân</div>
+                            </div>
+                          </div>
+                          <div className="muds423 ">
+                            <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M10.18 9" />
+                              <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
+                              </path>
+                            </svg>
+                            <div className="mud426">
+                              <div className="muds427">Vinh, Việt Nam (VII)</div>
+                              <div className="muds428">Sân bay quốc tế Vinh</div>
+                            </div>
+                          </div>
+                          <div className="muds423 ">
+                            <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M10.18 9" />
+                              <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
+                              </path>
+                            </svg>
+                            <div className="muds426">
+                              <div className="muds427">Huế, Việt Nam (HUI)</div>
+                              <div className="muds428">Sân bay Phú Bài</div>
+                            </div>
+                          </div>
+                          <div className="muds423 ">
+                            <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M10.18 9" />
+                              <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
+                              </path>
+                            </svg>
+                            <div className="muds426">
+                              <div className="muds427">Đồng Hới, Việt Nam (VDH)</div>
+                              <div className="muds428">Sân bay Đồng Hới</div>
+                            </div>
+                          </div>
+                          <div className="muds423 ">
+                            <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M10.18 9" />
+                              <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
+                              </path>
+                            </svg>
+                            <div className="muds426">
+                              <div className="muds427">Đà Nẵng, Việt Nam (DAD)</div>
+                              <div className="muds428">Sân bay quốc tế Đà Nẵng</div>
+                            </div>
+                          </div>
+                          <div className="muds423 ">
+                            <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M10.18 9" />
+                              <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
+                              </path>
+                            </svg>
+                            <div className="muds426">
+                              <div className="muds427">Chu Lai, Việt Nam (VCL)</div>
+                              <div className="muds428">Sân bay quốc tế Chu Lai</div>
+                            </div>
+                          </div>
+                          <div className="muds423 ">
+                            <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M10.18 9" />
+                              <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
+                              </path>
+                            </svg>
+                            <div className="muds426">
+                              <div className="muds427">Pleiku, Việt Nam (PXU)</div>
+                              <div className="muds428">Sân bay Pleiku</div>
+                            </div>
+                          </div>
+                          <div className="muds423">
+                            <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M10.18 9" />
+                              <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
+                              </path>
+                            </svg>
+                            <div className="muds426">
+                              <div className="muds427">Tuy Hòa, Việt Nam (TBB)</div>
+                              <div className="muds428">Sân bay Tuy Hòa</div>
+                            </div>
+                          </div>
+                          <div className="muds423 ">
+                            <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M10.18 9" />
+                              <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
+                              </path>
+                            </svg>
+                            <div className="muds426">
+                              <div className="muds427">Hồ Chí Minh, Việt Nam (SGN)</div>
+                              <div className="muds428">Sân bay quốc tế Tân Sơn Nhất</div>
+                            </div>
+                          </div>
+                          <div className="muds423 ">
+                            <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M10.18 9" />
+                              <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
+                              </path>
+                            </svg>
+                            <div className="muds426">
+                              <div className="muds427">Nha Trang, Việt Nam (CXR)</div>
+                              <div className="muds428">Sân bay quốc tế Cam Ranh</div>
+                            </div>
+                          </div>
+                          <div className="muds423 ">
+                            <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M10.18 9" />
+                              <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
+                              </path>
+                            </svg>
+                            <div className="muds426">
+                              <div className="muds427">Đà Lạt, Việt Nam (DLI)</div>
+                              <div className="muds428">Sân bay Liên Khương</div>
+                            </div>
+                          </div>
+                          <div className="muds423 ">
+                            <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M10.18 9" />
+                              <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
+                              </path>
+                            </svg>
+                            <div className="muds426">
+                              <div className="muds427">Phú Quốc, Việt Nam (PQC)</div>
+                              <div className="muds428">Sân bay Dương Đông</div>
+                            </div>
+                          </div>
+                          <div className="muds423 ">
+                            <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M10.18 9" />
+                              <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
+                              </path>
+                            </svg>
+                            <div className="muds426">
+                              <div className="muds427">Qui Nhơn, Việt Nam (UIH)</div>
+                              <div className="muds428">Sân bay Phù Cát</div>
+                            </div>
+                          </div>
+                          <div className="muds423 ">
+                            <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M10.18 9" />
+                              <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
+                              </path>
+                            </svg>
+                            <div className="muds426">
+                              <div className="muds427">Cần Thơ, Việt Nam (VCA)</div>
+                              <div className="muds428">Sân bay quốc tế Cần Thơ</div>
+                            </div>
+                          </div>
+                          <div className="muds423 ">
+                            <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M10.18 9" />
+                              <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
+                              </path>
+                            </svg>
+                            <div className="muds426">
+                              <div className="muds427">Côn Sơn, Việt Nam (VCS)</div>
+                              <div className="muds428">Sân bay Côn Đảo</div>
+                            </div>
+                          </div>
+                          <div className="muds423 "><svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.18 9" />
+                            <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
+                            </path>
+                          </svg>
+                            <div className="muds426">
+                              <div className="muds427">Buôn Ma Thuột, Việt Nam (BMV)</div>
+                              <div className="muds428">Sân bay Buôn Ma Thuột</div>
+                            </div>
+                          </div>
+                          <div className="muds423 "><svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.18 9" />
+                            <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
+                            </path>
+                          </svg>
+                            <div className="muds426">
+                              <div className="muds427">Rạch Giá, Việt Nam (VKG)</div>
+                              <div className="muds428">Sân bay Rạch Giá</div>
+                            </div>
+                          </div>
+                          <div className="muds423 "><svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.18 9" />
+                            <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
+                            </path>
+                          </svg>
+                            <div className="muds426">
+                              <div className="muds427">Cà Mau, Việt Nam (CAH)</div>
+                              <div className="muds428">Sân bay Cà Mau</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
 
+                  </div>
+                </div>
+              </div>
 
-              {/* end row */}
+              {/* end place search*/}
               <div className="row">
                 <div className="col-lg-12">
                   <div className="card">
