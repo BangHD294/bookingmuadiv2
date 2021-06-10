@@ -64,7 +64,7 @@ const Login = (props) => {
       dispatch(login(username, password, agentcode, hashcode))
         .then(() => {
           window.location.reload();
-          props.history.push("/profile");
+          props.history.push("/search");
         })
         .catch(() => {
           setLoading(false);
@@ -75,7 +75,7 @@ const Login = (props) => {
   };
 
   if (isLoggedIn) {
-    return <Redirect to="/profile" />;
+    return <Redirect to="/search" />;
   }
 
 

@@ -34,3 +34,6 @@ label {
 .mt-5, .my-5 {
   margin-top: -7rem!important;
 }
+.bg-black{
+  background-color: black;
+}
