@@ -16,8 +16,11 @@ import LeftSidebar from "..//components/menubar/LeftSidebar";
 import FooterModal from "../components/menubar/FooterModal";
 import Logobar from "../components/menubar/Logobar";
 import { addDays } from 'date-fns';
-import "../components/search/formSearch.css"
-import "../components/search/PlaceSearch.css"
+import "../components/search/formSearch.css";
+import "../components/search/PlaceSearch.css";
+import HeaderSearch from "../components/search/HeaderSearch";
+import FilterSearch from "../components/search/FilterSearch";
+import ViewSearch from  "../components/search/ViewSearch";
 const DayPicker = () => {
   const [startDate, setStartDate] = useState(new Date());
   const months = ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12']
@@ -889,208 +892,24 @@ const Search = () => {
               </div>
 
               {/* end place search*/}
-              <div className="row">
-                <div className="col-lg-12">
-                  <div className="card">
-                    <div className="card-body">
-                      <h4 className="card-title mb-4">Search Booking</h4>
-                      <div className="table-responsive">
-                        <table className="table table-centered table-nowrap mb-0">
-                          <thead className="thead-light">
-                            <tr>
-                              <th style={{ width: '20px' }}>
-                                <div className="custom-control custom-checkbox">
-                                  <input type="checkbox" className="custom-control-input" id="customCheck1" />
-                                  <label className="custom-control-label" htmlFor="customCheck1">&nbsp;</label>
-                                </div>
-                              </th>
-                              <th>Order ID</th>
-                              <th>Billing Name</th>
-                              <th>Date</th>
-                              <th>Total</th>
-                              <th>Payment Status</th>
-                              <th>Payment Method</th>
-                              <th>View Details</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td>
-                                <div className="custom-control custom-checkbox">
-                                  <input type="checkbox" className="custom-control-input" id="customCheck2" />
-                                  <label className="custom-control-label" htmlFor="customCheck2">&nbsp;</label>
-                                </div>
-                              </td>
-                              <td><a href=" " className="text-body font-weight-bold">#SK2540</a> </td>
-                              <td>Neal Matthews</td>
-                              <td>
-                                07 Oct, 2019
-                            </td>
-                              <td>
-                                $400
-                            </td>
-                              <td>
-                                <span className="badge badge-pill badge-soft-success font-size-12">Paid</span>
-                              </td>
-                              <td>
-                                <i className="fab fa-cc-mastercard mr-1" /> Mastercard
-                            </td>
-                              <td>
-                                {/* Button trigger modal */}
-                                <button type="button" className="btn btn-primary btn-sm btn-rounded waves-effect waves-light" data-toggle="modal" data-target=".exampleModal">
-                                  View Details
-                              </button>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <div className="custom-control custom-checkbox">
-                                  <input type="checkbox" className="custom-control-input" id="customCheck3" />
-                                  <label className="custom-control-label" htmlFor="customCheck3">&nbsp;</label>
-                                </div>
-                              </td>
-                              <td><a href=" " className="text-body font-weight-bold">#SK2541</a> </td>
-                              <td>Jamal Burnett</td>
-                              <td>
-                                07 Oct, 2019
-                            </td>
-                              <td>
-                                $380
-                            </td>
-                              <td>
-                                <span className="badge badge-pill badge-soft-danger font-size-12">Chargeback</span>
-                              </td>
-                              <td>
-                                <i className="fab fa-cc-visa mr-1" /> Visa
-                            </td>
-                              <td>
-                                {/* Button trigger modal */}
-                                <button type="button" className="btn btn-primary btn-sm btn-rounded waves-effect waves-light" data-toggle="modal" data-target=".exampleModal">
-                                  View Details
-                              </button>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <div className="custom-control custom-checkbox">
-                                  <input type="checkbox" className="custom-control-input" id="customCheck4" />
-                                  <label className="custom-control-label" htmlFor="customCheck4">&nbsp;</label>
-                                </div>
-                              </td>
-                              <td><a href=" " className="text-body font-weight-bold">#SK2542</a> </td>
-                              <td>Juan Mitchell</td>
-                              <td>
-                                06 Oct, 2019
-                            </td>
-                              <td>
-                                $384
-                            </td>
-                              <td>
-                                <span className="badge badge-pill badge-soft-success font-size-12">Paid</span>
-                              </td>
-                              <td>
-                                <i className="fab fa-cc-paypal mr-1" /> Paypal
-                            </td>
-                              <td>
-                                {/* Button trigger modal */}
-                                <button type="button" className="btn btn-primary btn-sm btn-rounded waves-effect waves-light" data-toggle="modal" data-target=".exampleModal">
-                                  View Details
-                              </button>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <div className="custom-control custom-checkbox">
-                                  <input type="checkbox" className="custom-control-input" id="customCheck5" />
-                                  <label className="custom-control-label" htmlFor="customCheck5">&nbsp;</label>
-                                </div>
-                              </td>
-                              <td><a href=" " className="text-body font-weight-bold">#SK2543</a> </td>
-                              <td>Barry Dick</td>
-                              <td>
-                                05 Oct, 2021
-                            </td>
-                              <td>
-                                $412
-                            </td>
-                              <td>
-                                <span className="badge badge-pill badge-soft-success font-size-12">Paid</span>
-                              </td>
-                              <td>
-                                <i className="fab fa-cc-mastercard mr-1" /> Mastercard
-                            </td>
-                              <td>
-                                {/* Button trigger modal */}
-                                <button type="button" className="btn btn-primary btn-sm btn-rounded waves-effect waves-light" data-toggle="modal" data-target=".exampleModal">
-                                  View Details
-                              </button>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <div className="custom-control custom-checkbox">
-                                  <input type="checkbox" className="custom-control-input" id="customCheck6" />
-                                  <label className="custom-control-label" htmlFor="customCheck6">&nbsp;</label>
-                                </div>
-                              </td>
-                              <td><a href=" " className="text-body font-weight-bold">#SK2544</a> </td>
-                              <td>Ronald Taylor</td>
-                              <td>
-                                04 Oct, 2019
-                            </td>
-                              <td>
-                                $404
-                            </td>
-                              <td>
-                                <span className="badge badge-pill badge-soft-warning font-size-12">Refund</span>
-                              </td>
-                              <td>
-                                <i className="fab fa-cc-visa mr-1" /> Visa
-                            </td>
-                              <td>
-                                {/* Button trigger modal */}
-                                <button type="button" className="btn btn-primary btn-sm btn-rounded waves-effect waves-light" data-toggle="modal" data-target=".exampleModal">
-                                  View Details
-                              </button>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <div className="custom-control custom-checkbox">
-                                  <input type="checkbox" className="custom-control-input" id="customCheck7" />
-                                  <label className="custom-control-label" htmlFor="customCheck7">&nbsp;</label>
-                                </div>
-                              </td>
-                              <td><a href=" " className="text-body font-weight-bold">#SK2545</a> </td>
-                              <td>Jacob Hunter</td>
-                              <td>
-                                04 Oct, 2019
-                            </td>
-                              <td>
-                                $392
-                            </td>
-                              <td>
-                                <span className="badge badge-pill badge-soft-success font-size-12">Paid</span>
-                              </td>
-                              <td>
-                                <i className="fab fa-cc-paypal mr-1" /> Paypal
-                            </td>
-                              <td>
-                                {/* Button trigger modal */}
-                                <button type="button" className="btn btn-primary btn-sm btn-rounded waves-effect waves-light" data-toggle="modal" data-target=".exampleModal">
-                                  View Details
-                              </button>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      {/* end table-responsive */}
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {/* end row */}
+              {/* view search */}
+          
+                      <div>
+                        <div className="MuiPaper-root MuiAppBar-root MuiAppBar-positionSticky MuiAppBar-colorTransparent jss1753 jss1754 MuiPaper-elevation0">
+                          <HeaderSearch/>
+                        </div>
+
+                        <div className="jss1767">
+                          <div className="MuiContainer-root jss1768 MuiContainer-maxWidthLg">
+                            <FilterSearch/>
+                            <ViewSearch/>
+                          </div>
+                        </div>
+                      </div> 
+                  
+              {/* end view search */}
+
+
             </div>
             {/* container-fluid */}
           </div>
