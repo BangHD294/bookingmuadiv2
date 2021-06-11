@@ -20,7 +20,7 @@ import "../components/search/formSearch.css";
 import "../components/search/PlaceSearch.css";
 import HeaderSearch from "../components/search/HeaderSearch";
 import FilterSearch from "../components/search/FilterSearch";
-import ViewSearch from  "../components/search/ViewSearch";
+import ViewSearch from "../components/search/ViewSearch";
 const DayPicker = () => {
   const [startDate, setStartDate] = useState(new Date());
   const months = ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12']
@@ -592,7 +592,7 @@ const Search = () => {
 
               {/*end nguoi lon tre em */}
               {/* place search */}
-              <div className={isActivePlace ? "placeHidden" : "placeShow" }>
+              <div className={isActivePlace ? "placeHidden" : "placeShow"}>
                 <div className="muds52 muds53">
                   <div className="muds405">
                     <div className="muds414 ">
@@ -893,20 +893,20 @@ const Search = () => {
 
               {/* end place search*/}
               {/* view search */}
-          
-                      <div>
-                        <div className="MuiPaper-root MuiAppBar-root MuiAppBar-positionSticky MuiAppBar-colorTransparent jss1753 jss1754 MuiPaper-elevation0">
-                          <HeaderSearch/>
-                        </div>
 
-                        <div className="jss1767">
-                          <div className="MuiContainer-root jss1768 MuiContainer-maxWidthLg">
-                            <FilterSearch/>
-                            <ViewSearch/>
-                          </div>
-                        </div>
-                      </div> 
-                  
+              <div>
+                <div className="MuiPaper-root MuiAppBar-root MuiAppBar-positionSticky MuiAppBar-colorTransparent jss1753 jss1754 MuiPaper-elevation0">
+                  <HeaderSearch />
+                </div>
+
+                <div className="jss1767">
+                  <div className="MuiContainer-root jss1768 MuiContainer-maxWidthLg">
+                    <FilterSearch />
+                    <ViewSearch />
+                  </div>
+                </div>
+              </div>
+
               {/* end view search */}
 
 

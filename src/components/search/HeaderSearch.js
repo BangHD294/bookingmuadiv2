@@ -1,5 +1,5 @@
 import React from "react";
-import "../search/ViewSearch.css"
+// import "../search/ViewSearch.css"
 
 const HeaderSearch = () =>{
  return (
