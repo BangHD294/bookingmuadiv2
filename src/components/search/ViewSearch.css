@@ -5243,4 +5243,6 @@
             }
         }
         /*end resize màn hình*/
-
+.mufoverflow{
+    overflow: auto;
+}

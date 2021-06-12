@@ -1,10 +1,20 @@
 import React from 'react';
 import "../search/ViewSearch.css";
+import Accordion from '@material-ui/core/Accordion';
+import AccordionDetails from '@material-ui/core/AccordionDetails';
+import AccordionSummary from '@material-ui/core/AccordionSummary';
+
 const ViewSearch = () => {
+
+    const [expanded, setExpanded] = React.useState(false);
+
+    const handleChange = (panel) => (event, isExpanded) => {
+        setExpanded(isExpanded ? panel : false);
+    };
     return (
         <div className="jss1770">
             <div className="jss1771">
-                <div className="mufMuiTabs-root jss1773">
+                <div className="mufMuiTabs-root jss1773 mufoverflow">
                     <div className="mufMuiButtonBase-root mufMuiTabScrollButton-root mufMuiTabs-scrollButtons mufMuiTabs-scrollButtonsDesktop" aria-disabled="false">
                         <svg className="mufMuiSvgIcon-root mufMuiSvgIcon-fontSizeSmall" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M15.41 16.09l-4.58-4.59 4.58-4.59L14 5.5l-6 6 6 6z" />
@@ -303,227 +313,218 @@ const ViewSearch = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="jss1964">
-                        <div className="jss1965">
-                            <button className="MuiButtonBase-root MuiButton-root MuiButton-text jss1966 MuiButton-textSecondary" tabIndex={0} type="button">
-                                <span className="MuiButton-label">
-                                    <span>Chi tiết</span>
-                                    <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 16 16" className="jss1 jss1967 jss1968" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                        <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clipRule="evenodd" />
-                                    </svg>
-                                    <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 16 16" className="jss1 jss1967" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                        <path fillRule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clipRule="evenodd" />
-                                    </svg>
-                                </span>
-                                <span className="MuiTouchRipple-root" />
-                            </button>
-                            <div />
-                        </div>
-                        <div hidden className>
-                            <div className="jss1969">
-                                <div className="jss1993">
-                                    <div className="jss1870 jss1994">
-                                        <button className="MuiButtonBase-root MuiIconButton-root   MuiIconButton-colorSecondary" tabIndex={0} type="button">
-                                            <span className="MuiIconButton-label">
-                                                <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="jss1 jss1873 " height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
-                                                    </path>
-                                                </svg>
-                                            </span>
-                                            <span className="MuiTouchRipple-root" />
-                                        </button>
-                                        <h4 className="MuiTypography-root MuiTypography-h4">Chuyến bay đã chọn </h4>
-                                        <span className="jss1871" />
-                                    </div>
-                                    <div className="MuiTabs-root jss1995">
-                                        <div className="MuiTabs-scroller MuiTabs-fixed" style={{ overflow: 'hidden' }}>
-                                            <div className="MuiTabs-flexContainer MuiTabs-centered" role="tablist">
-                                                <button className="MuiButtonBase-root MuiTab-root MuiTab-textColorInherit jss1997 Mui-selected MuiTab-fullWidth" tabIndex={0} type="button" role="tab" aria-selected="true">
-                                                    <span className="MuiTab-wrapper">Chuyến bay</span>
-                                                    <span className="MuiTouchRipple-root" />
-                                                </button>
-                                                <button className="MuiButtonBase-root MuiTab-root MuiTab-textColorInherit jss1997 MuiTab-fullWidth" tabIndex={-1} type="button" role="tab" aria-selected="false">
-                                                    <span className="MuiTab-wrapper">Chi tiết giá</span>
-                                                    <span className="MuiTouchRipple-root" />
-                                                </button>
-                                            </div>
-                                            <span className="jss1782 jss1783 MuiTabs-indicator jss1996" style={{ left: '0px', width: '0px' }} />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="jss1998 jss1999">
-                                    <div className>
-                                        <div>
-                                            <div className="jss2007">
-                                                <div>
-                                                    <div className="jss2008">
-                                                        <div className="jss2009">
-                                                            <div className="jss1958">
-                                                                <img src="https://cdn.justfly.vn/media/flights/logo/VJ.png" alt="Vietjet Air" loading="eager" className="jss143 jss1959" />
-                                                            </div>
-                                                            <p className="MuiTypography-root jss2010 MuiTypography-body2 jss28 MuiTypography-colorTextSecondary">VJ127</p>
-                                                        </div>
-                                                        <div className="jss2011">
-                                                            <p className="MuiTypography-root jss2012 MuiTypography-body1"> Vietjet Air</p>
-                                                            <p className="MuiTypography-root jss2013 MuiTypography-body2 jss28 MuiTypography-colorTextSecondary">
-                                                                <span>2g 15p</span>
-                                                                <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 16 16" className="jss1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                                                    <path fillRule="evenodd" d="M8 9.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" clipRule="evenodd" />
-                                                                </svg>
-                                                                <span>Bay thẳng</span>
-                                                                <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 16 16" className="jss1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                                                    <path fillRule="evenodd" d="M8 9.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" clipRule="evenodd" />
-                                                                </svg>
-                                                                <span>Hạng E1_ECO</span>
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                    <div className="jss2014">
-                                                        <div className="jss2015 jss2016">
-                                                            <div className="jss2017">
-                                                                <div>
-                                                                    <p className="MuiTypography-root jss2018 MuiTypography-h4">06:45</p>
-                                                                    <p className="MuiTypography-root MuiTypography-body1">10 Thg6</p>
-                                                                </div>
-                                                                <div>
-                                                                    <p className="MuiTypography-root jss2018 MuiTypography-h4">09:00</p>
-                                                                    <p className="MuiTypography-root MuiTypography-body1">10 Thg6</p>
-                                                                </div>
-                                                                <div className="jss2019" />
-                                                            </div>
-                                                            <div className="jss2020 jss2021">
-                                                                <div className="jss2023">
-                                                                    <p className="MuiTypography-root jss2022 MuiTypography-h4">Hà Nội (HAN)</p>
-                                                                    <p className="MuiTypography-root MuiTypography-body2 jss28 MuiTypography-colorTextSecondary">Sân bay quốc tế Nội Bài</p>
-                                                                </div>
-                                                                <div className="jss2023">
-                                                                    <p className="MuiTypography-root jss2022 MuiTypography-h4">Hồ Chí Minh (SGN)</p>
-                                                                    <p className="MuiTypography-root MuiTypography-body2 jss28 MuiTypography-colorTextSecondary">Sân bay quốc tế Tân Sơn Nhất</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div className="jss2028 jss2029">
-                                                            <p className="MuiTypography-root jss2033 jss2030 MuiTypography-body1 MuiTypography-colorSecondary">
-                                                                <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 16 16" className="jss1 jss2034" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                                                    <path fillRule="evenodd" d="M13.854 3.646a.5.5 0 010 .708l-7 7a.5.5 0 01-.708 0l-3.5-3.5a.5.5 0 11.708-.708L6.5 10.293l6.646-6.647a.5.5 0 01.708 0z" clipRule="evenodd" />
-                                                                </svg> Xách tay 7kg</p>
-                                                            <p className="MuiTypography-root jss2033 jss2030 MuiTypography-body1 MuiTypography-colorPrimary">
-                                                                <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="jss1 jss2034" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                                                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
-                                                                    </path>
-                                                                </svg> Không hoàn vé</p>
-                                                            <p className="MuiTypography-root jss2033 jss2030 MuiTypography-body1 MuiTypography-colorPrimary">
-                                                                <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="jss1 jss2034" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                                                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
-                                                                    </path>
-                                                                </svg> Không ký gửi</p>
-                                                            <p className="MuiTypography-root jss2033 jss2030 MuiTypography-body1 MuiTypography-colorPrimary">
-                                                                <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="jss1 jss2034" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                                                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
-                                                                    </path>
-                                                                </svg> Không đổi ngày</p>
-                                                            <p className="MuiTypography-root jss2033 jss2030 MuiTypography-body1 MuiTypography-colorPrimary">
-                                                                <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="jss1 jss2034" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                                                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
-                                                                    </path>
-                                                                </svg> Không ăn nhẹ</p>
-                                                            <p className="MuiTypography-root jss2033 jss2030 MuiTypography-body1 MuiTypography-colorSecondary">
-                                                                <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 16 16" className="jss1 jss2034" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                                                    <path fillRule="evenodd" d="M13.854 3.646a.5.5 0 010 .708l-7 7a.5.5 0 01-.708 0l-3.5-3.5a.5.5 0 11.708-.708L6.5 10.293l6.646-6.647a.5.5 0 01.708 0z" clipRule="evenodd" />
-                                                                </svg> Airbus 321</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div hidden className>
-                                        <div className="jss2035">
-                                            <div className="jss2036">
-                                                <div className="jss2037">
-                                                    <p className="MuiTypography-root jss2038 MuiTypography-body1">
-                                                        <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 16 16" className="jss1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                                            <path fillRule="evenodd" d="M8 9.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" clipRule="evenodd" />
-                                                        </svg> Người lớn</p>
-                                                    <p className="MuiTypography-root MuiTypography-body1">
-                                                        <span>1 người x </span>
-                                                        <span className="jss2040">598,900₫</span>
-                                                    </p>
-                                                </div>
-                                                <div className="jss2037">
-                                                    <p className="MuiTypography-root jss2039 jss2038 MuiTypography-body1">Bạn thanh toán</p>
-                                                    <p className="MuiTypography-root MuiTypography-body1">
-                                                        <span className="jss2040 jss2041">598,900 ₫</span>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div className="jss2042 jss2043">
-                                                <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 16 16" className="jss1 jss2044" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                                    <path fillRule="evenodd" d="M8 15A7 7 0 108 1a7 7 0 000 14zm0 1A8 8 0 108 0a8 8 0 000 16z" clipRule="evenodd" />
-                                                    <path d="M7.002 11a1 1 0 112 0 1 1 0 01-2 0zM7.1 4.995a.905.905 0 111.8 0l-.35 3.507a.552.552 0 01-1.1 0L7.1 4.995z">
-                                                    </path>
-                                                </svg> Giá cuối cùng (Đã bao gồm thuế phí)</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="jss2058 jss2001">
-                                    <div className="jss2061">
-                                        <p className="MuiTypography-root MuiTypography-h3 MuiTypography-colorError">598,900 ₫
-                                        <button className="MuiButtonBase-root MuiIconButton-root" tabIndex={0} type="button">
-                                                <span className="MuiIconButton-label">
-                                                    <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="jss1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                                        <path d="M6.293 13.293L7.707 14.707 12 10.414 16.293 14.707 17.707 13.293 12 7.586z">
-                                                        </path>
+                    {/* chi tiết */}
+
+                    <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')} className="jss1964">
+                        
+                    <AccordionSummary>
+                                        <div className="jss1965">
+                                            <button className="MuiButtonBase-root MuiButton-root MuiButton-text jss1966 MuiButton-textSecondary" tabIndex={0} type="button">
+                                                <span className="MuiButton-label">
+                                                
+                                                    <span>Chi tiết</span>
+                                              
+                                                    <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 16 16" className="jss1 jss1967 jss1968" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fillRule="evenodd" d="M1.646 4.646a.5.5 0 01.708 0L8 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z" clipRule="evenodd" />
+                                                    </svg>
+                                                    <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 16 16" className="jss1 jss1967" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                        <path fillRule="evenodd" d="M7.646 4.646a.5.5 0 01.708 0l6 6a.5.5 0 01-.708.708L8 5.707l-5.646 5.647a.5.5 0 01-.708-.708l6-6z" clipRule="evenodd" />
                                                     </svg>
                                                 </span>
                                                 <span className="MuiTouchRipple-root" />
                                             </button>
-                                        </p>
-                                        <p className="MuiTypography-root MuiTypography-body2 jss28 MuiTypography-colorTextSecondary">(1 người lớn)</p>
-                                    </div>
-                                    <button className="MuiButtonBase-root MuiButton-root MuiButton-contained jss2063 MuiButton-containedSecondary" tabIndex={0} type="button">
-                                        <span className="MuiButton-label">Đặt</span>
-                                        <span className="MuiTouchRipple-root" />
-                                    </button>
-                                </div>
-                                <div className="jss2059 jss2001">
-                                    <div className="jss2060">
-                                        <p className="MuiTypography-root jss2066 MuiTypography-body2 jss28">
-                                            <span className="jss2067">Chiều đi</span>
-                                            <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 16 16" className="jss1 jss2068" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                                <path fillRule="evenodd" d="M8 9.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" clipRule="evenodd" />
-                                            </svg>
-                                            <span>Vietjet Air</span>
-                                            <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 16 16" className="jss1 jss2068" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                                <path fillRule="evenodd" d="M8 9.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" clipRule="evenodd" />
-                                            </svg>
-                                            <span>VJ127</span>
-                                        </p>
-                                        <div className="jss2069">
-                                            <h4 className="MuiTypography-root jss2070 MuiTypography-h4">
-                                                <span>06:45</span>
-                                                <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 16 16" className="jss1 jss2072" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                                    <path fillRule="evenodd" d="M3.5 8a.5.5 0 01.5-.5h8a.5.5 0 010 1H4a.5.5 0 01-.5-.5z" clipRule="evenodd" />
-                                                </svg>
-                                                <span>09:00</span>
-                                            </h4>
-                                            <h4 className="MuiTypography-root jss2071 MuiTypography-h4">598,900₫</h4>
+                                            <div />
                                         </div>
-                                    </div>
-                                    <div className="jss2060" />
-                                    <div className="jss2060">
-                                        <div className="jss2062">
-                                            <h4 className="MuiTypography-root jss2061 MuiTypography-h4">598,900₫</h4>
-                                            <button className="MuiButtonBase-root MuiButton-root MuiButton-contained jss2063 MuiButton-containedSecondary" tabIndex={0} type="button">
-                                                <span className="MuiButton-label">Chọn</span>
-                                                <span className="MuiTouchRipple-root" />
-                                            </button>
+                                        </AccordionSummary>
+                                        <AccordionDetails>
+                                        <div className>
+                                            <div className="jss1969">
+                                                <div className="jss1993">
+                                                    <div className="MuiTabs-root jss1995">
+                                                        <div className="MuiTabs-scroller MuiTabs-fixed" style={{ overflow: 'hidden' }}>
+                                                            <div className="MuiTabs-flexContainer MuiTabs-centered" role="tablist">
+                                                                <button className="MuiButtonBase-root MuiTab-root MuiTab-textColorInherit jss1997 Mui-selected MuiTab-fullWidth" tabIndex={0} type="button" role="tab" aria-selected="true">
+                                                                    <span className="MuiTab-wrapper">Chuyến bay</span>
+                                                                    <span className="MuiTouchRipple-root" />
+                                                                </button>
+                                                                <button className="MuiButtonBase-root MuiTab-root MuiTab-textColorInherit jss1997 MuiTab-fullWidth" tabIndex={-1} type="button" role="tab" aria-selected="false">
+                                                                    <span className="MuiTab-wrapper">Chi tiết giá</span>
+                                                                    <span className="MuiTouchRipple-root" />
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="jss1998 jss1999">
+                                                    {/* chuyến bay */}
+                                                    <div className>
+                                                        <div>
+                                                            <div className="jss2007">
+                                                                <div>
+                                                                    <div className="jss2008">
+                                                                        <div className="jss2009">
+                                                                            <div className="jss1958"><img src="https://cdn.justfly.vn/media/flights/logo/VJ.png" alt="Vietjet Air" loading="eager" className="jss143 jss1959" /></div>
+                                                                            <p className="MuiTypography-root jss2010 MuiTypography-body2 jss28 MuiTypography-colorTextSecondary">
+                                                                                VJ127</p>
+                                                                        </div>
+                                                                        <div className="jss2011">
+                                                                            <p className="MuiTypography-root jss2012 MuiTypography-body1">
+                                                                                Vietjet Air</p>
+                                                                            <p className="MuiTypography-root jss2013 MuiTypography-body2 jss28 MuiTypography-colorTextSecondary">
+                                                                                <span>2g 15p</span><svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 16 16" className="jss1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                                                    <path fillRule="evenodd" d="M8 9.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" clipRule="evenodd" />
+                                                                                </svg><span>Bay thẳng</span><svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 16 16" className="jss1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                                                    <path fillRule="evenodd" d="M8 9.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" clipRule="evenodd" />
+                                                                                </svg><span>Hạng E1_ECO</span>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div className="jss2014">
+                                                                        <div className="jss2015 jss2016">
+                                                                            <div className="jss2017">
+                                                                                <div>
+                                                                                    <p className="MuiTypography-root jss2018 MuiTypography-h4">
+                                                                                        06:45</p>
+                                                                                    <p className="MuiTypography-root MuiTypography-body1">
+                                                                                        10 Thg6</p>
+                                                                                </div>
+                                                                                <div>
+                                                                                    <p className="MuiTypography-root jss2018 MuiTypography-h4">
+                                                                                        09:00</p>
+                                                                                    <p className="MuiTypography-root MuiTypography-body1">
+                                                                                        10 Thg6</p>
+                                                                                </div>
+                                                                                <div className="jss2019" />
+                                                                            </div>
+                                                                            <div className="jss2020 jss2021">
+                                                                                <div className="jss2023">
+                                                                                    <p className="MuiTypography-root jss2022 MuiTypography-h4">
+                                                                                        Hà Nội (HAN)</p>
+                                                                                    <p className="MuiTypography-root MuiTypography-body2 jss28 MuiTypography-colorTextSecondary">
+                                                                                        Sân bay quốc tế Nội Bài</p>
+                                                                                </div>
+                                                                                <div className="jss2023">
+                                                                                    <p className="MuiTypography-root jss2022 MuiTypography-h4">
+                                                                                        Hồ Chí Minh (SGN)</p>
+                                                                                    <p className="MuiTypography-root MuiTypography-body2 jss28 MuiTypography-colorTextSecondary">
+                                                                                        Sân bay quốc tế Tân Sơn Nhất</p>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className="jss2028 jss2029">
+                                                                            <p className="MuiTypography-root jss2033 jss2030 MuiTypography-body1 MuiTypography-colorSecondary">
+                                                                                <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 16 16" className="jss1 jss2034" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                                                    <path fillRule="evenodd" d="M13.854 3.646a.5.5 0 010 .708l-7 7a.5.5 0 01-.708 0l-3.5-3.5a.5.5 0 11.708-.708L6.5 10.293l6.646-6.647a.5.5 0 01.708 0z" clipRule="evenodd" />
+                                                                                </svg> Xách tay 7kg
+                                                                            </p>
+                                                                            <p className="MuiTypography-root jss2033 jss2030 MuiTypography-body1 MuiTypography-colorPrimary">
+                                                                                <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="jss1 jss2034" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                                                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+                                                                                    </path>
+                                                                                </svg> Không hoàn vé
+                                                                            </p>
+                                                                            <p className="MuiTypography-root jss2033 jss2030 MuiTypography-body1 MuiTypography-colorPrimary">
+                                                                                <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="jss1 jss2034" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                                                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+                                                                                    </path>
+                                                                                </svg> Không ký gửi
+                                                                            </p>
+                                                                            <p className="MuiTypography-root jss2033 jss2030 MuiTypography-body1 MuiTypography-colorPrimary">
+                                                                                <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="jss1 jss2034" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                                                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+                                                                                    </path>
+                                                                                </svg> Không đổi ngày
+                                                                            </p>
+                                                                            <p className="MuiTypography-root jss2033 jss2030 MuiTypography-body1 MuiTypography-colorPrimary">
+                                                                                <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="jss1 jss2034" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                                                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+                                                                                    </path>
+                                                                                </svg> Không ăn nhẹ
+                                                                            </p>
+                                                                            <p className="MuiTypography-root jss2033 jss2030 MuiTypography-body1 MuiTypography-colorSecondary">
+                                                                                <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 16 16" className="jss1 jss2034" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                                                    <path fillRule="evenodd" d="M13.854 3.646a.5.5 0 010 .708l-7 7a.5.5 0 01-.708 0l-3.5-3.5a.5.5 0 11.708-.708L6.5 10.293l6.646-6.647a.5.5 0 01.708 0z" clipRule="evenodd" />
+                                                                                </svg> Airbus 321
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    {/* chi tiết giá */}
+                                                    <div hidden className>
+                                                        <div className="jss2035">
+                                                            <div className="jss2036">
+                                                                <div className="jss2037">
+                                                                    <p className="MuiTypography-root jss2038 MuiTypography-body1">
+                                                                        <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 16 16" className="jss1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                                            <path fillRule="evenodd" d="M8 9.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" clipRule="evenodd" />
+                                                                        </svg> Người lớn
+                                                                    </p>
+                                                                    <p className="MuiTypography-root MuiTypography-body1">
+                                                                        <span>1 người x </span><span className="jss2040">598,900
+                                                                            ₫</span>
+                                                                    </p>
+                                                                </div>
+                                                                <div className="jss2037">
+                                                                    <p className="MuiTypography-root jss2039 jss2038 MuiTypography-body1">
+                                                                        Bạn thanh toán</p>
+                                                                    <p className="MuiTypography-root MuiTypography-body1"><span className="jss2040 jss2041">598,900 ₫</span></p>
+                                                                </div>
+                                                            </div>
+                                                            <div className="jss2042 jss2043"><svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 16 16" className="jss1 jss2044" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                                <path fillRule="evenodd" d="M8 15A7 7 0 108 1a7 7 0 000 14zm0 1A8 8 0 108 0a8 8 0 000 16z" clipRule="evenodd" />
+                                                                <path d="M7.002 11a1 1 0 112 0 1 1 0 01-2 0zM7.1 4.995a.905.905 0 111.8 0l-.35 3.507a.552.552 0 01-1.1 0L7.1 4.995z">
+                                                                </path>
+                                                            </svg> Giá cuối cùng (Đã bao gồm thuế phí)</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div className="jss2058 jss2001">
+                                                    <div className="jss2061">
+                                                        <p className="MuiTypography-root MuiTypography-h3 MuiTypography-colorError">
+                                                            598,900 ₫<button className="MuiButtonBase-root MuiIconButton-root" tabIndex={0} type="button"><span className="MuiIconButton-label"><svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="jss1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M6.293 13.293L7.707 14.707 12 10.414 16.293 14.707 17.707 13.293 12 7.586z">
+                                                                </path>
+                                                            </svg></span><span className="MuiTouchRipple-root" /></button></p>
+                                                        <p className="MuiTypography-root MuiTypography-body2 jss28 MuiTypography-colorTextSecondary">
+                                                            (1 người lớn)</p>
+                                                    </div><button className="MuiButtonBase-root MuiButton-root MuiButton-contained jss2063 MuiButton-containedSecondary" tabIndex={0} type="button"><span className="MuiButton-label">Đặt</span><span className="MuiTouchRipple-root" /></button>
+                                                </div>
+                                                <div className="jss2059 jss2001">
+                                                    <div className="jss2060">
+                                                        <p className="MuiTypography-root jss2066 MuiTypography-body2 jss28">
+                                                            <span className="jss2067">Chiều đi</span><svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 16 16" className="jss1 jss2068" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                                <path fillRule="evenodd" d="M8 9.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" clipRule="evenodd" />
+                                                            </svg><span>Vietjet Air</span><svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 16 16" className="jss1 jss2068" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                                <path fillRule="evenodd" d="M8 9.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" clipRule="evenodd" />
+                                                            </svg><span>VJ127</span>
+                                                        </p>
+                                                        <div className="jss2069">
+                                                            <h4 className="MuiTypography-root jss2070 MuiTypography-h4">
+                                                                <span>06:45</span><svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 16 16" className="jss1 jss2072" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path fillRule="evenodd" d="M3.5 8a.5.5 0 01.5-.5h8a.5.5 0 010 1H4a.5.5 0 01-.5-.5z" clipRule="evenodd" />
+                                                                </svg><span>09:00</span>
+                                                            </h4>
+                                                            <h4 className="MuiTypography-root jss2071 MuiTypography-h4">598,900
+                                                                ₫</h4>
+                                                        </div>
+                                                    </div>
+                                                    <div className="jss2060" />
+                                                    <div className="jss2060">
+                                                        <div className="jss2062">
+                                                            <h4 className="MuiTypography-root jss2061 MuiTypography-h4">598,900
+                                                                ₫</h4><button className="MuiButtonBase-root MuiButton-root MuiButton-contained jss2063 MuiButton-containedSecondary" tabIndex={0} type="button"><span className="MuiButton-label">Chọn</span><span className="MuiTouchRipple-root" /></button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                        </AccordionDetails>
+                        
+                    </Accordion>
+                    {/*  */}
                 </div>
                 <div className="jss1962 jss1796">
                     <div className="jss1970">
@@ -582,7 +583,7 @@ const ViewSearch = () => {
                             </button>
                             <div />
                         </div>
-                        <div hidden className>
+                        <div hidden  className>
                             <div className="jss1969">
                                 <div className="jss1993">
                                     <div className="jss1870 jss1994">
@@ -3772,8 +3773,7 @@ const ViewSearch = () => {
                                                 <p className="MuiTypography-root jss2048 MuiTypography-body2 jss28">
                                                     <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 16 16" className="jss1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                                         <path fillRule="evenodd" d="M8 9.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" clipRule="evenodd" />
-                                                    </svg> Justfly.vn không tính thêm phí dịch vụ. Chính
-                            sách hủy và thay đổi dựa trên loại vé; bất kỳ khoản phí
+                                                    </svg> Justfly.vn không tính thêm phí dịch vụ. Chính sách hủy và thay đổi dựa trên loại vé; bất kỳ khoản phí
                             bổ sung nào được xác định bởi các hãng hàng không hoặc</p>
                                                 <p className="MuiTypography-root jss2048 MuiTypography-body2 jss28">
                                                     <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 16 16" className="jss1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">

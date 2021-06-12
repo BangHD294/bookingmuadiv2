@@ -12,6 +12,8 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 // import Home from "./components/Home";
 import Search from "./components/Search";
+
+
 // import { logout } from "./actions/auth";
 import { clearMessage } from "./actions/message";
 
