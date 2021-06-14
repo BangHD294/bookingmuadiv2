@@ -315,9 +315,9 @@ const ViewSearch = () => {
                     </div>
                     {/* chi tiết */}
 
-                    <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')} className="jss1964">
+                    <div expanded={expanded === 'panel2'} onChange={handleChange('panel2')} className="jss1964">
                         
-                    <AccordionSummary>
+                    <div>
                                         <div className="jss1965">
                                             <button className="MuiButtonBase-root MuiButton-root MuiButton-text jss1966 MuiButton-textSecondary" tabIndex={0} type="button">
                                                 <span className="MuiButton-label">
@@ -335,8 +335,8 @@ const ViewSearch = () => {
                                             </button>
                                             <div />
                                         </div>
-                                        </AccordionSummary>
-                                        <AccordionDetails>
+                                        </div>
+                                        <div>
                                         <div className>
                                             <div className="jss1969">
                                                 <div className="jss1993">
@@ -521,9 +521,9 @@ const ViewSearch = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                        </AccordionDetails>
+                                        </div>
                         
-                    </Accordion>
+                    </div>
                     {/*  */}
                 </div>
                 <div className="jss1962 jss1796">

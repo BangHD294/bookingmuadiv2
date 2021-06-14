@@ -1,5 +1,5 @@
 
-        .mufmufMuiBackdrop-root {
+        .MuiBackdrop-root {
             top: 0;
             left: 0;
             right: 0;
@@ -13,129 +13,129 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        .mufmufMuiBackdrop-invisible {
+        .MuiBackdrop-invisible {
             background-color: transparent;
         }
 
-        .mufmufMuiPaper-root {
+        .MuiPaper-root {
             color: #1A2B49;
             transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
             background-color: #fff;
         }
 
-        .mufmufMuiPaper-rounded {
+        .MuiPaper-rounded {
             border-radius: 4px;
         }
 
-        .mufmufMuiPaper-outlined {
+        .MuiPaper-outlined {
             border: 1px solid rgba(0, 0, 0, 0.12);
         }
 
-        .mufmufMuiPaper-elevation0 {
+        .MuiPaper-elevation0 {
             box-shadow: none;
         }
 
-        .mufmufMuiPaper-elevation1 {
+        .MuiPaper-elevation1 {
             box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
         }
 
-        .mufmufMuiPaper-elevation2 {
+        .MuiPaper-elevation2 {
             box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
         }
 
-        .mufmufMuiPaper-elevation3 {
+        .MuiPaper-elevation3 {
             box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.2), 0px 3px 4px 0px rgba(0, 0, 0, 0.14), 0px 1px 8px 0px rgba(0, 0, 0, 0.12);
         }
 
-        .mufmufMuiPaper-elevation4 {
+        .MuiPaper-elevation4 {
             box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
         }
 
-        .mufmufMuiPaper-elevation5 {
+        .MuiPaper-elevation5 {
             box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 5px 8px 0px rgba(0, 0, 0, 0.14), 0px 1px 14px 0px rgba(0, 0, 0, 0.12);
         }
 
-        .mufmufMuiPaper-elevation6 {
+        .MuiPaper-elevation6 {
             box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
         }
 
-        .mufmufMuiPaper-elevation7 {
+        .MuiPaper-elevation7 {
             box-shadow: 0px 4px 5px -2px rgba(0, 0, 0, 0.2), 0px 7px 10px 1px rgba(0, 0, 0, 0.14), 0px 2px 16px 1px rgba(0, 0, 0, 0.12);
         }
 
-        .mufmufMuiPaper-elevation8 {
+        .MuiPaper-elevation8 {
             box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
         }
 
-        .mufmufMuiPaper-elevation9 {
+        .MuiPaper-elevation9 {
             box-shadow: 0px 5px 6px -3px rgba(0, 0, 0, 0.2), 0px 9px 12px 1px rgba(0, 0, 0, 0.14), 0px 3px 16px 2px rgba(0, 0, 0, 0.12);
         }
 
-        .mufmufMuiPaper-elevation10 {
+        .MuiPaper-elevation10 {
             box-shadow: 0px 6px 6px -3px rgba(0, 0, 0, 0.2), 0px 10px 14px 1px rgba(0, 0, 0, 0.14), 0px 4px 18px 3px rgba(0, 0, 0, 0.12);
         }
 
-        .mufmufMuiPaper-elevation11 {
+        .MuiPaper-elevation11 {
             box-shadow: 0px 6px 7px -4px rgba(0, 0, 0, 0.2), 0px 11px 15px 1px rgba(0, 0, 0, 0.14), 0px 4px 20px 3px rgba(0, 0, 0, 0.12);
         }
 
-        .mufmufMuiPaper-elevation12 {
+        .MuiPaper-elevation12 {
             box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 12px 17px 2px rgba(0, 0, 0, 0.14), 0px 5px 22px 4px rgba(0, 0, 0, 0.12);
         }
 
-        .mufmufMuiPaper-elevation13 {
+        .MuiPaper-elevation13 {
             box-shadow: 0px 7px 8px -4px rgba(0, 0, 0, 0.2), 0px 13px 19px 2px rgba(0, 0, 0, 0.14), 0px 5px 24px 4px rgba(0, 0, 0, 0.12);
         }
 
-        .mufmufMuiPaper-elevation14 {
+        .MuiPaper-elevation14 {
             box-shadow: 0px 7px 9px -4px rgba(0, 0, 0, 0.2), 0px 14px 21px 2px rgba(0, 0, 0, 0.14), 0px 5px 26px 4px rgba(0, 0, 0, 0.12);
         }
 
-        .mufmufMuiPaper-elevation15 {
+        .MuiPaper-elevation15 {
             box-shadow: 0px 8px 9px -5px rgba(0, 0, 0, 0.2), 0px 15px 22px 2px rgba(0, 0, 0, 0.14), 0px 6px 28px 5px rgba(0, 0, 0, 0.12);
         }
 
-        .mufmufMuiPaper-elevation16 {
+        .MuiPaper-elevation16 {
             box-shadow: 0px 8px 10px -5px rgba(0, 0, 0, 0.2), 0px 16px 24px 2px rgba(0, 0, 0, 0.14), 0px 6px 30px 5px rgba(0, 0, 0, 0.12);
         }
 
-        .mufmufMuiPaper-elevation17 {
+        .MuiPaper-elevation17 {
             box-shadow: 0px 8px 11px -5px rgba(0, 0, 0, 0.2), 0px 17px 26px 2px rgba(0, 0, 0, 0.14), 0px 6px 32px 5px rgba(0, 0, 0, 0.12);
         }
 
-        .mufmufMuiPaper-elevation18 {
+        .MuiPaper-elevation18 {
             box-shadow: 0px 9px 11px -5px rgba(0, 0, 0, 0.2), 0px 18px 28px 2px rgba(0, 0, 0, 0.14), 0px 7px 34px 6px rgba(0, 0, 0, 0.12);
         }
 
-        .mufmufMuiPaper-elevation19 {
+        .MuiPaper-elevation19 {
             box-shadow: 0px 9px 12px -6px rgba(0, 0, 0, 0.2), 0px 19px 29px 2px rgba(0, 0, 0, 0.14), 0px 7px 36px 6px rgba(0, 0, 0, 0.12);
         }
 
-        .mufmufMuiPaper-elevation20 {
+        .MuiPaper-elevation20 {
             box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.2), 0px 20px 31px 3px rgba(0, 0, 0, 0.14), 0px 8px 38px 7px rgba(0, 0, 0, 0.12);
         }
 
-        .mufmufMuiPaper-elevation21 {
+        .MuiPaper-elevation21 {
             box-shadow: 0px 10px 13px -6px rgba(0, 0, 0, 0.2), 0px 21px 33px 3px rgba(0, 0, 0, 0.14), 0px 8px 40px 7px rgba(0, 0, 0, 0.12);
         }
 
-        .mufmufMuiPaper-elevation22 {
+        .MuiPaper-elevation22 {
             box-shadow: 0px 10px 14px -6px rgba(0, 0, 0, 0.2), 0px 22px 35px 3px rgba(0, 0, 0, 0.14), 0px 8px 42px 7px rgba(0, 0, 0, 0.12);
         }
 
-        .mufmufMuiPaper-elevation23 {
+        .MuiPaper-elevation23 {
             box-shadow: 0px 11px 14px -7px rgba(0, 0, 0, 0.2), 0px 23px 36px 3px rgba(0, 0, 0, 0.14), 0px 9px 44px 8px rgba(0, 0, 0, 0.12);
         }
 
-        .mufmufMuiPaper-elevation24 {
+        .MuiPaper-elevation24 {
             box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
         }
 
-        .mufmufMuiDrawer-docked {
+        .MuiDrawer-docked {
             flex: 0 0 auto;
         }
 
-        .mufmufMuiDrawer-paper {
+        .MuiDrawer-paper {
             top: 0;
             flex: 1 0 auto;
             height: 100%;
@@ -148,17 +148,17 @@
             -webkit-overflow-scrolling: touch;
         }
 
-        .mufmufMuiDrawer-paperAnchorLeft {
+        .MuiDrawer-paperAnchorLeft {
             left: 0;
             right: auto;
         }
 
-        .mufmufMuiDrawer-paperAnchorRight {
+        .MuiDrawer-paperAnchorRight {
             left: auto;
             right: 0;
         }
 
-        .mufmufMuiDrawer-paperAnchorTop {
+        .MuiDrawer-paperAnchorTop {
             top: 0;
             left: 0;
             right: 0;
@@ -167,7 +167,7 @@
             max-height: 100%;
         }
 
-        .mufmufMuiDrawer-paperAnchorBottom {
+        .MuiDrawer-paperAnchorBottom {
             top: auto;
             left: 0;
             right: 0;
@@ -176,23 +176,23 @@
             max-height: 100%;
         }
 
-        .mufmufMuiDrawer-paperAnchorDockedLeft {
+        .MuiDrawer-paperAnchorDockedLeft {
             border-right: 1px solid rgba(0, 0, 0, 0.12);
         }
 
-        .mufmufMuiDrawer-paperAnchorDockedTop {
+        .MuiDrawer-paperAnchorDockedTop {
             border-bottom: 1px solid rgba(0, 0, 0, 0.12);
         }
 
-        .mufmufMuiDrawer-paperAnchorDockedRight {
+        .MuiDrawer-paperAnchorDockedRight {
             border-left: 1px solid rgba(0, 0, 0, 0.12);
         }
 
-        .mufmufMuiDrawer-paperAnchorDockedBottom {
+        .MuiDrawer-paperAnchorDockedBottom {
             border-top: 1px solid rgba(0, 0, 0, 0.12);
         }
 
-        .mufmufMuiAppBar-root {
+        .MuiAppBar-root {
             width: 100%;
             display: flex;
             z-index: 1100;
@@ -201,7 +201,7 @@
             flex-direction: column;
         }
 
-        .mufmufMuiAppBar-positionFixed {
+        .MuiAppBar-positionFixed {
             top: 0;
             left: auto;
             right: 0;
@@ -209,58 +209,58 @@
         }
 
         @media print {
-            .mufmufMuiAppBar-positionFixed {
+            .MuiAppBar-positionFixed {
                 position: absolute;
             }
         }
 
-        .mufmufMuiAppBar-positionAbsolute {
+        .MuiAppBar-positionAbsolute {
             top: 0;
             left: auto;
             right: 0;
             position: absolute;
         }
 
-        .mufmufMuiAppBar-positionSticky {
+        .MuiAppBar-positionSticky {
             top: 0;
             left: auto;
             right: 0;
             position: sticky;
         }
 
-        .mufmufMuiAppBar-positionStatic {
+        .MuiAppBar-positionStatic {
             position: static;
         }
 
-        .mufmufMuiAppBar-positionRelative {
+        .MuiAppBar-positionRelative {
             position: relative;
         }
 
-        .mufmufMuiAppBar-colorDefault {
+        .MuiAppBar-colorDefault {
             color: rgba(0, 0, 0, 0.87);
             background-color: #f5f5f5;
         }
 
-        .mufmufMuiAppBar-colorPrimary {
+        .MuiAppBar-colorPrimary {
             color: #fff;
             background-color: #1A2B49;
         }
 
-        .mufmufMuiAppBar-colorSecondary {
+        .MuiAppBar-colorSecondary {
             color: #fff;
             background-color: #1593FF;
         }
 
-        .mufmufMuiAppBar-colorInherit {
+        .MuiAppBar-colorInherit {
             color: inherit;
         }
 
-        .mufmufMuiAppBar-colorTransparent {
+        .MuiAppBar-colorTransparent {
             color: inherit;
             background-color: transparent;
         }
 
-        .mufmufMuiContainer-root {
+        .MuiContainer-root {
             width: 100%;
             display: block;
             box-sizing: border-box;
@@ -271,110 +271,110 @@
         }
 
         @media (min-width:660px) {
-            .mufmufMuiContainer-root {
+            .MuiContainer-root {
                 padding-left: 24px;
                 padding-right: 24px;
             }
         }
 
-        .mufmufMuiContainer-disableGutters {
+        .MuiContainer-disableGutters {
             padding-left: 0;
             padding-right: 0;
         }
 
         @media (min-width:660px) {
-            .mufmufMuiContainer-fixed {
+            .MuiContainer-fixed {
                 max-width: 660px;
             }
         }
 
         @media (min-width:960px) {
-            .mufmufMuiContainer-fixed {
+            .MuiContainer-fixed {
                 max-width: 960px;
             }
         }
 
         @media (min-width:1218px) {
-            .mufmufMuiContainer-fixed {
+            .MuiContainer-fixed {
                 max-width: 1218px;
             }
         }
 
         @media (min-width:1920px) {
-            .mufmufMuiContainer-fixed {
+            .MuiContainer-fixed {
                 max-width: 1920px;
             }
         }
 
         @media (min-width:0px) {
-            .mufmufMuiContainer-maxWidthXs {
+            .MuiContainer-maxWidthXs {
                 max-width: 444px;
             }
         }
 
         @media (min-width:660px) {
-            .mufmufMuiContainer-maxWidthSm {
+            .MuiContainer-maxWidthSm {
                 max-width: 660px;
             }
         }
 
         @media (min-width:960px) {
-            .mufmufMuiContainer-maxWidthMd {
+            .MuiContainer-maxWidthMd {
                 max-width: 960px;
             }
         }
 
         @media (min-width:1218px) {
-            .mufmufMuiContainer-maxWidthLg {
+            .MuiContainer-maxWidthLg {
                 max-width: 1218px;
             }
         }
 
         @media (min-width:1920px) {
-            .mufmufMuiContainer-maxWidthXl {
+            .MuiContainer-maxWidthXl {
                 max-width: 1920px;
             }
         }
 
-        .mufmufMuiToolbar-root {
+        .MuiToolbar-root {
             display: flex;
             position: relative;
             align-items: center;
         }
 
-        .mufmufMuiToolbar-gutters {
+        .MuiToolbar-gutters {
             padding-left: 16px;
             padding-right: 16px;
         }
 
         @media (min-width:660px) {
-            .mufmufMuiToolbar-gutters {
+            .MuiToolbar-gutters {
                 padding-left: 24px;
                 padding-right: 24px;
             }
         }
 
-        .mufmufMuiToolbar-regular {
+        .MuiToolbar-regular {
             min-height: 56px;
         }
 
         @media (min-width:0px) and (orientation: landscape) {
-            .mufmufMuiToolbar-regular {
+            .MuiToolbar-regular {
                 min-height: 48px;
             }
         }
 
         @media (min-width:660px) {
-            .mufmufMuiToolbar-regular {
+            .MuiToolbar-regular {
                 min-height: 64px;
             }
         }
 
-        .mufmufMuiToolbar-dense {
+        .MuiToolbar-dense {
             min-height: 48px;
         }
 
-        .mufmufMuiTouchRipple-root {
+        .MuiTouchRipple-root {
             top: 0;
             left: 0;
             right: 0;
@@ -386,22 +386,22 @@
             pointer-events: none;
         }
 
-        .mufmufMuiTouchRipple-ripple {
+        .MuiTouchRipple-ripple {
             opacity: 0;
             position: absolute;
         }
 
-        .mufmufMuiTouchRipple-rippleVisible {
+        .MuiTouchRipple-rippleVisible {
             opacity: 0.3;
             animation: mufMuiTouchRipple-keyframes-enter 550ms cubic-bezier(0.4, 0, 0.2, 1);
             transform: scale(1);
         }
 
-        .mufmufMuiTouchRipple-ripplePulsate {
+        .MuiTouchRipple-ripplePulsate {
             animation-duration: 200ms;
         }
 
-        .mufmufMuiTouchRipple-child {
+        .MuiTouchRipple-child {
             width: 100%;
             height: 100%;
             display: block;
@@ -410,12 +410,12 @@
             background-color: currentColor;
         }
 
-        .mufmufMuiTouchRipple-childLeaving {
+        .MuiTouchRipple-childLeaving {
             opacity: 0;
             animation: mufMuiTouchRipple-keyframes-exit 550ms cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .mufmufMuiTouchRipple-childPulsate {
+        .MuiTouchRipple-childPulsate {
             top: 0;
             left: 0;
             position: absolute;
@@ -479,22 +479,22 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        .mufmufMuiButtonBase-root::-moz-focus-inner {
+        .MuiButtonBase-root::-moz-focus-inner {
             border-style: none;
         }
 
-        .mufmufMuiButtonBase-root.mufmufMui-disabled {
+        .MuiButtonBase-root.Mui-disabled {
             cursor: default;
             pointer-events: none;
         }
 
         @media print {
-            .mufmufMuiButtonBase-root {
+            .MuiButtonBase-root {
                 -webkit-print-color-adjust: exact;
             }
         }
 
-        .mufmufMuiButton-root {
+        .MuiButton-root {
             color: #1A2B49;
             padding: 6px 16px;
             font-size: 0.875rem;
@@ -509,267 +509,267 @@
             text-transform: uppercase;
         }
 
-        .mufmufMuiButton-root:hover {
+        .MuiButton-root:hover {
             text-decoration: none;
             background-color: rgba(26, 43, 73, 0.04);
         }
 
-        .mufmufMuiButton-root.mufmufMui-disabled {
+        .MuiButton-root.Mui-disabled {
             color: rgba(0, 0, 0, 0.26);
         }
 
         @media (hover: none) {
-            .mufmufMuiButton-root:hover {
+            .MuiButton-root:hover {
                 background-color: transparent;
             }
         }
 
-        .mufmufMuiButton-root:hover .mufmufMui-disabled {
+        .MuiButton-root:hover .Mui-disabled {
             background-color: transparent;
         }
 
-        .mufmufMuiButton-label {
+        .MuiButton-label {
             width: 100%;
             display: inherit;
             align-items: inherit;
             justify-content: inherit;
         }
 
-        .mufmufMuiButton-text {
+        .MuiButton-text {
             padding: 6px 8px;
         }
 
-        .mufmufMuiButton-textPrimary {
+        .MuiButton-textPrimary {
             color: #1A2B49;
         }
 
-        .mufmufMuiButton-textPrimary:hover {
+        .MuiButton-textPrimary:hover {
             background-color: rgba(26, 43, 73, 0.04);
         }
 
         @media (hover: none) {
-            .mufmufMuiButton-textPrimary:hover {
+            .MuiButton-textPrimary:hover {
                 background-color: transparent;
             }
         }
 
-        .mufmufMuiButton-textSecondary {
+        .MuiButton-textSecondary {
             color: #1593FF;
         }
 
-        .mufmufMuiButton-textSecondary:hover {
+        .MuiButton-textSecondary:hover {
             background-color: rgba(21, 147, 255, 0.04);
         }
 
         @media (hover: none) {
-            .mufmufMuiButton-textSecondary:hover {
+            .MuiButton-textSecondary:hover {
                 background-color: transparent;
             }
         }
 
-        .mufmufMuiButton-outlined {
+        .MuiButton-outlined {
             border: 1px solid rgba(0, 0, 0, 0.23);
             padding: 5px 15px;
         }
 
-        .mufmufMuiButton-outlined .mufmufMui-disabled {
+        .MuiButton-outlined .Mui-disabled {
             border: 1px solid rgba(0, 0, 0, 0.12);
         }
 
-        .mufmufMuiButton-outlinedPrimary {
+        .MuiButton-outlinedPrimary {
             color: #1A2B49;
             border: 1px solid rgba(26, 43, 73, 0.5);
         }
 
-        .mufmufMuiButton-outlinedPrimary:hover {
+        .MuiButton-outlinedPrimary:hover {
             border: 1px solid #1A2B49;
             background-color: rgba(26, 43, 73, 0.04);
         }
 
         @media (hover: none) {
-            .mufmufMuiButton-outlinedPrimary:hover {
+            .MuiButton-outlinedPrimary:hover {
                 background-color: transparent;
             }
         }
 
-        .mufmufMuiButton-outlinedSecondary {
+        .MuiButton-outlinedSecondary {
             color: #1593FF;
             border: 1px solid rgba(21, 147, 255, 0.5);
         }
 
-        .mufmufMuiButton-outlinedSecondary:hover {
+        .MuiButton-outlinedSecondary:hover {
             border: 1px solid #1593FF;
             background-color: rgba(21, 147, 255, 0.04);
         }
 
-        .mufmufMuiButton-outlinedSecondary.mufmufMui-disabled {
+        .MuiButton-outlinedSecondary.Mui-disabled {
             border: 1px solid rgba(0, 0, 0, 0.26);
         }
 
         @media (hover: none) {
-            .mufmufMuiButton-outlinedSecondary:hover {
+            .MuiButton-outlinedSecondary:hover {
                 background-color: transparent;
             }
         }
 
-        .mufmufMuiButton-contained {
+        .MuiButton-contained {
             color: rgba(0, 0, 0, 0.87);
             box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
             background-color: #e0e0e0;
         }
 
-        .mufmufMuiButton-contained:hover {
+        .MuiButton-contained:hover {
             box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
             background-color: #d5d5d5;
         }
 
-        .mufmufMuiButton-contained.mufmufMui-focusVisible {
+        .MuiButton-contained.Mui-focusVisible {
             box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2), 0px 6px 10px 0px rgba(0, 0, 0, 0.14), 0px 1px 18px 0px rgba(0, 0, 0, 0.12);
         }
 
-        .mufmufMuiButton-contained:active {
+        .MuiButton-contained:active {
             box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2), 0px 8px 10px 1px rgba(0, 0, 0, 0.14), 0px 3px 14px 2px rgba(0, 0, 0, 0.12);
         }
 
-        .mufmufMuiButton-contained.mufmufMui-disabled {
+        .MuiButton-contained.Mui-disabled {
             color: rgba(0, 0, 0, 0.26);
             box-shadow: none;
             background-color: rgba(0, 0, 0, 0.12);
         }
 
         @media (hover: none) {
-            .mufmufMuiButton-contained:hover {
+            .MuiButton-contained:hover {
                 box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
                 background-color: #e0e0e0;
             }
         }
 
-        .mufmufMuiButton-contained:hover.mufmufMui-disabled {
+        .MuiButton-contained:hover.Mui-disabled {
             background-color: rgba(0, 0, 0, 0.12);
         }
 
-        .mufmufMuiButton-containedPrimary {
+        .MuiButton-containedPrimary {
             color: #fff;
             background-color: #1A2B49;
         }
 
-        .mufmufMuiButton-containedPrimary:hover {
+        .MuiButton-containedPrimary:hover {
             background-color: rgb(18, 30, 51);
         }
 
         @media (hover: none) {
-            .mufmufMuiButton-containedPrimary:hover {
+            .MuiButton-containedPrimary:hover {
                 background-color: #1A2B49;
             }
         }
 
-        .mufmufMuiButton-containedSecondary {
+        .MuiButton-containedSecondary {
             color: #fff;
             background-color: #1593FF;
         }
 
-        .mufmufMuiButton-containedSecondary:hover {
+        .MuiButton-containedSecondary:hover {
             background-color: rgb(14, 102, 178);
         }
 
         @media (hover: none) {
-            .mufmufMuiButton-containedSecondary:hover {
+            .MuiButton-containedSecondary:hover {
                 background-color: #1593FF;
             }
         }
 
-        .mufmufMuiButton-disableElevation {
+        .MuiButton-disableElevation {
             box-shadow: none;
         }
 
-        .mufmufMuiButton-disableElevation:hover {
+        .MuiButton-disableElevation:hover {
             box-shadow: none;
         }
 
-        .mufmufMuiButton-disableElevation.mufmufMui-focusVisible {
+        .MuiButton-disableElevation.Mui-focusVisible {
             box-shadow: none;
         }
 
-        .mufmufMuiButton-disableElevation:active {
+        .MuiButton-disableElevation:active {
             box-shadow: none;
         }
 
-        .mufmufMuiButton-disableElevation.mufmufMui-disabled {
+        .MuiButton-disableElevation.Mui-disabled {
             box-shadow: none;
         }
 
-        .mufmufMuiButton-colorInherit {
+        .MuiButton-colorInherit {
             color: inherit;
             border-color: currentColor;
         }
 
-        .mufmufMuiButton-textSizeSmall {
+        .MuiButton-textSizeSmall {
             padding: 4px 5px;
             font-size: 0.8125rem;
         }
 
-        .mufmufMuiButton-textSizeLarge {
+        .MuiButton-textSizeLarge {
             padding: 8px 11px;
             font-size: 0.9375rem;
         }
 
-        .mufmufMuiButton-outlinedSizeSmall {
+        .MuiButton-outlinedSizeSmall {
             padding: 3px 9px;
             font-size: 0.8125rem;
         }
 
-        .mufmufMuiButton-outlinedSizeLarge {
+        .MuiButton-outlinedSizeLarge {
             padding: 7px 21px;
             font-size: 0.9375rem;
         }
 
-        .mufmufMuiButton-containedSizeSmall {
+        .MuiButton-containedSizeSmall {
             padding: 4px 10px;
             font-size: 0.8125rem;
         }
 
-        .mufmufMuiButton-containedSizeLarge {
+        .MuiButton-containedSizeLarge {
             padding: 8px 22px;
             font-size: 0.9375rem;
         }
 
-        .mufmufMuiButton-fullWidth {
+        .MuiButton-fullWidth {
             width: 100%;
         }
 
-        .mufmufMuiButton-startIcon {
+        .MuiButton-startIcon {
             display: inherit;
             margin-left: -4px;
             margin-right: 8px;
         }
 
-        .mufmufMuiButton-startIcon.mufmufMuiButton-iconSizeSmall {
+        .MuiButton-startIcon.MuiButton-iconSizeSmall {
             margin-left: -2px;
         }
 
-        .mufmufMuiButton-endIcon {
+        .MuiButton-endIcon {
             display: inherit;
             margin-left: 8px;
             margin-right: -4px;
         }
 
-        .mufmufMuiButton-endIcon.mufmufMuiButton-iconSizeSmall {
+        .MuiButton-endIcon.MuiButton-iconSizeSmall {
             margin-right: -2px;
         }
 
-        .mufmufMuiButton-iconSizeSmall>*:first-child {
+        .MuiButton-iconSizeSmall>*:first-child {
             font-size: 18px;
         }
 
-        .mufmufMuiButton-iconSizeMedium>*:first-child {
+        .MuiButton-iconSizeMedium>*:first-child {
             font-size: 20px;
         }
 
-        .mufmufMuiButton-iconSizeLarge>*:first-child {
+        .MuiButton-iconSizeLarge>*:first-child {
             font-size: 22px;
         }
 
-        .mufmufMuiIconButton-root {
+        .MuiIconButton-root {
             flex: 0 0 auto;
             color: rgba(0, 0, 0, 0.54);
             padding: 12px;
@@ -780,75 +780,75 @@
             border-radius: 50%;
         }
 
-        .mufmufMuiIconButton-root:hover {
+        .MuiIconButton-root:hover {
             background-color: rgba(0, 0, 0, 0.04);
         }
 
-        .mufmufMuiIconButton-root.mufmufMui-disabled {
+        .MuiIconButton-root.Mui-disabled {
             color: rgba(0, 0, 0, 0.26);
             background-color: transparent;
         }
 
         @media (hover: none) {
-            .mufmufMuiIconButton-root:hover {
+            .MuiIconButton-root:hover {
                 background-color: transparent;
             }
         }
 
-        .mufmufMuiIconButton-edgeStart {
+        .MuiIconButton-edgeStart {
             margin-left: -12px;
         }
 
-        .mufmufMuiIconButton-sizeSmall.mufmufMuiIconButton-edgeStart {
+        .MuiIconButton-sizeSmall.MuiIconButton-edgeStart {
             margin-left: -3px;
         }
 
-        .mufmufMuiIconButton-edgeEnd {
+        .MuiIconButton-edgeEnd {
             margin-right: -12px;
         }
 
-        .mufmufMuiIconButton-sizeSmall.mufmufMuiIconButton-edgeEnd {
+        .MuiIconButton-sizeSmall.MuiIconButton-edgeEnd {
             margin-right: -3px;
         }
 
-        .mufmufMuiIconButton-colorInherit {
+        .MuiIconButton-colorInherit {
             color: inherit;
         }
 
-        .mufmufMuiIconButton-colorPrimary {
+        .MuiIconButton-colorPrimary {
             color: #1A2B49;
         }
 
-        .mufmufMuiIconButton-colorPrimary:hover {
+        .MuiIconButton-colorPrimary:hover {
             background-color: rgba(26, 43, 73, 0.04);
         }
 
         @media (hover: none) {
-            .mufmufMuiIconButton-colorPrimary:hover {
+            .MuiIconButton-colorPrimary:hover {
                 background-color: transparent;
             }
         }
 
-        .mufmufMuiIconButton-colorSecondary {
+        .MuiIconButton-colorSecondary {
             color: #1593FF;
         }
 
-        .mufmufMuiIconButton-colorSecondary:hover {
+        .MuiIconButton-colorSecondary:hover {
             background-color: rgba(21, 147, 255, 0.04);
         }
 
         @media (hover: none) {
-            .mufmufMuiIconButton-colorSecondary:hover {
+            .MuiIconButton-colorSecondary:hover {
                 background-color: transparent;
             }
         }
 
-        .mufmufMuiIconButton-sizeSmall {
+        .MuiIconButton-sizeSmall {
             padding: 3px;
             font-size: 1.125rem;
         }
 
-        .mufmufMuiIconButton-label {
+        .MuiIconButton-label {
             width: 100%;
             display: flex;
             align-items: inherit;
@@ -872,11 +872,11 @@
             width: 100%;
         }
 
-        .mufmufMuiTypography-root {
+        .MuiTypography-root {
             margin: 0;
         }
 
-        .mufmufMuiTypography-body2 {
+        .MuiTypography-body2 {
             font-size: 0.875rem;
             font-family: "Roboto", "Helvetica", "Arial", sans-serif;
             font-weight: 400;
@@ -884,11 +884,11 @@
             letter-spacing: 0.01071em;
         }
 
-        .mufmufMuiTypography-body1 {
+        .MuiTypography-body1 {
             font-size: 0.875rem;
         }
 
-        .mufmufMuiTypography-caption {
+        .MuiTypography-caption {
             font-size: 0.75rem;
             font-family: "Roboto", "Helvetica", "Arial", sans-serif;
             font-weight: 400;
@@ -896,7 +896,7 @@
             letter-spacing: 0.03333em;
         }
 
-        .mufmufMuiTypography-button {
+        .MuiTypography-button {
             font-size: 0.875rem;
             font-family: "Roboto", "Helvetica", "Arial", sans-serif;
             font-weight: 500;
@@ -905,80 +905,80 @@
             text-transform: uppercase;
         }
 
-        .mufmufMuiTypography-h1 {
+        .MuiTypography-h1 {
             font-size: 2rem;
             font-weight: bold;
             line-height: 1.2;
         }
 
         @media (min-width:1218px) {
-            .mufmufMuiTypography-h1 {
+            .MuiTypography-h1 {
                 font-size: 3rem;
             }
         }
 
-        .mufmufMuiTypography-h2 {
+        .MuiTypography-h2 {
             font-size: 1.5rem;
             font-weight: bold;
             line-height: 1.2;
         }
 
         @media (min-width:1218px) {
-            .mufmufMuiTypography-h2 {
+            .MuiTypography-h2 {
                 font-size: 2rem;
             }
         }
 
-        .mufmufMuiTypography-h3 {
+        .MuiTypography-h3 {
             font-size: 1.25rem;
             font-weight: bold;
         }
 
         @media (min-width:1218px) {
-            .mufmufMuiTypography-h3 {
+            .MuiTypography-h3 {
                 font-size: 1.25rem;
             }
         }
 
-        .mufmufMuiTypography-h4 {
+        .MuiTypography-h4 {
             font-size: 1rem;
             font-weight: bold;
         }
 
         @media (min-width:1218px) {
-            .mufmufMuiTypography-h4 {
+            .MuiTypography-h4 {
                 font-size: 1.5rem;
             }
         }
 
-        .mufmufMuiTypography-h5 {
+        .MuiTypography-h5 {
             font-size: 0.875rem;
             font-weight: bold;
         }
 
         @media (min-width:1218px) {
-            .mufmufMuiTypography-h5 {
+            .MuiTypography-h5 {
                 font-size: 1rem;
             }
         }
 
-        .mufmufMuiTypography-h6 {
+        .MuiTypography-h6 {
             font-size: 0.75rem;
             font-weight: bold;
         }
 
         @media (min-width:1218px) {
-            .mufmufMuiTypography-h6 {
+            .MuiTypography-h6 {
                 font-size: 0.875rem;
             }
         }
 
-        .mufmufMuiTypography-subtitle1 {
+        .MuiTypography-subtitle1 {
             font-size: 1.125rem;
             line-height: 1.5;
         }
 
-        .mufmufMuiTypography-subtitle2 {
+        .MuiTypography-subtitle2 {
             font-size: 0.875rem;
             font-family: "Roboto", "Helvetica", "Arial", sans-serif;
             font-weight: 500;
@@ -986,7 +986,7 @@
             letter-spacing: 0.00714em;
         }
 
-        .mufmufMuiTypography-overline {
+        .MuiTypography-overline {
             font-size: 0.75rem;
             font-family: "Roboto", "Helvetica", "Arial", sans-serif;
             font-weight: 400;
@@ -995,72 +995,72 @@
             text-transform: uppercase;
         }
 
-        .mufmufMuiTypography-srOnly {
+        .MuiTypography-srOnly {
             width: 1px;
             height: 1px;
             overflow: hidden;
             position: absolute;
         }
 
-        .mufmufMuiTypography-alignLeft {
+        .MuiTypography-alignLeft {
             text-align: left;
         }
 
-        .mufmufMuiTypography-alignCenter {
+        .MuiTypography-alignCenter {
             text-align: center;
         }
 
-        .mufmufMuiTypography-alignRight {
+        .MuiTypography-alignRight {
             text-align: right;
         }
 
-        .mufmufMuiTypography-alignJustify {
+        .MuiTypography-alignJustify {
             text-align: justify;
         }
 
-        .mufmufMuiTypography-noWrap {
+        .MuiTypography-noWrap {
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
         }
 
-        .mufmufMuiTypography-gutterBottom {
+        .MuiTypography-gutterBottom {
             margin-bottom: 0.35em;
         }
 
-        .mufmufMuiTypography-paragraph {
+        .MuiTypography-paragraph {
             margin-bottom: 16px;
         }
 
-        .mufmufMuiTypography-colorInherit {
+        .MuiTypography-colorInherit {
             color: inherit;
         }
 
-        .mufmufMuiTypography-colorPrimary {
+        .MuiTypography-colorPrimary {
             color: #1A2B49;
         }
 
-        .mufmufMuiTypography-colorSecondary {
+        .MuiTypography-colorSecondary {
             color: #1593FF;
         }
 
-        .mufmufMuiTypography-colorTextPrimary {
+        .MuiTypography-colorTextPrimary {
             color: #1A2B49;
         }
 
-        .mufmufMuiTypography-colorTextSecondary {
+        .MuiTypography-colorTextSecondary {
             color: rgba(0, 0, 0, 0.54);
         }
 
-        .mufmufMuiTypography-colorError {
+        .MuiTypography-colorError {
             color: #ff1744;
         }
 
-        .mufmufMuiTypography-displayInline {
+        .MuiTypography-displayInline {
             display: inline;
         }
 
-        .mufmufMuiTypography-displayBlock {
+        .MuiTypography-displayBlock {
             display: block;
         }
 
@@ -1226,35 +1226,35 @@
             position: absolute;
         }
 
-        .mufmufMuiCollapse-container {
+        .MuiCollapse-container {
             height: 0;
             overflow: hidden;
             transition: height 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
         }
 
-        .mufmufMuiCollapse-entered {
+        .MuiCollapse-entered {
             height: auto;
             overflow: visible;
         }
 
-        .mufmufMuiCollapse-hidden {
+        .MuiCollapse-hidden {
             visibility: hidden;
         }
 
-        .mufmufMuiCollapse-wrapper {
+        .MuiCollapse-wrapper {
             display: flex;
         }
 
-        .mufmufMuiCollapse-wrapperInner {
+        .MuiCollapse-wrapperInner {
             width: 100%;
         }
 
-        .mufmufMuiAccordion-root {
+        .MuiAccordion-root {
             position: relative;
             transition: margin 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
         }
 
-        .mufmufMuiAccordion-root:before {
+        .MuiAccordion-root:before {
             top: -1px;
             left: 0;
             right: 0;
@@ -1266,77 +1266,77 @@
             background-color: rgba(0, 0, 0, 0.12);
         }
 
-        .mufmufMuiAccordion-root.mufmufMui-expanded {
+        .MuiAccordion-root.Mui-expanded {
             margin: 16px 0;
         }
 
-        .mufmufMuiAccordion-root.mufmufMui-disabled {
+        .MuiAccordion-root.Mui-disabled {
             background-color: rgba(0, 0, 0, 0.12);
         }
 
-        .mufmufMuiAccordion-root.mufmufMui-expanded+.mufmufMuiAccordion-root:before {
+        .MuiAccordion-root.Mui-expanded+.MuiAccordion-root:before {
             display: none;
         }
 
-        .mufmufMuiAccordion-root.mufmufMui-expanded:first-child {
+        .MuiAccordion-root.Mui-expanded:first-child {
             margin-top: 0;
         }
 
-        .mufmufMuiAccordion-root.mufmufMui-expanded:last-child {
+        .MuiAccordion-root.Mui-expanded:last-child {
             margin-bottom: 0;
         }
 
-        .mufmufMuiAccordion-root.mufmufMui-expanded:before {
+        .MuiAccordion-root.Mui-expanded:before {
             opacity: 0;
         }
 
-        .mufmufMuiAccordion-root:first-child:before {
+        .MuiAccordion-root:first-child:before {
             display: none;
         }
 
-        .mufmufMuiAccordion-rounded {
+        .MuiAccordion-rounded {
             border-radius: 0;
         }
 
-        .mufmufMuiAccordion-rounded:first-child {
+        .MuiAccordion-rounded:first-child {
             border-top-left-radius: 4px;
             border-top-right-radius: 4px;
         }
 
-        .mufmufMuiAccordion-rounded:last-child {
+        .MuiAccordion-rounded:last-child {
             border-bottom-left-radius: 4px;
             border-bottom-right-radius: 4px;
         }
 
         @supports (-ms-ime-align: auto) {
-            .mufmufMuiAccordion-rounded:last-child {
+            .MuiAccordion-rounded:last-child {
                 border-bottom-left-radius: 0;
                 border-bottom-right-radius: 0;
             }
         }
 
-        .mufmufMuiAccordionDetails-root {
+        .MuiAccordionDetails-root {
             display: flex;
             padding: 8px 16px 16px;
         }
  
-        .mufmufMuiLink-underlineNone {
+        .MuiLink-underlineNone {
             text-decoration: none;
         }
 
-        .mufmufMuiLink-underlineHover {
+        .MuiLink-underlineHover {
             text-decoration: none;
         }
 
-        .mufmufMuiLink-underlineHover:hover {
+        .MuiLink-underlineHover:hover {
             text-decoration: underline;
         }
 
-        .mufmufMuiLink-underlineAlways {
+        .MuiLink-underlineAlways {
             text-decoration: underline;
         }
 
-        .mufmufMuiLink-button {
+        .MuiLink-button {
             border: 0;
             cursor: pointer;
             margin: 0;
@@ -1352,58 +1352,58 @@
             -webkit-tap-highlight-color: transparent;
         }
 
-        .mufmufMuiLink-button::-moz-focus-inner {
+        .MuiLink-button::-moz-focus-inner {
             border-style: none;
         }
 
-        .mufmufMuiLink-button.mufmufMui-focusVisible {
+        .MuiLink-button.Mui-focusVisible {
             outline: auto;
         }
 
-        .mufmufMuiAccordionSummary-root {
+        .MuiAccordionSummary-root {
             display: flex;
             padding: 0px 16px;
             min-height: 48px;
             transition: min-height 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, background-color 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
         }
 
-        .mufmufMuiAccordionSummary-root:hover:not(.mufMui-disabled) {
+        .MuiAccordionSummary-root:hover:not(.mufMui-disabled) {
             cursor: pointer;
         }
 
-        .mufmufMuiAccordionSummary-root.mufmufMui-expanded {
+        .MuiAccordionSummary-root.Mui-expanded {
             min-height: 64px;
         }
 
-        .mufmufMuiAccordionSummary-root.mufmufMui-focused {
+        .MuiAccordionSummary-root.Mui-focused {
             background-color: rgba(0, 0, 0, 0.12);
         }
 
-        .mufmufMuiAccordionSummary-root.mufmufMui-disabled {
+        .MuiAccordionSummary-root.Mui-disabled {
             opacity: 0.38;
         }
 
-        .mufmufMuiAccordionSummary-content {
+        .MuiAccordionSummary-content {
             margin: 12px 0;
             display: flex;
             flex-grow: 1;
             transition: margin 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
         }
 
-        .mufmufMuiAccordionSummary-content.mufmufMui-expanded {
+        .MuiAccordionSummary-content.Mui-expanded {
             margin: 20px 0;
         }
 
-        .mufmufMuiAccordionSummary-expandIcon {
+        .MuiAccordionSummary-expandIcon {
             transform: rotate(0deg);
             transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
         }
 
-        .mufmufMuiAccordionSummary-expandIcon:hover {
+        .MuiAccordionSummary-expandIcon:hover {
             background-color: transparent;
         }
 
-        .mufmufMuiAccordionSummary-expandIcon.mufmufMui-expanded {
+        .MuiAccordionSummary-expandIcon.Mui-expanded {
             transform: rotate(180deg);
         }
 
@@ -1438,7 +1438,7 @@
                 border-bottom: none;
             }
 
-            .jss360 .mufmufMuiCollapse-container {
+            .jss360 .MuiCollapse-container {
                 height: auto !important;
                 visibility: visible !important;
             }
@@ -1694,7 +1694,7 @@
             overscroll-behavior: none;
         }
 
-        .mufmufMuiSvgIcon-root {
+        .MuiSvgIcon-root {
             fill: currentColor;
             width: 1em;
             height: 1em;
@@ -1705,35 +1705,35 @@
             user-select: none;
         }
 
-        .mufmufMuiSvgIcon-colorPrimary {
+        .MuiSvgIcon-colorPrimary {
             color: #1A2B49;
         }
 
-        .mufmufMuiSvgIcon-colorSecondary {
+        .MuiSvgIcon-colorSecondary {
             color: #1593FF;
         }
 
-        .mufmufMuiSvgIcon-colorAction {
+        .MuiSvgIcon-colorAction {
             color: rgba(0, 0, 0, 0.54);
         }
 
-        .mufmufMuiSvgIcon-colorError {
+        .MuiSvgIcon-colorError {
             color: #ff1744;
         }
 
-        .mufmufMuiSvgIcon-colorDisabled {
+        .MuiSvgIcon-colorDisabled {
             color: rgba(0, 0, 0, 0.26);
         }
 
-        .mufmufMuiSvgIcon-fontSizeInherit {
+        .MuiSvgIcon-fontSizeInherit {
             font-size: inherit;
         }
 
-        .mufmufMuiSvgIcon-fontSizeSmall {
+        .MuiSvgIcon-fontSizeSmall {
             font-size: 1.25rem;
         }
 
-        .mufmufMuiSvgIcon-fontSizeLarge {
+        .MuiSvgIcon-fontSizeLarge {
             font-size: 2.1875rem;
         }
 
@@ -1745,7 +1745,7 @@
             text-transform: unset;
         }
  
-        .mufmufMuiFormControlLabel-root {
+        .MuiFormControlLabel-root {
             cursor: pointer;
             display: inline-flex;
             align-items: center;

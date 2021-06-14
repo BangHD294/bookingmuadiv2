@@ -1,21 +1,48 @@
 import React from "react";
 import "../search/ViewSearch.css"
+import "../search/FilterSearch.css"
+import { makeStyles } from '@material-ui/core/styles';
+// import Typography from '@material-ui/core/Typography';
+import Slider from '@material-ui/core/Slider';
+import Checkbox from '@material-ui/core/Checkbox';
+
+const useStyles = makeStyles({
+    root: {
+        width: 275,
+    },
+});
+
+function valuetext(value) {
+    return `${value}°C`;
+}
 const FilterSearch = () => {
+    const classes = useStyles();
+    const [value, setValue] = React.useState([250000, 400000]);
+
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+    };
+    //   checkbox
+    const [checked, setChecked] = React.useState(true);
+
+    const handleChange1 = (event) => {
+        setChecked(event.target.checked);
+    };
     return (
         <div>
             <div className="jss1769">
                 <div className="jss1859">
                     <div className="jss1870 jss1860">
-                        <button className="MuiButtonBase-root MuiIconButton-root jss1861  MuiIconButton-colorSecondary" tabIndex={0} type="button">
-                            <span className="MuiIconButton-label">
+                        <button className=" jss1861  " tabIndex={0} type="button">
+                            <span className="">
                                 <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="jss1 jss1873 " height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
                                     </path>
                                 </svg>
                             </span>
-                            <span className="MuiTouchRipple-root" />
+                            <span />
                         </button>
-                        <h4 className="MuiTypography-root jss1862 MuiTypography-h4">Bộ lọc</h4>
+                        <h4 className=" jss1862 mudh4">Bộ lọc</h4>
                         <span className="jss1871">
                             <button className="MuiButtonBase-root MuiButton-root MuiButton-text jss1863" tabIndex={0} type="button">
                                 <span className="MuiButton-label">Xóa chọn</span>
@@ -26,20 +53,21 @@ const FilterSearch = () => {
                     <div className="jss1864">
                         <div className="jss1874 jss1866">
                             <div className="jss1875">
-                                <p className="MuiTypography-root jss1876 MuiTypography-subtitle1">Giá vé</p>
-                                <p className="MuiTypography-root jss1877 MuiTypography-body1 MuiTypography-colorSecondary">598,900 ₫ - 719,000 ₫</p>
+                                <p className=" jss1876 ">Giá vé</p>
+                                <p className=" jss1877 ">598,900 ₫ - 719,000 ₫</p>
                             </div>
                             <div className="jss1879">
-                                <span className="MuiSlider-root jss1878 MuiSlider-colorSecondary">
-                                    <span className="MuiSlider-rail jss1881" />
-                                    <span className="MuiSlider-track jss1880" style={{ left: '0%', width: '100%' }}>
-                                    </span>
-                                    <input type="hidden" defaultValue="598900,719000" />
-                                    <span className="MuiSlider-thumb jss1882 MuiSlider-thumbColorSecondary" tabIndex={0} role="slider" data-index={0} aria-orientation="horizontal" aria-valuemax={719000} aria-valuemin={598900} aria-valuenow={598900} style={{ left: '0%' }}>
-                                    </span>
-                                    <span className="MuiSlider-thumb jss1882 MuiSlider-thumbColorSecondary" tabIndex={0} role="slider" data-index={1} aria-orientation="horizontal" aria-valuemax={719000} aria-valuemin={598900} aria-valuenow={719000} style={{ left: '100%' }}>
-                                    </span>
-                                </span>
+                                <div className={classes.root}>
+                                    <Slider
+                                        min={0}
+                                        max={1000000}
+                                        value={value}
+                                        onChange={handleChange}
+                                        valueLabelDisplay="auto"
+                                        aria-labelledby="range-slider"
+                                        getAriaValueText={valuetext}
+                                    />
+                                </div>
                             </div>
                         </div>
                         <div className="jss1866 jss1867">
@@ -122,12 +150,13 @@ const FilterSearch = () => {
                             <p className="MuiTypography-root jss1898 MuiTypography-subtitle1">Hãng bay</p>
                             <label className="MuiFormControlLabel-root jss1899 MuiFormControlLabel-labelPlacementStart">
                                 <span className="MuiButtonBase-root MuiIconButton-root jss1852 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary" aria-disabled="false">
-                                    <span className="MuiIconButton-label">
-                                        <input className="jss1855" type="checkbox" data-indeterminate="false" defaultValue="[object Object]" />
-                                        <svg className="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
-                                            <path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z">
-                                            </path>
-                                        </svg>
+                                    <span className=" ">
+                                        <Checkbox
+                                            defaultChecked
+                                            color="primary"
+                                            inputProps={{ 'aria-label': 'secondary checkbox' }}
+                                        />
+
                                     </span>
                                     <span className="MuiTouchRipple-root" />
                                 </span>
@@ -144,9 +173,11 @@ const FilterSearch = () => {
                                 <span className="MuiButtonBase-root MuiIconButton-root jss1852 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary" aria-disabled="false">
                                     <span className="MuiIconButton-label">
                                         <input className="jss1855" type="checkbox" data-indeterminate="false" defaultValue="[object Object]" />
-                                        <svg className="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
-                                            <path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"></path>
-                                        </svg>
+                                        <Checkbox
+                                            defaultChecked
+                                            color="primary"
+                                            inputProps={{ 'aria-label': 'secondary checkbox' }}
+                                        />
                                     </span>
                                     <span className="MuiTouchRipple-root" />
                                 </span>
@@ -161,10 +192,13 @@ const FilterSearch = () => {
                             </label>
                             <label className="MuiFormControlLabel-root jss1899 MuiFormControlLabel-labelPlacementStart">
                                 <span className="MuiButtonBase-root MuiIconButton-root jss1852 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary" aria-disabled="false">
-                                    <span className="MuiIconButton-label"><input className="jss1855" type="checkbox" data-indeterminate="false" defaultValue="[object Object]" />
-                                        <svg className="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
-                                            <path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"></path>
-                                        </svg>
+                                    <span className="MuiIconButton-label">
+                                        <input className="jss1855" type="checkbox" data-indeterminate="false" defaultValue="[object Object]" />
+                                        <Checkbox
+                                            defaultChecked
+                                            color="primary"
+                                            inputProps={{ 'aria-label': 'secondary checkbox' }}
+                                        />
                                     </span>
                                     <span className="MuiTouchRipple-root" />
                                 </span>
@@ -187,10 +221,11 @@ const FilterSearch = () => {
                                             <span className="MuiButtonBase-root MuiIconButton-root jss1852 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary" aria-disabled="false">
                                                 <span className="MuiIconButton-label">
                                                     <input className="jss1855" type="checkbox" data-indeterminate="false" defaultValue={320} />
-                                                    <svg className="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
-                                                        <path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z">
-                                                        </path>
-                                                    </svg>
+                                                    <Checkbox
+                                            defaultChecked
+                                            color="primary"
+                                            inputProps={{ 'aria-label': 'secondary checkbox' }}
+                                        />
                                                 </span>
                                                 <span className="MuiTouchRipple-root" />
                                             </span>
@@ -202,10 +237,11 @@ const FilterSearch = () => {
                                             <span className="MuiButtonBase-root MuiIconButton-root jss1852 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary" aria-disabled="false">
                                                 <span className="MuiIconButton-label">
                                                     <input className="jss1855" type="checkbox" data-indeterminate="false" defaultValue={321} />
-                                                    <svg className="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
-                                                        <path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z">
-                                                        </path>
-                                                    </svg>
+                                                    <Checkbox
+                                            defaultChecked
+                                            color="primary"
+                                            inputProps={{ 'aria-label': 'secondary checkbox' }}
+                                        />
                                                 </span>
                                                 <span className="MuiTouchRipple-root" />
                                             </span>
@@ -217,10 +253,11 @@ const FilterSearch = () => {
                                             <span className="MuiButtonBase-root MuiIconButton-root jss1852 MuiCheckbox-root MuiCheckbox-colorSecondary MuiIconButton-colorSecondary" aria-disabled="false">
                                                 <span className="MuiIconButton-label">
                                                     <input className="jss1855" type="checkbox" data-indeterminate="false" defaultValue={350} />
-                                                    <svg className="MuiSvgIcon-root" focusable="false" viewBox="0 0 24 24" aria-hidden="true">
-                                                        <path d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z">
-                                                        </path>
-                                                    </svg>
+                                                    <Checkbox
+                                            defaultChecked
+                                            color="primary"
+                                            inputProps={{ 'aria-label': 'secondary checkbox' }}
+                                        />
                                                 </span>
                                                 <span className="MuiTouchRipple-root" />
                                             </span>

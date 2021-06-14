@@ -18,9 +18,12 @@ import Logobar from "../components/menubar/Logobar";
 import { addDays } from 'date-fns';
 import "../components/search/formSearch.css";
 import "../components/search/PlaceSearch.css";
+import "../components/search/Search.css";
 import HeaderSearch from "../components/search/HeaderSearch";
 import FilterSearch from "../components/search/FilterSearch";
 import ViewSearch from "../components/search/ViewSearch";
+// import material-UI
+import Button from '@material-ui/core/Button';
 const DayPicker = () => {
   const [startDate, setStartDate] = useState(new Date());
   const months = ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12']
@@ -326,10 +329,10 @@ const Search = () => {
                       <div id="__next">
                         <div id="back-to-top-anchor" />
                         <div className="jss23">
-                          <div className="MuiContainer-root jss24 MuiContainer-disableGutters MuiContainer-maxWidthLg">
-                            <div className="MuiPaper-root jss25 MuiPaper-elevation0 MuiPaper-rounded">
+                          <div className=" jss24">
+                            <div className=" jss25 ">
                               <div className="jss27">
-                                <div className="MuiPaper-root jss29 MuiPaper-elevation4 MuiPaper-rounded">
+                                <div className=" jss29 ">
                                   <div className="jss30">
                                     <div className="jss32">
 
@@ -340,15 +343,15 @@ const Search = () => {
                                             </path>
                                           </svg></div>
                                           <div className="jss60"><label className="jss61">Từ</label>
-                                            <p className="MuiTypography-root jss62 MuiTypography-body1 MuiTypography-noWrap">
+                                            <p className=" jss62 ">
                                               Hà Nội (HAN)</p>
                                           </div>
                                         </div>
                                       </div>
 
                                       <div className="jss35">
-                                        <button className="MuiButtonBase-root MuiIconButton-root jss36" tabIndex={0} type="button" aria-label="Đổi sân bay">
-                                          <span className="MuiIconButton-label"><svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 1024 1024" className="jss1 jss39" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                        <button className=" jss36 mud36" tabIndex={0} type="button" aria-label="Đổi sân bay">
+                                          <span className=""><svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 1024 1024" className="jss1 jss39" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M847.9 592H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h605.2L612.9 851c-4.1 5.2-.4 13 6.3 13h72.5c4.9 0 9.5-2.2 12.6-6.1l168.8-214.1c16.5-21 1.6-51.8-25.2-51.8zM872 356H266.8l144.3-183c4.1-5.2.4-13-6.3-13h-72.5c-4.9 0-9.5 2.2-12.6 6.1L150.9 380.2c-16.5 21-1.6 51.8 25.1 51.8h696c4.4 0 8-3.6 8-8v-60c0-4.4-3.6-8-8-8z">
                                             </path>
                                           </svg></span>
@@ -358,7 +361,7 @@ const Search = () => {
                                       <div className="jss57 jss31 jss34 " onClick={handlePlace}>
                                         <div className="jss58">
                                           <div className="jss60"><label className="jss61">Đến</label>
-                                            <p className="MuiTypography-root jss62 MuiTypography-body1 MuiTypography-noWrap">
+                                            <p className=" jss62 ">
                                               Hồ Chí Minh (SGN)</p>
                                           </div>
                                         </div>
@@ -377,7 +380,7 @@ const Search = () => {
                                           </svg></div>
                                           <div className="jss60">
                                             <label className="jss61">Ngày đi</label>
-                                            <p className="MuiTypography-root jss62 MuiTypography-body1 MuiTypography-noWrap no-css">
+                                            <p className=" jss62 no-css">
                                               <div className="daypicker-1">
                                                 <DayPicker />
                                               </div>
@@ -385,17 +388,17 @@ const Search = () => {
                                           </div>
                                         </div>
                                         <div className="jss74">
-                                          <label className="MuiFormControlLabel-root jss50 MuiFormControlLabel-labelPlacementTop">
+                                          <label className=" jss50 ">
                                             <span className="MuiSwitch-root">
-                                              <span className="MuiButtonBase-root MuiIconButton-root jss79 MuiSwitch-switchBase MuiSwitch-colorSecondary" aria-disabled="false">
-                                                <span className="MuiIconButton-label">
-                                                  <input type="checkbox" className="jss82 MuiSwitch-input" name="round-trip" />
-                                                  <span className="MuiSwitch-thumb" />
+                                              <span className=" jss79 " aria-disabled="false">
+                                                <span className="">
+                                                  <input type="checkbox" className="jss82" name="round-trip" />
+                                                  <span className="" />
                                                 </span>
                                               </span>
-                                              <span className="MuiSwitch-track" />
+                                              <span className="" />
                                             </span>
-                                            <span className="MuiTypography-root MuiFormControlLabel-label jss51 MuiTypography-body1">Khứ
+                                            <span className=" jss51">Khứ
                                             hồi</span>
                                           </label>
                                         </div>
@@ -406,9 +409,9 @@ const Search = () => {
                                         <div className="jss72" onClick={handleToggle}>
                                           {/* <div className="MuiCollapse-container MuiCollapse-entered" style={{ minHeight: '0px' }}> */}
                                           <div className={isActive ? "MuiCollapse-entered MuiCollapse-container" : "MuiCollapse-hidden MuiCollapse-container"}>
-                                            <div className="MuiCollapse-wrapper">
-                                              <div className="MuiCollapse-wrapperInner">
-                                                <div className="jss44">+ Khứ hồi</div>
+                                            <div className="">
+                                              <div className="">
+                                                <div className="mudkhuhoi">+ Khứ hồi</div>
                                               </div>
                                             </div>
                                           </div>
@@ -416,8 +419,8 @@ const Search = () => {
 
                                         {/* <div className="MuiCollapse-container MuiCollapse-hidden" style={{ minHeight: '0px' }}> */}
                                         <div className={isActive ? "MuiCollapse-hidden  MuiCollapse-container" : "MuiCollapse-entered  MuiCollapse-container"}>
-                                          <div className="MuiCollapse-wrapper">
-                                            <div className="MuiCollapse-wrapperInner">
+                                          <div className="">
+                                            <div className="">
                                               <div className="jss57 jss31 jss43 ">
                                                 <div className="jss58">
                                                   <div className="jss59"><svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="jss1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
@@ -429,14 +432,14 @@ const Search = () => {
                                                     </g>
                                                   </svg></div>
                                                   <div className="jss60"><label className="jss61">Ngày về</label>
-                                                    <p className="MuiTypography-root jss62 MuiTypography-body1 MuiTypography-noWrap">
+                                                    <p className=" jss62 ">
                                                       <DayPicker />
                                                     </p>
                                                   </div>
                                                 </div>
-                                                <div className="jss72" onClick={handleToggle}>
-                                                  <button className="MuiButtonBase-root MuiIconButton-root jss45 MuiIconButton-colorPrimary" tabIndex={0} type="button" >
-                                                    <span className="MuiIconButton-label">
+                                                <div className="jss72 mudsclose" onClick={handleToggle}>
+                                                  <button className=" mudbtnclose" tabIndex={0} type="button" >
+                                                    <span className="">
                                                       <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="jss1 jss46" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                                         <g>
                                                           <path fill="none" d="M0 0h24v24H0z"></path>
@@ -464,14 +467,14 @@ const Search = () => {
                                           </path>
                                         </svg></div>
                                         <div className="jss60"><label className="jss61">Khách</label>
-                                          <p className="MuiTypography-root jss62 MuiTypography-body1 MuiTypography-noWrap">
+                                          <p className=" jss62 ">
                                             1</p>
                                         </div>
                                       </div>
                                     </div>
                                   </div>
                                   <div className="jss48">
-                                    <button className="MuiButtonBase-root MuiButton-root MuiButton-contained jss49 jss85 MuiButton-containedSecondary MuiButton-fullWidth" tabIndex={0} type="button">
+                                    <button className=" jss49 jss85 mud48btnsearch" tabIndex={0} type="button">
                                       <span className="MuiButton-label">Tìm chuyến bay</span>
                                     </button>
                                   </div>
