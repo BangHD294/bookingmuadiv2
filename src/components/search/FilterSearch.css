@@ -10,3 +10,47 @@
     z-index: 1;
     position: absolute;
 }
+.mud1863{
+    margin-right: 18px;
+}
+.mud1863 button{
+    text-transform: capitalize;
+}
+.mudbgcolor button{
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    text-transform: lowercase;
+}
+.mudlabel{
+    margin-left: 16px;
+    margin-right: -11px;
+    flex-direction: row-reverse;
+   
+}
+.mudlable1 label{
+    height: 45px;
+}
+.muf1899{
+    margin-right: -11px;
+    flex-direction: row-reverse;
+}
+.muf1906{
+    margin-right: -11px;
+    flex-direction: row-reverse;
+}
+.mufbtb08 button{
+    text-transform: capitalize;
+    color: #1593FF;
+}
+.muf1912 button{
+    text-transform: capitalize;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    border-radius: 8px;
+    text-transform: unset;
+    color: #1A2B49;
+}
+.muf1965 button{
+    text-transform: capitalize;
+    color: #1593FF;
+}

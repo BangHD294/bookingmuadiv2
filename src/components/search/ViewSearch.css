@@ -5246,3 +5246,55 @@
 .mufoverflow{
     overflow: auto;
 }
+
+.muf1786 button{
+    text-transform: capitalize;
+}
+.muf1786 .muf28{
+    width: 13%;
+}
+.muf1985 button{
+    background-color: #1593FF;
+    text-transform: capitalize;
+    margin-bottom: 15px;
+    width: 80px;
+    border-radius: 40px;
+
+}
+.muf1985 p {
+    color: #1593FF;
+    margin-right: 30px;
+}
+.muf1985 span{
+    color: #fff;
+}
+.muf1997 button span{
+    text-transform: capitalize;
+}
+.mufViewTime{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.mufprice{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.muf2037{
+    font-weight: bold;
+}
+.muf2043{
+    color: #1A2B49;
+    margin: 0;
+    font-size: 0.875rem;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 400;
+    line-height: 1.43;
+    letter-spacing: 0.01071em;
+    text-align: center;
+}
+.mufDetail{
+    padding: 0px;
+}
+.MuiBox-root-17{
+    padding: 0px;
+}
