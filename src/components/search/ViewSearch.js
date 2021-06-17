@@ -520,7 +520,7 @@ const ViewSearch = () => {
                                                     </div>
                                                 </div>
                                             </TabPanel>
-                                            <TabPanel className="mufDetail" value={value} index={1} dir={theme.direction}>
+                                            <TabPanel  value={value} index={1} dir={theme.direction}>
                                                   {/* chi tiết giá */}
                                                 <div  className="">
                                                     <div className="jss2035 ">
