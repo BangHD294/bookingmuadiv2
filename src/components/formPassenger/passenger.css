@@ -4574,7 +4574,7 @@
             .mudp2218 {
                 width: 200px;
                 flex-flow: column;
-                margin-top: 0;
+                margin-top: 18;
                 align-items: flex-start;
             }
         }
@@ -5725,8 +5725,36 @@
             }
         }
 
-        .test-display{
-            display: flex;
-        }
-
-  
+.mudp2244 .inputName1 {
+    padding-top: 10px;
+}
+    /* .mudp2244 input {
+        height: 0.1876em;
+    } */
+.btn2250{
+    left: 416px;
+    width: 38%;
+}
+.inputName2{
+    display: flex;
+}
+.inputName2 label{
+    margin-top: 2px;
+}
+.mudpcheckrd{
+    display: block !important;
+}
+.inputdmy input{
+    min-width: 70px;
+} 
+.inputdmy .MuiAutocomplete-inputRoot .MuiAutocomplete-input {
+    width: 0;
+    min-width: 70px;
+}
+.inputacplt {
+    margin-left: -4px;
+}
+.btnpay2{
+    width: 41%;
+    margin-left: 419px;
+}

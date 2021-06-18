@@ -1,19 +1,20 @@
 import React from "react";
 import "./passenger.css";
-import { makeStyles } from '@material-ui/core/styles';
+// import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        '& > *': {
-            margin: theme.spacing(1),
-            width: '25ch',
-        },
-    },
-}));
+// const useStyles = makeStyles((theme) => ({
+//     root: {
+//         '& > *': {
+//             margin: theme.spacing(1),
+//             width: '25ch',
+//             height: '9ch'
+//         },
+//     },
+// }));
 
 const Contact = () => {
-    const classes = useStyles();
+    // const classes = useStyles();
     return (
         <div className="mudp2160">
             <div className="mudp2161">
@@ -37,43 +38,40 @@ const Contact = () => {
                 <div className="mudp2236">
                     <div className="mudp2243">
                         <div className="mudpform-root mudpTextField-root mudp2244">
-                            <label className="mudpformlb-root mudpInputLabel-root mudpInputLabel-formControl mudpInputLabel-animated mudpInputLabel-marginDense mudpInputLabel-outlined mudp-required mudp-required" data-shrink="false">Họ và tên
+                            {/* <label className="mudpformlb-root mudpInputLabel-root mudpInputLabel-formControl mudpInputLabel-animated mudpInputLabel-marginDense mudpInputLabel-outlined mudp-required mudp-required" data-shrink="false">Họ và tên
                                 <span aria-hidden="true" className="mudpFormLabel-asterisk mudpInputLabel-asterisk"> *</span>
-                            </label>
-                            <div className="mudpInputBase-root mudpOutlinedInput-root mudpInputBase-formControl mudpInputBase-marginDense mudpOutlinedInput-marginDense">
-                                <form className={classes.root} noValidate autoComplete="off">
-                                    <TextField
-                                        id="outlined-secondary"
-                                        label="Outlined secondary"
-                                        variant="outlined"
-                                        color="secondary"
-                                    />
-                                </form>
-                            </div>
+                            </label> */}
+                            {/* <form className={classes.root} noValidate autoComplete="off"> */}
+                            <TextField 
+                            className="inputName1"
+                            id="outlined-basic" 
+                            label="Họ và tên *" 
+                            variant="outlined" />
+                            {/* </form> */}
                         </div>
                         <div className="mudpform-root mudpTextField-root mudp2244">
-                            <label className="mudpformlb-root mudpInputLabel-root mudpInputLabel-formControl mudpInputLabel-animated mudpInputLabel-marginDense mudpInputLabel-outlined mudp-required mudp-required" data-shrink="false">Số điện thoại
+                            {/* <label className="mudpformlb-root mudpInputLabel-root mudpInputLabel-formControl mudpInputLabel-animated mudpInputLabel-marginDense mudpInputLabel-outlined mudp-required mudp-required" data-shrink="false">Số điện thoại
                                 <span aria-hidden="true" className="mudpFormLabel-asterisk mudpInputLabel-asterisk"> *</span>
                             </label>
-                            <div className="mudpInputBase-root mudpOutlinedInput-root mudpInputBase-formControl mudpInputBase-marginDense mudpOutlinedInput-marginDense">
-                                <input aria-invalid="false" autoComplete="off" name="contact.phone" required type="text" className="mudpInputBase-input mudpOutlinedInput-input mudpInputBase-inputMarginDense mudpOutlinedInput-inputMarginDense" defaultValue />
-                                <fieldset aria-hidden="true" className="mudp2221 mudpOutlinedInput-notchedOutline">
-                                    <legend className="mudp2223">
-                                        <span>Số điện thoại&nbsp;*</span>
-                                    </legend>
-                                </fieldset>
-                            </div>
+                            <div className="mudpInputBase-root mudpOutlinedInput-root mudpInputBase-formControl mudpInputBase-marginDense mudpOutlinedInput-marginDense"> */}
+                            <TextField
+                                className="inputName1"
+                                id="outlined-basic"
+                                label="Số điện thoại *"
+                                variant="outlined"
+                            />
+                            {/* </div> */}
                         </div>
                         <div className="mudpform-root mudpTextField-root mudp2244">
-                            <label className="mudpformlb-root mudpInputLabel-root mudpInputLabel-formControl mudpInputLabel-animated mudpInputLabel-marginDense mudpInputLabel-outlined" data-shrink="false">Email</label>
-                            <div className="mudpInputBase-root mudpOutlinedInput-root mudpInputBase-formControl mudpInputBase-marginDense mudpOutlinedInput-marginDense">
-                                <input aria-invalid="false" autoComplete="off" name="contact.email" placeholder="ticketing@justfly.vn" type="email" className="mudpInputBase-input mudpOutlinedInput-input mudpInputBase-inputMarginDense mudpOutlinedInput-inputMarginDense" defaultValue />
-                                <fieldset aria-hidden="true" className="mudp2221 mudpOutlinedInput-notchedOutline">
-                                    <legend className="mudp2223">
-                                        <span>Email</span>
-                                    </legend>
-                                </fieldset>
-                            </div>
+                            {/* <label className="mudpformlb-root mudpInputLabel-root mudpInputLabel-formControl mudpInputLabel-animated mudpInputLabel-marginDense mudpInputLabel-outlined" data-shrink="false">Email</label>
+                            <div className="mudpInputBase-root mudpOutlinedInput-root mudpInputBase-formControl mudpInputBase-marginDense mudpOutlinedInput-marginDense"> */}
+                            <TextField
+                                className="inputName1"
+                                id="outlined-basic"
+                                label="Email"
+                                variant="outlined"
+                            />
+                            {/* </div> */}
                         </div>
                     </div>
                 </div>

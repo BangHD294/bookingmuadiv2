@@ -22,7 +22,7 @@ const TotalPayment = () => {
                     <p className="mudpTg-root mudpTg-h4 mudptg-colorError"> 2,864,500 ₫</p>
                 </div>
             </div>
-            <button className="mudpbtnbase-root Mudpbtn-root mudpbtn-label-contained mudp2197 mudp1941 mudpbtn-label-containedSecondary mudpbtn-label-fullWidth" tabIndex={0} type="submit">
+            <button className="mudpbtnbase-root Mudpbtn-root mudpbtn-label-contained mudp2197 mudp1941 mudpbtn-label-containedSecondary mudpbtn-label-fullWidth btnpay2" tabIndex={0} type="submit">
                 <span className="mudpbtn-label-label">Đến trang thanh toán</span>
                 <span className="mudpTR-root" />
             </button>

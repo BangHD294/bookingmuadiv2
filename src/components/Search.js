@@ -52,6 +52,7 @@ const Search = () => {
   const [isActive, setActive] = useState('false');
   const [isActive1, setActive1] = useState('false');
   const [isActivePlace, setActivePlace] = useState('false');
+  const [isActiceChoose, setActiveChoose] = useState('false');
   const { user: currentUser } = useSelector((state) => state.auth);
   // 
   const dispatch = useDispatch();
@@ -84,7 +85,7 @@ const Search = () => {
   }
   return (
     <div>
-      <bodys className="mufsearch1" data-sidebar="dark">
+      <bodys className="mufsearch1 hiddenSearch1 showSearch1" data-sidebar="dark">
         <div id="layout-wrapper">
           <header id="page-topbar">
             <div className="navbar-header">
@@ -1051,7 +1052,7 @@ const Search = () => {
         <div className="rightbar-overlay" />
 
       </bodys>
-      <div className="main-content">
+      <div className="main-content  showInformation">
         <div className="page-content">
           <div className="mufpassenger">
             <BaseForm />
