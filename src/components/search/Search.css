@@ -47,3 +47,9 @@
 .hiddenInformation{
     visibility: hidden;
 }
+.hiddenSearch1{
+    visibility: hidden;
+}
+.showSearch1{
+    visibility: none;
+}

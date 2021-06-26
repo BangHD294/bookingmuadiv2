@@ -6,3 +6,10 @@ export const LOGOUT = "LOGOUT";
 
 export const SET_MESSAGE = "SET_MESSAGE";
 export const CLEAR_MESSAGE = "CLEAR_MESSAGE";
+
+// phase 2
+
+export const BUTTON_CHOOSE = "BUTTON_CHOOSE";
+
+export const BUTTON_DELETE = "BUTTON_DELETE";
+

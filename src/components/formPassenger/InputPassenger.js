@@ -7,7 +7,6 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import Autocomplete from '@material-ui/lab/Autocomplete';
-import { makeStyles } from '@material-ui/core/styles';
 const year = [
     { year: "2021" },
     { year: "2020" },
@@ -223,7 +222,7 @@ const InputPassenger = () => {
                             <label className="mudpFormLabel-root mudp2229">Ngày sinh</label>
                             <div className="mudp2230">
 
-                                <div className="mudpAutocomplete-root mudp2231 mudpAutocomplete-hasPopupIcon" role="combobox" aria-expanded="false">
+                                <div className="mudpAutocomplete-root mudp2231 mudpAutocomplete-hasPopupIcon"aria-expanded="false">
                                     <div className="mudpFormControl-root mudpTextField-root mudpFormControl-fullWidth">
                                         <label className="mudpFormLabel-root mudpInputLabel-root mudpInputLabel-formControl mudpInputLabel-animated mudpInputLabel-shrink mudpInputLabel-marginDense mudpInputLabel-outlined mudpFormLabel-filled" data-shrink="true" id="mudp-46143-label" htmlFor="mudp-46143">Năm sinh</label>
                                         <div className="inputName2 mudpInputBase-root mudpOutlinedInput-root mudpAutocomplete-inputRoot mudpInputBase-fullWidth mudpInputBase-formControl mudpInputBase-adornedEnd mudpOutlinedInput-adornedEnd mudpInputBase-marginDense mudpOutlinedInput-marginDense inputdmy">
@@ -255,7 +254,7 @@ const InputPassenger = () => {
                                     </div>
                                 </div>
 
-                                <div className="mudpAutocomplete-root mudp2231 mudpAutocomplete-hasPopupIcon" role="combobox" aria-expanded="false">
+                                <div className="mudpAutocomplete-root mudp2231 mudpAutocomplete-hasPopupIcon"  aria-expanded="false">
                                     <div className="mudpFormControl-root mudpTextField-root mudpFormControl-fullWidth">
                                         <label className="mudpFormLabel-root mudpInputLabel-root mudpInputLabel-formControl mudpInputLabel-animated mudpInputLabel-shrink mudpInputLabel-marginDense mudpInputLabel-outlined mudpFormLabel-filled" data-shrink="true" id="mudp-91813-label" htmlFor="mudp-91813">Tháng sinh</label>
                                         <div className="inputName2 mudpInputBase-root mudpOutlinedInput-root mudpAutocomplete-inputRoot mudpInputBase-fullWidth mudpInputBase-formControl mudpInputBase-adornedEnd mudpOutlinedInput-adornedEnd mudpInputBase-marginDense mudpOutlinedInput-marginDense inputdmy">
@@ -286,7 +285,7 @@ const InputPassenger = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="mudpAutocomplete-root mudp2231 mudpAutocomplete-hasPopupIcon" role="combobox" aria-expanded="false">
+                                <div className="mudpAutocomplete-root mudp2231 mudpAutocomplete-hasPopupIcon"  aria-expanded="false">
                                     <div className="mudpFormControl-root mudpTextField-root mudpFormControl-fullWidth">
                                         <label className="mudpFormLabel-root mudpInputLabel-root mudpInputLabel-formControl mudpInputLabel-animated mudpInputLabel-shrink mudpInputLabel-marginDense mudpInputLabel-outlined mudpFormLabel-filled" data-shrink="true" id="mudp-24980-label" htmlFor="mudp-24980">Ngày sinh</label>
                                         <div className="inputName2 mudpInputBase-root mudpOutlinedInput-root mudpAutocomplete-inputRoot mudpInputBase-fullWidth mudpInputBase-formControl mudpInputBase-adornedEnd mudpOutlinedInput-adornedEnd mudpInputBase-marginDense mudpOutlinedInput-marginDense inputdmy">
@@ -381,7 +380,7 @@ const InputPassenger = () => {
                             <label className="mudpFormLabel-root mudp2229">Ngày sinh</label>
                             <div className="mudp2230">
 
-                                <div className="mudpAutocomplete-root mudp2231 mudpAutocomplete-hasPopupIcon" role="combobox" aria-expanded="false">
+                                <div className="mudpAutocomplete-root mudp2231 mudpAutocomplete-hasPopupIcon"  aria-expanded="false">
                                     <div className="mudpFormControl-root mudpTextField-root mudpFormControl-fullWidth">
                                         <label className="mudpFormLabel-root mudpInputLabel-root mudpInputLabel-formControl mudpInputLabel-animated mudpInputLabel-shrink mudpInputLabel-marginDense mudpInputLabel-outlined mudpFormLabel-filled" data-shrink="true" id="mudp-46143-label" htmlFor="mudp-46143">Năm sinh</label>
                                         <div className="inputName2 mudpInputBase-root mudpOutlinedInput-root mudpAutocomplete-inputRoot mudpInputBase-fullWidth mudpInputBase-formControl mudpInputBase-adornedEnd mudpOutlinedInput-adornedEnd mudpInputBase-marginDense mudpOutlinedInput-marginDense inputdmy">
@@ -413,7 +412,7 @@ const InputPassenger = () => {
                                     </div>
                                 </div>
 
-                                <div className="mudpAutocomplete-root mudp2231 mudpAutocomplete-hasPopupIcon" role="combobox" aria-expanded="false">
+                                <div className="mudpAutocomplete-root mudp2231 mudpAutocomplete-hasPopupIcon"  aria-expanded="false">
                                     <div className="mudpFormControl-root mudpTextField-root mudpFormControl-fullWidth">
                                         <label className="mudpFormLabel-root mudpInputLabel-root mudpInputLabel-formControl mudpInputLabel-animated mudpInputLabel-shrink mudpInputLabel-marginDense mudpInputLabel-outlined mudpFormLabel-filled" data-shrink="true" id="mudp-91813-label" htmlFor="mudp-91813">Tháng sinh</label>
                                         <div className="inputName2 mudpInputBase-root mudpOutlinedInput-root mudpAutocomplete-inputRoot mudpInputBase-fullWidth mudpInputBase-formControl mudpInputBase-adornedEnd mudpOutlinedInput-adornedEnd mudpInputBase-marginDense mudpOutlinedInput-marginDense inputdmy">
@@ -444,7 +443,7 @@ const InputPassenger = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="mudpAutocomplete-root mudp2231 mudpAutocomplete-hasPopupIcon" role="combobox" aria-expanded="false">
+                                <div className="mudpAutocomplete-root mudp2231 mudpAutocomplete-hasPopupIcon"  aria-expanded="false">
                                     <div className="mudpFormControl-root mudpTextField-root mudpFormControl-fullWidth">
                                         <label className="mudpFormLabel-root mudpInputLabel-root mudpInputLabel-formControl mudpInputLabel-animated mudpInputLabel-shrink mudpInputLabel-marginDense mudpInputLabel-outlined mudpFormLabel-filled" data-shrink="true" id="mudp-24980-label" htmlFor="mudp-24980">Ngày sinh</label>
                                         <div className="inputName2 mudpInputBase-root mudpOutlinedInput-root mudpAutocomplete-inputRoot mudpInputBase-fullWidth mudpInputBase-formControl mudpInputBase-adornedEnd mudpOutlinedInput-adornedEnd mudpInputBase-marginDense mudpOutlinedInput-marginDense inputdmy">

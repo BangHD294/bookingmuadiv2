@@ -1,13 +1,10 @@
-// import React from "react";
 import { Redirect } from 'react-router-dom';
 import { useSelector } from "react-redux";
-
 import { logout } from "../actions/auth";
 import { useDispatch } from "react-redux";
 import React, { useEffect, useState } from "react";
 import { history } from "../helpers/history";
 import { clearMessage } from "../actions/message";
-
 import DatePicker from "react-datepicker";
 // import { addMonths } from 'date-fns';
 import "react-datepicker/dist/react-datepicker.css";
@@ -24,7 +21,8 @@ import FilterSearch from "../components/search/FilterSearch";
 import ViewSearch from "../components/search/ViewSearch";
 import BaseForm from './formPassenger/BaseForm';
 // import material-UI
-
+import { selectStatus } from "./search/btnSlide";
+import { connect } from 'react-redux';
 const DayPicker = () => {
   const [startDate, setStartDate] = useState(new Date());
   const months = ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12']
@@ -49,10 +47,11 @@ const DayPicker = () => {
 
 
 const Search = () => {
+  // const status = useSelector(selectStatus);
   const [isActive, setActive] = useState('false');
   const [isActive1, setActive1] = useState('false');
   const [isActivePlace, setActivePlace] = useState('false');
-  const [isActiceChoose, setActiveChoose] = useState('false');
+  // const [isActiceChoose, setActiveChoose] = useState('false');
   const { user: currentUser } = useSelector((state) => state.auth);
   // 
   const dispatch = useDispatch();
@@ -83,9 +82,10 @@ const Search = () => {
   const handlePlace = () => {
     setActivePlace(!isActivePlace);
   }
+  //
   return (
     <div>
-      <bodys className="mufsearch1 hiddenSearch1 showSearch1" data-sidebar="dark">
+      <bodys className="mufsearch1  showSearch1" data-sidebar="dark">
         <div id="layout-wrapper">
           <header id="page-topbar">
             <div className="navbar-header">

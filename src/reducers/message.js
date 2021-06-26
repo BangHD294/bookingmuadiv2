@@ -12,7 +12,7 @@ export default function (state = initialState, action) {
     case CLEAR_MESSAGE:
       return { message: "" };
     default:
-      console.log('load message fail');
+      console.log('load message fail chay vao day la sai');
       console.log(state)
       return state;
   }

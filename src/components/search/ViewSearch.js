@@ -1,4 +1,5 @@
-import React from 'react';
+// import React, { useState } from 'react';
+import React, { useState } from 'react'
 import "../search/ViewSearch.css";
 import Accordion from '@material-ui/core/Accordion';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
@@ -12,6 +13,13 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
+import { useDispatch, useSelector } from "react-redux";
+// import { updateStatus } from "../search/btnSlide";
+// import * as actions from '../../actions';
+import { buttonChoose } from '../../actions/search'
+import { connect } from 'react-redux';
+import TextField from '@material-ui/core/TextField';
+import Autocomplete from '@material-ui/lab/Autocomplete';
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
 
@@ -51,6 +59,13 @@ const useStyles = makeStyles((theme) => ({
         width: 771,
     },
 }));
+//
+
+const options = ['A: 199000 (7 Seats APXVNF6)',
+    'P: 299000 (7 Seats PPXVNF6)', 'E: 499000 (7 Seats EPXVNF)', 'T: 599000 (7 Seats TPXVNF)', 'R: 749000 (7 Seats RPXVNF)'
+    , 'N: 899000 (7 Seats NPXVNF)', 'Q: 1149000 (7 Seats QPXVNF)', 'L: 1449000 (7 Seats LPXVNF)', 'K: 1749000 (7 Seats KPXVNF)', 'H: 2049000 (7 Seats HPXVNF)'
+    , 'S: 2399000 (7 Seats SVNF)', 'M: 2739000 (7 Seats MVNF)', 'D: 4899000 (1 Seats DVNF)', 'C: 5499000 (7 Seats CVNF)', 'J: 6399000 (7 Seats JVNF)', 'G: 39000 (0 Seats GPXVNF63)',
+    'I: 4399000 (0 Seats IVNF)'];
 const ViewSearch = () => {
 
     const [expanded, setExpanded] = React.useState(false);
@@ -70,7 +85,22 @@ const ViewSearch = () => {
     const handleChangeIndex = (index) => {
         setValue(index);
     };
-    // 
+    //redux toolkit
+
+    // const [status, setStatus] = useState();
+    // const dispatch = useDispatch();
+
+    // function handleStatus(){
+    //     dispatch(updateStatus("true"));
+    // }
+    const [status, setStatus] = useState();
+    const dispatch = useDispatch();
+    const handleChooseBtn = () => {
+        dispatch({ type: 'BUTTON_CHOOSE' });
+    }
+    const [valueOptions, setValueOptions] = React.useState(options[0]);
+    const [inputValue, setInputValue] = React.useState('');
+
     return (
         <div className="jss1770">
             <div className="jss1771">
@@ -361,9 +391,29 @@ const ViewSearch = () => {
                             </div>
                         </div>
                         <div className="jss1984">
-                            <div className="jss1985 muf1985">
-                                <p className=" jss1986 mufprice ">598,900 ₫</p>
-                                <Button variant="contained" color="primary">Chọn</Button>
+                            <div className="jss1985 ">
+                                {/* <p className=" jss1986 mufprice ">598,900 ₫</p> */}
+                                <div className="searchOption">
+                                    <Autocomplete
+                                        value={valueOptions}
+                                        onChange={(event, newValue) => {
+                                            setValueOptions(newValue);
+                                        }}
+                                        inputValue={inputValue}
+                                        onInputChange={(event, newInputValue) => {
+                                            setInputValue(newInputValue);
+                                        }}
+                                        id="controllable-states-demo"
+                                        options={options}
+                                        style={{ width: 250 }}
+                                        renderInput={(params) => <TextField {...params}  variant="outlined" />}
+                                    />
+                                </div>
+
+                                <div className='muf1985'>
+                                    <Button variant="contained" color="primary" onClick={handleChooseBtn} >Chọn</Button>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -425,104 +475,102 @@ const ViewSearch = () => {
                                             <TabPanel value={value} index={0} dir={theme.direction}>
                                                 {/* chuyến bay */}
                                                 <div className>
-                                                    <div>
-                                                        <div className="jss2007">
-                                                            <div>
-                                                                <div className="jss2008">
-                                                                    <div className="jss2009">
-                                                                        <div className="jss1958"><img src="https://cdn.justfly.vn/media/flights/logo/VJ.png" alt="Vietjet Air" loading="eager" className="jss143 jss1959" /></div>
-                                                                        <p className=" jss2010  jss28 ">
-                                                                            VJ127</p>
+
+                                                    <div className="jss2007">
+                                                        <div className="jss2008">
+                                                            <div className="jss2009">
+                                                                <div className="jss1958"><img src="https://cdn.justfly.vn/media/flights/logo/VJ.png" alt="Vietjet Air" loading="eager" className="jss143 jss1959" /></div>
+                                                                <p className=" jss2010  jss28 ">
+                                                                    VJ127</p>
+                                                            </div>
+                                                            <div className="jss2011">
+                                                                <p className=" jss2012">
+                                                                    Vietjet Air</p>
+                                                                <p className=" jss2013  jss28 ">
+                                                                    <span>2g 15p</span><svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 16 16" className="jss1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path fillRule="evenodd" d="M8 9.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" clipRule="evenodd" />
+                                                                    </svg><span>Bay thẳng</span><svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 16 16" className="jss1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path fillRule="evenodd" d="M8 9.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" clipRule="evenodd" />
+                                                                    </svg><span>Hạng E1_ECO</span>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                        <div className="jss2014">
+                                                            <div className="jss2015 jss2016">
+                                                                <div className="jss2017">
+                                                                    <div>
+                                                                        <p className=" jss2018 ">
+                                                                            06:45</p>
+                                                                        <p className="">
+                                                                            10 Thg6</p>
                                                                     </div>
-                                                                    <div className="jss2011">
-                                                                        <p className=" jss2012">
-                                                                            Vietjet Air</p>
-                                                                        <p className=" jss2013  jss28 ">
-                                                                            <span>2g 15p</span><svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 16 16" className="jss1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                                                                <path fillRule="evenodd" d="M8 9.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" clipRule="evenodd" />
-                                                                            </svg><span>Bay thẳng</span><svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 16 16" className="jss1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                                                                <path fillRule="evenodd" d="M8 9.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" clipRule="evenodd" />
-                                                                            </svg><span>Hạng E1_ECO</span>
-                                                                        </p>
+                                                                    <div>
+                                                                        <p className=" jss2018 ">
+                                                                            09:00</p>
+                                                                        <p className="">
+                                                                            10 Thg6</p>
                                                                     </div>
+                                                                    <div className="jss2019" />
                                                                 </div>
-                                                                <div className="jss2014">
-                                                                    <div className="jss2015 jss2016">
-                                                                        <div className="jss2017">
-                                                                            <div>
-                                                                                <p className=" jss2018 ">
-                                                                                    06:45</p>
-                                                                                <p className="">
-                                                                                    10 Thg6</p>
-                                                                            </div>
-                                                                            <div>
-                                                                                <p className=" jss2018 ">
-                                                                                    09:00</p>
-                                                                                <p className="">
-                                                                                    10 Thg6</p>
-                                                                            </div>
-                                                                            <div className="jss2019" />
-                                                                        </div>
-                                                                        <div className="jss2020 jss2021">
-                                                                            <div className="jss2023">
-                                                                                <p className=" jss2022 ">
-                                                                                    Hà Nội (HAN)</p>
-                                                                                <p className=" jss28">
-                                                                                    Sân bay quốc tế Nội Bài</p>
-                                                                            </div>
-                                                                            <div className="jss2023">
-                                                                                <p className=" jss2022 ">
-                                                                                    Hồ Chí Minh (SGN)</p>
-                                                                                <p className="jss28 ">
-                                                                                    Sân bay quốc tế Tân Sơn Nhất</p>
-                                                                            </div>
-                                                                        </div>
+                                                                <div className="jss2020 jss2021">
+                                                                    <div className="jss2023">
+                                                                        <p className=" jss2022 ">
+                                                                            Hà Nội (HAN)</p>
+                                                                        <p className=" jss28">
+                                                                            Sân bay quốc tế Nội Bài</p>
                                                                     </div>
-                                                                    <div className="jss2028 jss2029">
-                                                                        <p className="MuiTypography-root jss2033 jss2030 MuiTypography-body1 MuiTypography-colorSecondary">
-                                                                            <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 16 16" className="jss1 jss2034" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                                                                <path fillRule="evenodd" d="M13.854 3.646a.5.5 0 010 .708l-7 7a.5.5 0 01-.708 0l-3.5-3.5a.5.5 0 11.708-.708L6.5 10.293l6.646-6.647a.5.5 0 01.708 0z" clipRule="evenodd" />
-                                                                            </svg> Xách tay 7kg
-                                                                        </p>
-                                                                        <p className="MuiTypography-root jss2033 jss2030 MuiTypography-body1 MuiTypography-colorPrimary">
-                                                                            <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="jss1 jss2034" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                                                                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
-                                                                                </path>
-                                                                            </svg> Không hoàn vé
-                                                                        </p>
-                                                                        <p className="MuiTypography-root jss2033 jss2030 MuiTypography-body1 MuiTypography-colorPrimary">
-                                                                            <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="jss1 jss2034" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                                                                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
-                                                                                </path>
-                                                                            </svg> Không ký gửi
-                                                                        </p>
-                                                                        <p className="MuiTypography-root jss2033 jss2030 MuiTypography-body1 MuiTypography-colorPrimary">
-                                                                            <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="jss1 jss2034" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                                                                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
-                                                                                </path>
-                                                                            </svg> Không đổi ngày
-                                                                        </p>
-                                                                        <p className="MuiTypography-root jss2033 jss2030 MuiTypography-body1 MuiTypography-colorPrimary">
-                                                                            <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="jss1 jss2034" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                                                                <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
-                                                                                </path>
-                                                                            </svg> Không ăn nhẹ
-                                                                        </p>
-                                                                        <p className="MuiTypography-root jss2033 jss2030 MuiTypography-body1 MuiTypography-colorSecondary">
-                                                                            <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 16 16" className="jss1 jss2034" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                                                                <path fillRule="evenodd" d="M13.854 3.646a.5.5 0 010 .708l-7 7a.5.5 0 01-.708 0l-3.5-3.5a.5.5 0 11.708-.708L6.5 10.293l6.646-6.647a.5.5 0 01.708 0z" clipRule="evenodd" />
-                                                                            </svg> Airbus 321
-                                                                        </p>
+                                                                    <div className="jss2023">
+                                                                        <p className=" jss2022 ">
+                                                                            Hồ Chí Minh (SGN)</p>
+                                                                        <p className="jss28 ">
+                                                                            Sân bay quốc tế Tân Sơn Nhất</p>
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                            <div className="jss2028 jss2029">
+                                                                <p className="MuiTypography-root jss2033 jss2030 MuiTypography-body1 MuiTypography-colorSecondary">
+                                                                    <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 16 16" className="jss1 jss2034" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path fillRule="evenodd" d="M13.854 3.646a.5.5 0 010 .708l-7 7a.5.5 0 01-.708 0l-3.5-3.5a.5.5 0 11.708-.708L6.5 10.293l6.646-6.647a.5.5 0 01.708 0z" clipRule="evenodd" />
+                                                                    </svg> Xách tay 7kg
+                                                                </p>
+                                                                <p className="MuiTypography-root jss2033 jss2030 MuiTypography-body1 MuiTypography-colorPrimary">
+                                                                    <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="jss1 jss2034" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+                                                                        </path>
+                                                                    </svg> Không hoàn vé
+                                                                </p>
+                                                                <p className="MuiTypography-root jss2033 jss2030 MuiTypography-body1 MuiTypography-colorPrimary">
+                                                                    <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="jss1 jss2034" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+                                                                        </path>
+                                                                    </svg> Không ký gửi
+                                                                </p>
+                                                                <p className="MuiTypography-root jss2033 jss2030 MuiTypography-body1 MuiTypography-colorPrimary">
+                                                                    <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="jss1 jss2034" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+                                                                        </path>
+                                                                    </svg> Không đổi ngày
+                                                                </p>
+                                                                <p className="MuiTypography-root jss2033 jss2030 MuiTypography-body1 MuiTypography-colorPrimary">
+                                                                    <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="jss1 jss2034" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+                                                                        </path>
+                                                                    </svg> Không ăn nhẹ
+                                                                </p>
+                                                                <p className="MuiTypography-root jss2033 jss2030 MuiTypography-body1 MuiTypography-colorSecondary">
+                                                                    <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 16 16" className="jss1 jss2034" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                                        <path fillRule="evenodd" d="M13.854 3.646a.5.5 0 010 .708l-7 7a.5.5 0 01-.708 0l-3.5-3.5a.5.5 0 11.708-.708L6.5 10.293l6.646-6.647a.5.5 0 01.708 0z" clipRule="evenodd" />
+                                                                    </svg> Airbus 321
+                                                                </p>
+                                                            </div>
                                                         </div>
                                                     </div>
+
                                                 </div>
                                             </TabPanel>
-                                            <TabPanel  value={value} index={1} dir={theme.direction}>
-                                                  {/* chi tiết giá */}
-                                                <div  className="">
+                                            <TabPanel value={value} index={1} dir={theme.direction}>
+                                                {/* chi tiết giá */}
+                                                <div className="">
                                                     <div className="jss2035 ">
                                                         <div className="jss2036">
                                                             <div className="jss2037">
@@ -551,7 +599,7 @@ const ViewSearch = () => {
                                             </TabPanel>
                                         </SwipeableViews>
 
-                                      
+
 
 
                                     </div>
@@ -3902,4 +3950,4 @@ const ViewSearch = () => {
         </div>
     )
 }
-export default ViewSearch;
+export default connect(null, buttonChoose)(ViewSearch);

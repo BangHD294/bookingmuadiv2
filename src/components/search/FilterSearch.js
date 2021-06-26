@@ -13,14 +13,15 @@ const useStyles = makeStyles({
 });
 
 function valuetext(value) {
-    return `${value}°C`;
+    return `${value}`;
 }
 const FilterSearch = () => {
     const classes = useStyles();
-    const [value, setValue] = React.useState([250000, 400000]);
+    const [value, setValue] = React.useState([39000, 400000]);
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
+
     };
     //   checkbox
 
@@ -47,7 +48,10 @@ const FilterSearch = () => {
                         <div className="jss1874 jss1866">
                             <div className="jss1875">
                                 <p className=" jss1876 ">Giá vé</p>
-                                <p className=" jss1877 ">598,900 ₫ - 719,000 ₫</p>
+                                {/* <p className=" jss1877 ">598,900 ₫ - 719,000 ₫</p> */}
+                                <p className="price">
+                                {value[0]} VNĐ - {value[1]} VNĐ
+                                </p>
                             </div>
                             <div className="jss1879">
                                 <div className={classes.root}>
@@ -58,7 +62,6 @@ const FilterSearch = () => {
                                         onChange={handleChange}
                                         valueLabelDisplay="auto"
                                         aria-labelledby="range-slider"
-                                        getAriaValueText={valuetext}
                                     />
                                 </div>
                             </div>
