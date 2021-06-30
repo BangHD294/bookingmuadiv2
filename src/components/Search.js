@@ -20,9 +20,12 @@ import HeaderSearch from "../components/search/HeaderSearch";
 import FilterSearch from "../components/search/FilterSearch";
 import ViewSearch from "../components/search/ViewSearch";
 import BaseForm from './formPassenger/BaseForm';
+
+import { listAirport } from './filejson/listAirport';
 // import material-UI
-import { selectStatus } from "./search/btnSlide";
-import { connect } from 'react-redux';
+// import { selectStatus } from "./search/btnSlide";
+// import { connect } from 'react-redux';
+// console.log(listAirport);
 const DayPicker = () => {
   const [startDate, setStartDate] = useState(new Date());
   const months = ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12']
@@ -45,7 +48,6 @@ const DayPicker = () => {
   )
 }
 
-
 const Search = () => {
   // const status = useSelector(selectStatus);
   const [isActive, setActive] = useState('false');
@@ -56,10 +58,29 @@ const Search = () => {
   // 
   const dispatch = useDispatch();
 
+
+ const [airport12, setAirport] = useState();
+
   useEffect(() => {
     history.listen((location) => {
       dispatch(clearMessage()); // clear message when changing location
     });
+
+    // san bay
+    let lstCode = [];
+    let lstCity = [];
+    let lstCountry = [];
+    let lstName = [];
+    const airport = listAirport.forEach((item => {
+      if (item.label === "Việt Nam") {
+        lstCode = item.airports.map(itemCode => itemCode.code);
+        console.log(lstCode);
+      }
+
+
+    }));
+
+
   }, [dispatch]);
   const logOut = () => {
     dispatch(logout());
@@ -69,7 +90,14 @@ const Search = () => {
     return <Redirect to="/login" />;
   }
 
-  //
+  const area = listAirport.map((item, i) => {
+    return (
+
+      <a role="button" className="mud1MuiChip-root muds422 mud1MuiChip-outlined mud1MuiChip-clickable" tabIndex={0} href="#">
+        <span className="mud1MuiChip-label">{item.label}</span>
+      </a>
+    );
+  })
 
   const handleToggle = () => {
     setActive(!isActive);
@@ -83,6 +111,7 @@ const Search = () => {
     setActivePlace(!isActivePlace);
   }
   //
+
   return (
     <div>
       <bodys className="mufsearch1  showSearch1" data-sidebar="dark">
@@ -627,41 +656,30 @@ const Search = () => {
                       </div>
                       <div className="muds413">
                         <div className="muds418">
+
                           <div className="muds419">
                             <div className="muds421">
-                              <a role="button" className="mud1MuiChip-root muds422 mud1MuiChip-colorPrimary mud1MuiChip-clickableColorPrimary MuiChip-outlined mud1MuiChip-outlinedPrimary mud1MuiChip-clickable" tabIndex={0} href=" ">
-                                <span className="MuiChip-label">Việt Nam</span>
-                              </a>
-                              <a role="button" className="mud1MuiChip-root muds422 mud1MuiChip-outlined mud1MuiChip-clickable" tabIndex={0} href=" ">
-                                <span className="mud1MuiChip-label">Trung Quốc</span>
-                              </a>
-                              <a role="button" className="mud1MuiChip-root muds422 mud1MuiChip-outlined mud1MuiChip-clickable" tabIndex={0} href=" ">
-                                <span className="mud1MuiChip-label">Châu Á</span>
-                              </a>
-                              <a role="button" className="mud1MuiChip-root muds422 mud1MuiChip-outlined mud1MuiChip-clickable" tabIndex={0} href=" ">
-                                <span className="mud1MuiChip-label">Châu Âu</span>
-                              </a>
-                              <a role="button" className="mud1MuiChip-root muds422 mud1MuiChip-outlined mud1MuiChip-clickable" tabIndex={0} href=" ">
-                                <span className="mud1MuiChip-label">Châu Mỹ</span>
-                              </a>
-                              <a role="button" className="mud1MuiChip-root muds422 mud1MuiChip-outlined mud1MuiChip-clickable" tabIndex={0} href=" ">
-                                <span className="mud1MuiChip-label">Châu Úc</span>
-                              </a>
+                              {area}
                             </div>
                           </div>
+
                           <div className="muds420">
-                            <div className="muds423 ">
+                            {airport12}
+                            {/* <div className="muds423 ">
                               <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M10.18 9" />
                                 <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
                                 </path>
                               </svg>
                               <div className="muds426">
-                                <div className="muds427">Hà Nội, Việt Nam (HAN)</div>
-                                <div className="muds428">Sân bay quốc tế Nội Bài</div>
+                                <div className="muds427">{lstCity}, {lstCountry} ({lstCode})</div>
+                                <div className="muds428">{lstName}</div>
                               </div>
-                            </div>
-                            <div className="muds423 ">
+                            </div> */}
+
+
+
+                            {/* <div className="muds423 ">
                               <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M10.18 9" />
                                 <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
@@ -888,8 +906,10 @@ const Search = () => {
                                 <div className="muds427">Cà Mau, Việt Nam (CAH)</div>
                                 <div className="muds428">Sân bay Cà Mau</div>
                               </div>
-                            </div>
+                            </div> */}
                           </div>
+
+
                         </div>
                       </div>
 

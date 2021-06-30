@@ -1,5 +1,5 @@
 // import React, { useState } from 'react';
-import React, { useState } from 'react'
+import React from 'react'
 import "../search/ViewSearch.css";
 import Accordion from '@material-ui/core/Accordion';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
@@ -13,7 +13,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 // import { updateStatus } from "../search/btnSlide";
 // import * as actions from '../../actions';
 import { buttonChoose } from '../../actions/search'
@@ -93,7 +93,7 @@ const ViewSearch = () => {
     // function handleStatus(){
     //     dispatch(updateStatus("true"));
     // }
-    const [status, setStatus] = useState();
+    // const [status, setStatus] = useState();
     const dispatch = useDispatch();
     const handleChooseBtn = () => {
         dispatch({ type: 'BUTTON_CHOOSE' });
@@ -393,8 +393,9 @@ const ViewSearch = () => {
                         <div className="jss1984">
                             <div className="jss1985 ">
                                 {/* <p className=" jss1986 mufprice ">598,900 ₫</p> */}
-                                <div className="searchOption">
+                                <div className="priceOption">
                                     <Autocomplete
+                                        className="priceOption1"
                                         value={valueOptions}
                                         onChange={(event, newValue) => {
                                             setValueOptions(newValue);

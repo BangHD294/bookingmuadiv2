@@ -12,9 +12,9 @@ const useStyles = makeStyles({
     },
 });
 
-function valuetext(value) {
-    return `${value}`;
-}
+// function valuetext(value) {
+//     return `${value}`;
+// }
 const FilterSearch = () => {
     const classes = useStyles();
     const [value, setValue] = React.useState([39000, 400000]);
