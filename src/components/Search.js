@@ -26,6 +26,7 @@ import { listAirport } from './filejson/listAirport';
 // import { selectStatus } from "./search/btnSlide";
 // import { connect } from 'react-redux';
 // console.log(listAirport);
+
 const DayPicker = () => {
   const [startDate, setStartDate] = useState(new Date());
   const months = ['Tháng 1', 'Tháng 2', 'Tháng 3', 'Tháng 4', 'Tháng 5', 'Tháng 6', 'Tháng 7', 'Tháng 8', 'Tháng 9', 'Tháng 10', 'Tháng 11', 'Tháng 12']
@@ -48,18 +49,35 @@ const DayPicker = () => {
   )
 }
 
+const test = () => {
+  let ListAirport = listAirport;
+  return (<>    
+    {ListAirport.map(item => (
+        <p>
+            {item.label}
+            {item.airports.map(itemDetail =>(
+                <p>{itemDetail.city} + {itemDetail.code}</p>
+            ))}
+        </p>
+      ))}    
+    </>)
+}
+
 const Search = () => {
   // const status = useSelector(selectStatus);
   const [isActive, setActive] = useState('false');
   const [isActive1, setActive1] = useState('false');
   const [isActivePlace, setActivePlace] = useState('false');
+
+
+  const [listAirport1, setListAirport1] = useState();
   // const [isActiceChoose, setActiveChoose] = useState('false');
   const { user: currentUser } = useSelector((state) => state.auth);
   // 
   const dispatch = useDispatch();
 
 
- const [airport12, setAirport] = useState();
+  const [airport12, setAirport] = useState();
 
   useEffect(() => {
     history.listen((location) => {
@@ -71,17 +89,16 @@ const Search = () => {
     let lstCity = [];
     let lstCountry = [];
     let lstName = [];
-    const airport = listAirport.forEach((item => {
-      if (item.label === "Việt Nam") {
-        lstCode = item.airports.map(itemCode => itemCode.code);
-        console.log(lstCode);
-      }
 
 
-    }));
+
 
 
   }, [dispatch]);
+
+
+
+
   const logOut = () => {
     dispatch(logout());
   };
@@ -90,15 +107,20 @@ const Search = () => {
     return <Redirect to="/login" />;
   }
 
-  const area = listAirport.map((item, i) => {
-    return (
+  //khu vực
+  // const area = listAirport.map((item, i) => {
+  //   return (
+  //     <a role="button" className="mud1MuiChip-root muds422 mud1MuiChip-outlined mud1MuiChip-clickable" tabIndex={0} href="#">
+  //       <span className="mud1MuiChip-label">{item.label}</span>
+  //     </a>
+  //   );
+  // })
 
-      <a role="button" className="mud1MuiChip-root muds422 mud1MuiChip-outlined mud1MuiChip-clickable" tabIndex={0} href="#">
-        <span className="mud1MuiChip-label">{item.label}</span>
-      </a>
-    );
-  })
-
+  //địa điểm bay
+  // let lstCode = [];
+  // let lstCity = [];
+  // let lstCountry = [];
+  // let lstName = [];
   const handleToggle = () => {
     setActive(!isActive);
   };
@@ -111,7 +133,13 @@ const Search = () => {
     setActivePlace(!isActivePlace);
   }
   //
-
+  const handleAirport = () => {
+    setListAirport1(!listAirport1)
+  }
+  let lstCode = [];
+  let lstCity = [];
+  let lstCountry = [];
+  let lstName = [];
   return (
     <div>
       <bodys className="mufsearch1  showSearch1" data-sidebar="dark">
@@ -539,6 +567,8 @@ const Search = () => {
                       </div>
                       <div className="mud376">
                         <h6 className="MuiTypography-root MuiTypography-subtitle2">Vui lòng chọn số lượng hành khách chính xác để xem được mức giá tốt nhất</h6>
+
+
                         <div className="mud377">
                           <div>
                             <h6 className="MuiTypography-root MuiTypography-subtitle1">Người lớn</h6>
@@ -563,6 +593,8 @@ const Search = () => {
                             </button>
                           </div>
                         </div>
+
+
                         <div className="mud377">
                           <div>
                             <h6 className="MuiTypography-root MuiTypography-subtitle1">Trẻ em</h6>
@@ -587,6 +619,8 @@ const Search = () => {
                             </button>
                           </div>
                         </div>
+
+
                         <div className="mud377">
                           <div>
                             <h6 className="MuiTypography-root MuiTypography-subtitle1">Em bé</h6>
@@ -611,6 +645,7 @@ const Search = () => {
                             </button>
                           </div>
                         </div>
+
                       </div>
                       <div className="mud383">
                         <button className="MuiButtonBase-root MuiButton-root mud384 MuiButton-contained MuiButton-containedSecondary" tabIndex={0} type="button" onClick={handleToggle1}>
@@ -656,15 +691,51 @@ const Search = () => {
                       </div>
                       <div className="muds413">
                         <div className="muds418">
-
+                          {/* Khu vực bay */}
                           <div className="muds419">
-                            <div className="muds421">
-                              {area}
+                            <div className="muds421" onClick={handleAirport}>
+                              {listAirport.map((item, i) => {
+                                return (
+                                  <a role="button" className="mud1MuiChip-root muds422 mud1MuiChip-outlined mud1MuiChip-clickable" tabIndex={0} href="#" key={i}>
+                                    <span className="mud1MuiChip-label">{item.label}</span>
+                                  </a>
+                                );
+                              })}
                             </div>
                           </div>
-
+                          {/* Địa điểm bay/ Sân bay */}
                           <div className="muds420">
-                            {airport12}
+                            {
+                              // listAirport.map(function (item) {
+
+                              //   if (item.label === "Trung Quốc") {
+                              //     item.airports.map((item, i) => {
+                              //       console.log(item.city)
+                              //       return (
+                              //         <div className="muds423 " >
+                              //           <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                              //             <path d="M10.18 9" />
+                              //             <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
+                              //             </path>
+                              //           </svg>
+                              //           <div className="muds426">
+                              //             <div className="muds427">{item.city}, {item.country} ({item.code})</div>
+                              //             <div className="muds428">{item.name}</div>
+                              //           </div>
+                              //         </div>
+                              //       )
+                              //     }
+                              //     )
+
+                              //   };
+                              // }
+
+                              // )
+                              test
+
+
+                            }
+
                             {/* <div className="muds423 ">
                               <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M10.18 9" />
