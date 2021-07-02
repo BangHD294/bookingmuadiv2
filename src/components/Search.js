@@ -25,7 +25,7 @@ import { listAirport } from './filejson/listAirport';
 // import material-UI
 // import { selectStatus } from "./search/btnSlide";
 // import { connect } from 'react-redux';
-// console.log(listAirport);
+
 
 const DayPicker = () => {
   const [startDate, setStartDate] = useState(new Date());
@@ -49,47 +49,51 @@ const DayPicker = () => {
   )
 }
 
-const test = () => {
-  let ListAirport = listAirport;
-  return (<>    
-    {ListAirport.map(item => (
-        <p>
-            {item.label}
-            {item.airports.map(itemDetail =>(
-                <p>{itemDetail.city} + {itemDetail.code}</p>
-            ))}
-        </p>
-      ))}    
-    </>)
-}
 
 const Search = () => {
   // const status = useSelector(selectStatus);
   const [isActive, setActive] = useState('false');
   const [isActive1, setActive1] = useState('false');
+
   const [isActivePlace, setActivePlace] = useState('false');
 
+  const [placeF, setPlaceF] = useState();
+  const [placeT, setPlaceT] = useState();
 
   const [listAirport1, setListAirport1] = useState();
+
   // const [isActiceChoose, setActiveChoose] = useState('false');
   const { user: currentUser } = useSelector((state) => state.auth);
-  // 
   const dispatch = useDispatch();
 
-
+// lấy chỉ số mảng của label
+const handleAirposrt = (i) => {
+  setAirport(i);
+}
   const [airport12, setAirport] = useState();
+  let i = 0
+  if(!airport12){
+    i = 0
+  }else{
+    i = airport12
+  }
+  let itemi = i
+  console.log(airport12);
+//lấy địa điểm bay
+const [city, setCity] = useState();
+const [code, setCode] = useState();
+const handleLocation = (city, code) =>{
+  setCity(city);
+  setCode(code);
+  
+}
+console.log(city);
+console.log(code);
 
   useEffect(() => {
     history.listen((location) => {
       dispatch(clearMessage()); // clear message when changing location
     });
-
-    // san bay
-    let lstCode = [];
-    let lstCity = [];
-    let lstCountry = [];
-    let lstName = [];
-
 
 
 
@@ -106,21 +110,6 @@ const Search = () => {
   if (!currentUser) {
     return <Redirect to="/login" />;
   }
-
-  //khu vực
-  // const area = listAirport.map((item, i) => {
-  //   return (
-  //     <a role="button" className="mud1MuiChip-root muds422 mud1MuiChip-outlined mud1MuiChip-clickable" tabIndex={0} href="#">
-  //       <span className="mud1MuiChip-label">{item.label}</span>
-  //     </a>
-  //   );
-  // })
-
-  //địa điểm bay
-  // let lstCode = [];
-  // let lstCity = [];
-  // let lstCountry = [];
-  // let lstName = [];
   const handleToggle = () => {
     setActive(!isActive);
   };
@@ -129,17 +118,20 @@ const Search = () => {
     setActive1(!isActive1);
   }
   //them dia diem vao chuyen bay
-  const handlePlace = () => {
-    setActivePlace(!isActivePlace);
+
+  // const handlePlace = () => {
+  //   setActivePlace(!isActivePlace);
+  // }
+  const handlePlaceF = (a) =>{
+    setPlaceF(a);
   }
-  //
-  const handleAirport = () => {
-    setListAirport1(!listAirport1)
+  const handlePlaceT = (b) =>{
+    setPlaceT(b);
   }
-  let lstCode = [];
-  let lstCity = [];
-  let lstCountry = [];
-  let lstName = [];
+  
+  console.log(placeF);
+  console.log(placeT);
+
   return (
     <div>
       <bodys className="mufsearch1  showSearch1" data-sidebar="dark">
@@ -185,22 +177,22 @@ const Search = () => {
                   </button>
                   <div className="dropdown-menu dropdown-menu-right">
                     {/* item*/}
-                    <a href=" " className="dropdown-item notify-item">
+                    <a href="# " className="dropdown-item notify-item">
                       <img src="assets\images\flags\spain.jpg" alt="img" className="mr-1" height={12} />
                       <span className="align-middle">Spanish</span>
                     </a>
                     {/* item*/}
-                    <a href=" " className="dropdown-item notify-item">
+                    <a href="# " className="dropdown-item notify-item">
                       <img src="assets\images\flags\germany.jpg" alt="img1" className="mr-1" height={12} />
                       <span className="align-middle">German</span>
                     </a>
                     {/* item*/}
-                    <a href=" " className="dropdown-item notify-item">
+                    <a href="# " className="dropdown-item notify-item">
                       <img src="assets\images\flags\italy.jpg" alt="img2" className="mr-1" height={12} />
                       <span className="align-middle">Italian</span>
                     </a>
                     {/* item*/}
-                    <a href=" " className="dropdown-item notify-item">
+                    <a href="# " className="dropdown-item notify-item">
                       <img src="assets\images\flags\russia.jpg" alt="img3" className="mr-1" height={12} />
                       <span className="align-middle">Russian</span>
                     </a>
@@ -214,19 +206,19 @@ const Search = () => {
                     <div className="px-lg-2">
                       <div className="row no-gutters">
                         <div className="col">
-                          <a className="dropdown-icon-item" href=" ">
+                          <a className="dropdown-icon-item" href="# ">
                             <img src="assets\images\brands\github.png" alt="Github" />
                             <span>GitHub</span>
                           </a>
                         </div>
                         <div className="col">
-                          <a className="dropdown-icon-item" href=" ">
+                          <a className="dropdown-icon-item" href="# ">
                             <img src="assets\images\brands\bitbucket.png" alt="bitbucket" />
                             <span>Bitbucket</span>
                           </a>
                         </div>
                         <div className="col">
-                          <a className="dropdown-icon-item" href=" ">
+                          <a className="dropdown-icon-item" href="# ">
                             <img src="assets\images\brands\dribbble.png" alt="dribbble" />
                             <span>Dribbble</span>
                           </a>
@@ -234,19 +226,19 @@ const Search = () => {
                       </div>
                       <div className="row no-gutters">
                         <div className="col">
-                          <a className="dropdown-icon-item" href=" ">
+                          <a className="dropdown-icon-item" href="# ">
                             <img src="assets\images\brands\dropbox.png" alt="dropbox" />
                             <span>Dropbox</span>
                           </a>
                         </div>
                         <div className="col">
-                          <a className="dropdown-icon-item" href=" ">
+                          <a className="dropdown-icon-item" href="# ">
                             <img src="assets\images\brands\mail_chimp.png" alt="mail_chimp" />
                             <span>Mail Chimp</span>
                           </a>
                         </div>
                         <div className="col">
-                          <a className="dropdown-icon-item" href=" ">
+                          <a className="dropdown-icon-item" href="# ">
                             <img src="assets\images\brands\slack.png" alt="slack" />
                             <span>Slack</span>
                           </a>
@@ -272,12 +264,12 @@ const Search = () => {
                           <h6 className="m-0"> Notifications </h6>
                         </div>
                         <div className="col-auto">
-                          <a href="#!" className="small"> View All</a>
+                          <a href="# " className="small"> View All</a>
                         </div>
                       </div>
                     </div>
                     <div data-simplebar style={{ maxHeight: '230px' }}>
-                      <a href className="text-reset notification-item">
+                      <a href="# " className="text-reset notification-item">
                         <div className="media">
                           <div className="avatar-xs mr-3">
                             <span className="avatar-title bg-primary rounded-circle font-size-16">
@@ -293,7 +285,7 @@ const Search = () => {
                           </div>
                         </div>
                       </a>
-                      <a href className="text-reset notification-item">
+                      <a href="# " className="text-reset notification-item">
                         <div className="media">
                           <img src="assets\images\users\avatar-3.jpg" className="mr-3 rounded-circle avatar-xs" alt="user-pic" />
                           <div className="media-body">
@@ -305,7 +297,7 @@ const Search = () => {
                           </div>
                         </div>
                       </a>
-                      <a href className="text-reset notification-item">
+                      <a href="# " className="text-reset notification-item">
                         <div className="media">
                           <div className="avatar-xs mr-3">
                             <span className="avatar-title bg-success rounded-circle font-size-16">
@@ -321,7 +313,7 @@ const Search = () => {
                           </div>
                         </div>
                       </a>
-                      <a href className="text-reset notification-item">
+                      <a href="# " className="text-reset notification-item">
                         <div className="media">
                           <img src="assets\images\users\avatar-4.jpg" className="mr-3 rounded-circle avatar-xs" alt="user-pic" />
                           <div className="media-body">
@@ -335,7 +327,7 @@ const Search = () => {
                       </a>
                     </div>
                     <div className="p-2 border-top">
-                      <a className="btn btn-sm btn-link font-size-14 btn-block text-center" href=" ">
+                      <a className="btn btn-sm btn-link font-size-14 btn-block text-center" href="# ">
                         <i className="mdi mdi-arrow-right-circle mr-1" /> View More..
                       </a>
                     </div>
@@ -349,11 +341,11 @@ const Search = () => {
                   </button>
                   <div className="dropdown-menu dropdown-menu-right" >
                     {/* item*/}
-                    <a className="dropdown-item" href=" "><i className="bx bx-user font-size-16 align-middle mr-1" />
+                    <a className="dropdown-item" href="# "><i className="bx bx-user font-size-16 align-middle mr-1" />
                       Search</a>
-                    <a className="dropdown-item" href=" "><i className="bx bx-wallet font-size-16 align-middle mr-1" /> My Wallet</a>
-                    <a className="dropdown-item d-block" href=" "><span className="badge badge-success float-right">11</span><i className="bx bx-wrench font-size-16 align-middle mr-1" /> Settings</a>
-                    <a className="dropdown-item" href=" "><i className="bx bx-lock-open font-size-16 align-middle mr-1" /> Lock screen</a>
+                    <a className="dropdown-item" href="# "><i className="bx bx-wallet font-size-16 align-middle mr-1" /> My Wallet</a>
+                    <a className="dropdown-item d-block" href="# "><span className="badge badge-success float-right">11</span><i className="bx bx-wrench font-size-16 align-middle mr-1" /> Settings</a>
+                    <a className="dropdown-item" href="# "><i className="bx bx-lock-open font-size-16 align-middle mr-1" /> Lock screen</a>
                     <div className="dropdown-divider" />
                     <a className="dropdown-item text-danger" href="/login" onClick={logOut}><i className="bx bx-power-off font-size-16 align-middle mr-1 text-danger" /> Logout</a>
                   </div>
@@ -372,7 +364,7 @@ const Search = () => {
                       <h4 className="mb-0 font-size-18">Tìm kiếm chuyến bay</h4>
                       <div className="page-title-right">
                         <ol className="breadcrumb m-0">
-                          <li className="breadcrumb-item"><a href=" ">Tìm kiếm chuyến bay</a></li>
+                          <li className="breadcrumb-item"><a href="# ">Tìm kiếm chuyến bay</a></li>
                           <li className="breadcrumb-item active">Dashboard</li>
                         </ol>
                       </div>
@@ -396,15 +388,15 @@ const Search = () => {
                                     <div className="jss30">
                                       <div className="jss32">
 
-                                        <div className="jss57 jss31 jss33 " onClick={handlePlace}>
-                                          <div className="jss58">
+                                        <div className="jss57 jss31 jss33 " >
+                                          <div className="jss58" onClick={()=>handlePlaceF(0)}>
                                             <div className="jss59"><svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="jss1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                               <path d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm8.94 3c-.46-4.17-3.77-7.48-7.94-7.94V1h-2v2.06C6.83 3.52 3.52 6.83 3.06 11H1v2h2.06c.46 4.17 3.77 7.48 7.94 7.94V23h2v-2.06c4.17-.46 7.48-3.77 7.94-7.94H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z">
                                               </path>
                                             </svg></div>
                                             <div className="jss60"><label className="jss61">Từ</label>
                                               <p className=" jss62 ">
-                                                Hà Nội (HAN)</p>
+                                                {city} ({code})</p>
                                             </div>
                                           </div>
                                         </div>
@@ -418,11 +410,11 @@ const Search = () => {
                                           </button>
                                         </div>
 
-                                        <div className="jss57 jss31 jss34 " onClick={handlePlace}>
-                                          <div className="jss58">
+                                        <div className="jss57 jss31 jss34 " >
+                                          <div className="jss58" onClick={()=>handlePlaceT(1)}>
                                             <div className="jss60"><label className="jss61">Đến</label>
                                               <p className=" jss62 ">
-                                                Hồ Chí Minh (SGN)</p>
+                                                {city} ({code})</p>
                                             </div>
                                           </div>
                                         </div>
@@ -661,8 +653,9 @@ const Search = () => {
                 </div>
 
                 {/*end nguoi lon tre em */}
+                
                 {/* place search */}
-                <div className={isActivePlace ? "placeHidden" : "placeShow"}>
+                <div className={placeF=== 0 || placeT === 1? "placeShow" : "placeHidden"}>
                   <div className="muds52 muds53">
                     <div className="muds405">
                       <div className="muds414 ">
@@ -675,6 +668,7 @@ const Search = () => {
                           </span>
                           <span className="mud1MuiTouchRipple-root" />
                         </button>
+
                         <div className="muds416">
                           <div className="muds406">
                             <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 1024 1024" className="muds1 muds407" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
@@ -683,20 +677,21 @@ const Search = () => {
                             </svg>
                             <div className="mud1MuiFormControl-root mud1MuiTextField-root muds408">
                               <div className="mud1MuiInputBase-root mud1MuiInput-root mud1MuiInput-underline muds412 mud1MuiInputBase-formControl MuiInput-formControl">
-                                <input aria-invalid="false" placeholder="Tìm điểm đi" type="text" className="mud1MuiInputBase-input mud1MuiInput-input muds409" defaultValue />
+                                <input aria-invalid="false" placeholder="Tìm điểm đi" type="text" className="mud1MuiInputBase-input mud1MuiInput-input muds409"  />
                               </div>
                             </div>
                           </div>
                         </div>
+
                       </div>
-                      <div className="muds413">
-                        <div className="muds418">
+                      
+                      <div className="muds413 muds418">
                           {/* Khu vực bay */}
                           <div className="muds419">
-                            <div className="muds421" onClick={handleAirport}>
+                            <div className="muds421" >
                               {listAirport.map((item, i) => {
                                 return (
-                                  <a role="button" className="mud1MuiChip-root muds422 mud1MuiChip-outlined mud1MuiChip-clickable" tabIndex={0} href="#" key={i}>
+                                  <a role="button" className="mud1MuiChip-root muds422 mud1MuiChip-outlined mud1MuiChip-clickable" href='# ' tabIndex={0} onClick={()=>handleAirposrt(i)} >
                                     <span className="mud1MuiChip-label">{item.label}</span>
                                   </a>
                                 );
@@ -706,283 +701,29 @@ const Search = () => {
                           {/* Địa điểm bay/ Sân bay */}
                           <div className="muds420">
                             {
-                              // listAirport.map(function (item) {
-
-                              //   if (item.label === "Trung Quốc") {
-                              //     item.airports.map((item, i) => {
-                              //       console.log(item.city)
-                              //       return (
-                              //         <div className="muds423 " >
-                              //           <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                              //             <path d="M10.18 9" />
-                              //             <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
-                              //             </path>
-                              //           </svg>
-                              //           <div className="muds426">
-                              //             <div className="muds427">{item.city}, {item.country} ({item.code})</div>
-                              //             <div className="muds428">{item.name}</div>
-                              //           </div>
-                              //         </div>
-                              //       )
-                              //     }
-                              //     )
-
-                              //   };
-                              // }
-
-                              // )
-                              test
-
-
+                                <div className="muds420 ">
+                                {
+                                  listAirport[itemi].airports.map((item) => {
+                                        return (
+                                          <div className="muds423 " onClick={()=>handleLocation(item.city, item.code)}>
+                                            <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                              <path d="M10.18 9" />
+                                              <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
+                                              </path>
+                                            </svg>
+                                            <div className="muds426">
+                                              <div className="muds427">{item.city}, {item.country} ({item.code})</div>
+                                              <div className="muds428">{item.name}</div>
+                                            </div>
+                                          </div>
+                                        )
+                                      }
+                                      ) 
+                                }
+                              </div>
                             }
-
-                            {/* <div className="muds423 ">
-                              <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10.18 9" />
-                                <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
-                                </path>
-                              </svg>
-                              <div className="muds426">
-                                <div className="muds427">{lstCity}, {lstCountry} ({lstCode})</div>
-                                <div className="muds428">{lstName}</div>
-                              </div>
-                            </div> */}
-
-
-
-                            {/* <div className="muds423 ">
-                              <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10.18 9" />
-                                <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
-                                </path>
-                              </svg>
-                              <div className="muds426">
-                                <div className="muds427">Hải Phòng, Việt Nam (HPH)</div>
-                                <div className="muds428">Sân bay quốc tế Cát Bi</div>
-                              </div>
-                            </div>
-                            <div className="muds423 ">
-                              <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10.18 9" />
-                                <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
-                                </path>
-                              </svg>
-                              <div className="muds426">
-                                <div className="muds427">Vân Đồn, Việt Nam (VDO)</div>
-                                <div className="muds428">Sân bay quốc tế Vân Đồn</div>
-                              </div>
-                            </div>
-                            <div className="muds423 ">
-                              <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10.18 9" />
-                                <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
-                                </path>
-                              </svg>
-                              <div className="muds426">
-                                <div className="muds427">Điện Biên Phủ, Việt Nam (DIN)</div>
-                                <div className="muds428">Sân bay Điện Biên Phủ</div>
-                              </div>
-                            </div>
-                            <div className="muds423 ">
-                              <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10.18 9" />
-                                <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
-                                </path>
-                              </svg>
-                              <div className="muds426">
-                                <div className="muds427">Thanh Hoá, Việt Nam (THD)</div>
-                                <div className="muds428">Sân bay Thọ Xuân</div>
-                              </div>
-                            </div>
-                            <div className="muds423 ">
-                              <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10.18 9" />
-                                <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
-                                </path>
-                              </svg>
-                              <div className="mud426">
-                                <div className="muds427">Vinh, Việt Nam (VII)</div>
-                                <div className="muds428">Sân bay quốc tế Vinh</div>
-                              </div>
-                            </div>
-                            <div className="muds423 ">
-                              <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10.18 9" />
-                                <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
-                                </path>
-                              </svg>
-                              <div className="muds426">
-                                <div className="muds427">Huế, Việt Nam (HUI)</div>
-                                <div className="muds428">Sân bay Phú Bài</div>
-                              </div>
-                            </div>
-                            <div className="muds423 ">
-                              <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10.18 9" />
-                                <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
-                                </path>
-                              </svg>
-                              <div className="muds426">
-                                <div className="muds427">Đồng Hới, Việt Nam (VDH)</div>
-                                <div className="muds428">Sân bay Đồng Hới</div>
-                              </div>
-                            </div>
-                            <div className="muds423 ">
-                              <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10.18 9" />
-                                <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
-                                </path>
-                              </svg>
-                              <div className="muds426">
-                                <div className="muds427">Đà Nẵng, Việt Nam (DAD)</div>
-                                <div className="muds428">Sân bay quốc tế Đà Nẵng</div>
-                              </div>
-                            </div>
-                            <div className="muds423 ">
-                              <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10.18 9" />
-                                <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
-                                </path>
-                              </svg>
-                              <div className="muds426">
-                                <div className="muds427">Chu Lai, Việt Nam (VCL)</div>
-                                <div className="muds428">Sân bay quốc tế Chu Lai</div>
-                              </div>
-                            </div>
-                            <div className="muds423 ">
-                              <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10.18 9" />
-                                <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
-                                </path>
-                              </svg>
-                              <div className="muds426">
-                                <div className="muds427">Pleiku, Việt Nam (PXU)</div>
-                                <div className="muds428">Sân bay Pleiku</div>
-                              </div>
-                            </div>
-                            <div className="muds423">
-                              <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10.18 9" />
-                                <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
-                                </path>
-                              </svg>
-                              <div className="muds426">
-                                <div className="muds427">Tuy Hòa, Việt Nam (TBB)</div>
-                                <div className="muds428">Sân bay Tuy Hòa</div>
-                              </div>
-                            </div>
-                            <div className="muds423 ">
-                              <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10.18 9" />
-                                <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
-                                </path>
-                              </svg>
-                              <div className="muds426">
-                                <div className="muds427">Hồ Chí Minh, Việt Nam (SGN)</div>
-                                <div className="muds428">Sân bay quốc tế Tân Sơn Nhất</div>
-                              </div>
-                            </div>
-                            <div className="muds423 ">
-                              <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10.18 9" />
-                                <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
-                                </path>
-                              </svg>
-                              <div className="muds426">
-                                <div className="muds427">Nha Trang, Việt Nam (CXR)</div>
-                                <div className="muds428">Sân bay quốc tế Cam Ranh</div>
-                              </div>
-                            </div>
-                            <div className="muds423 ">
-                              <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10.18 9" />
-                                <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
-                                </path>
-                              </svg>
-                              <div className="muds426">
-                                <div className="muds427">Đà Lạt, Việt Nam (DLI)</div>
-                                <div className="muds428">Sân bay Liên Khương</div>
-                              </div>
-                            </div>
-                            <div className="muds423 ">
-                              <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10.18 9" />
-                                <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
-                                </path>
-                              </svg>
-                              <div className="muds426">
-                                <div className="muds427">Phú Quốc, Việt Nam (PQC)</div>
-                                <div className="muds428">Sân bay Dương Đông</div>
-                              </div>
-                            </div>
-                            <div className="muds423 ">
-                              <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10.18 9" />
-                                <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
-                                </path>
-                              </svg>
-                              <div className="muds426">
-                                <div className="muds427">Qui Nhơn, Việt Nam (UIH)</div>
-                                <div className="muds428">Sân bay Phù Cát</div>
-                              </div>
-                            </div>
-                            <div className="muds423 ">
-                              <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10.18 9" />
-                                <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
-                                </path>
-                              </svg>
-                              <div className="muds426">
-                                <div className="muds427">Cần Thơ, Việt Nam (VCA)</div>
-                                <div className="muds428">Sân bay quốc tế Cần Thơ</div>
-                              </div>
-                            </div>
-                            <div className="muds423 ">
-                              <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M10.18 9" />
-                                <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
-                                </path>
-                              </svg>
-                              <div className="muds426">
-                                <div className="muds427">Côn Sơn, Việt Nam (VCS)</div>
-                                <div className="muds428">Sân bay Côn Đảo</div>
-                              </div>
-                            </div>
-                            <div className="muds423 "><svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M10.18 9" />
-                              <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
-                              </path>
-                            </svg>
-                              <div className="muds426">
-                                <div className="muds427">Buôn Ma Thuột, Việt Nam (BMV)</div>
-                                <div className="muds428">Sân bay Buôn Ma Thuột</div>
-                              </div>
-                            </div>
-                            <div className="muds423 "><svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M10.18 9" />
-                              <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
-                              </path>
-                            </svg>
-                              <div className="muds426">
-                                <div className="muds427">Rạch Giá, Việt Nam (VKG)</div>
-                                <div className="muds428">Sân bay Rạch Giá</div>
-                              </div>
-                            </div>
-                            <div className="muds423 "><svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="muds1 muds424" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
-                              <path d="M10.18 9" />
-                              <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z">
-                              </path>
-                            </svg>
-                              <div className="muds426">
-                                <div className="muds427">Cà Mau, Việt Nam (CAH)</div>
-                                <div className="muds428">Sân bay Cà Mau</div>
-                              </div>
-                            </div> */}
                           </div>
-
-
                         </div>
-                      </div>
 
                     </div>
                   </div>
@@ -1107,7 +848,7 @@ const Search = () => {
         <div className="right-bar">
           <div data-simplebar className="h-100">
             <div className="rightbar-title px-3 py-4">
-              <a href=" " className="right-bar-toggle float-right">
+              <a href="# " className="right-bar-toggle float-right">
                 <i className="mdi mdi-close noti-icon" />
               </a>
               <h5 className="m-0">Settings</h5>
