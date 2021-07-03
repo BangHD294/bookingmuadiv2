@@ -6,7 +6,6 @@ import React, { useEffect, useState } from "react";
 import { history } from "../helpers/history";
 import { clearMessage } from "../actions/message";
 import DatePicker from "react-datepicker";
-// import { addMonths } from 'date-fns';
 import "react-datepicker/dist/react-datepicker.css";
 import "../components/menubar/menubar.css";
 import LeftSidebar from "..//components/menubar/LeftSidebar";
@@ -20,11 +19,11 @@ import HeaderSearch from "../components/search/HeaderSearch";
 import FilterSearch from "../components/search/FilterSearch";
 import ViewSearch from "../components/search/ViewSearch";
 import BaseForm from './formPassenger/BaseForm';
-
 import { listAirport } from './filejson/listAirport';
-// import material-UI
-// import { selectStatus } from "./search/btnSlide";
-// import { connect } from 'react-redux';
+import LanguageMD from "../components/menuTop/language";
+import GitSP from './menuTop/gitSp';
+import Notifications from './menuTop/Notifications';
+import { empty } from 'object-path';
 
 
 const DayPicker = () => {
@@ -55,14 +54,6 @@ const Search = () => {
   const [isActive, setActive] = useState('false');
   const [isActive1, setActive1] = useState('false');
 
-  const [isActivePlace, setActivePlace] = useState('false');
-
-  const [placeF, setPlaceF] = useState();
-  const [placeT, setPlaceT] = useState();
-
-  const [listAirport1, setListAirport1] = useState();
-
-  // const [isActiceChoose, setActiveChoose] = useState('false');
   const { user: currentUser } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
@@ -82,13 +73,25 @@ const handleAirposrt = (i) => {
 //lấy địa điểm bay
 const [city, setCity] = useState();
 const [code, setCode] = useState();
+const [hideResult, setHideResult] = useState(false);
 const handleLocation = (city, code) =>{
   setCity(city);
   setCode(code);
+  if(!empty(code)){
+    setHideResult(true);
+  }
   
 }
+console.log(hideResult);
 console.log(city);
 console.log(code);
+//show off form search from
+const [hideFromSearch, setHideFromSearch] = useState(false);
+const onclickF = () => setHideFromSearch(!hideFromSearch);
+//show off form search to
+const [hideToSearch, setHideToSearch] = useState(false)
+const onclickT = () => setHideToSearch(!hideToSearch);
+
 
   useEffect(() => {
     history.listen((location) => {
@@ -99,9 +102,6 @@ console.log(code);
 
 
   }, [dispatch]);
-
-
-
 
   const logOut = () => {
     dispatch(logout());
@@ -117,21 +117,6 @@ console.log(code);
   const handleToggle1 = () => {
     setActive1(!isActive1);
   }
-  //them dia diem vao chuyen bay
-
-  // const handlePlace = () => {
-  //   setActivePlace(!isActivePlace);
-  // }
-  const handlePlaceF = (a) =>{
-    setPlaceF(a);
-  }
-  const handlePlaceT = (b) =>{
-    setPlaceT(b);
-  }
-  
-  console.log(placeF);
-  console.log(placeT);
-
   return (
     <div>
       <bodys className="mufsearch1  showSearch1" data-sidebar="dark">
@@ -152,7 +137,7 @@ console.log(code);
                     <span className="bx bx-search-alt" />
                   </div>
                 </form>
-              </div>
+              </div>  
               <div className="d-flex">
                 <div className="dropdown d-inline-block d-lg-none ml-2">
                   <button type="button" className="btn header-item noti-icon waves-effect" id="page-header-search-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -172,79 +157,17 @@ console.log(code);
                   </div>
                 </div>
                 <div className="dropdown d-inline-block">
-                  <button type="button" className="btn header-item waves-effect" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img className src="assets\images\flags\us.jpg" alt="Header Language" height={16} />
-                  </button>
-                  <div className="dropdown-menu dropdown-menu-right">
-                    {/* item*/}
-                    <a href="# " className="dropdown-item notify-item">
-                      <img src="assets\images\flags\spain.jpg" alt="img" className="mr-1" height={12} />
-                      <span className="align-middle">Spanish</span>
-                    </a>
-                    {/* item*/}
-                    <a href="# " className="dropdown-item notify-item">
-                      <img src="assets\images\flags\germany.jpg" alt="img1" className="mr-1" height={12} />
-                      <span className="align-middle">German</span>
-                    </a>
-                    {/* item*/}
-                    <a href="# " className="dropdown-item notify-item">
-                      <img src="assets\images\flags\italy.jpg" alt="img2" className="mr-1" height={12} />
-                      <span className="align-middle">Italian</span>
-                    </a>
-                    {/* item*/}
-                    <a href="# " className="dropdown-item notify-item">
-                      <img src="assets\images\flags\russia.jpg" alt="img3" className="mr-1" height={12} />
-                      <span className="align-middle">Russian</span>
-                    </a>
-                  </div>
+                    {/* language */}
+                    <LanguageMD />
                 </div>
                 <div className="dropdown d-none d-lg-inline-block ml-1">
                   <button type="button" className="btn header-item noti-icon waves-effect" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i className="bx bx-customize" />
                   </button>
                   <div className="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                    <div className="px-lg-2">
-                      <div className="row no-gutters">
-                        <div className="col">
-                          <a className="dropdown-icon-item" href="# ">
-                            <img src="assets\images\brands\github.png" alt="Github" />
-                            <span>GitHub</span>
-                          </a>
-                        </div>
-                        <div className="col">
-                          <a className="dropdown-icon-item" href="# ">
-                            <img src="assets\images\brands\bitbucket.png" alt="bitbucket" />
-                            <span>Bitbucket</span>
-                          </a>
-                        </div>
-                        <div className="col">
-                          <a className="dropdown-icon-item" href="# ">
-                            <img src="assets\images\brands\dribbble.png" alt="dribbble" />
-                            <span>Dribbble</span>
-                          </a>
-                        </div>
-                      </div>
-                      <div className="row no-gutters">
-                        <div className="col">
-                          <a className="dropdown-icon-item" href="# ">
-                            <img src="assets\images\brands\dropbox.png" alt="dropbox" />
-                            <span>Dropbox</span>
-                          </a>
-                        </div>
-                        <div className="col">
-                          <a className="dropdown-icon-item" href="# ">
-                            <img src="assets\images\brands\mail_chimp.png" alt="mail_chimp" />
-                            <span>Mail Chimp</span>
-                          </a>
-                        </div>
-                        <div className="col">
-                          <a className="dropdown-icon-item" href="# ">
-                            <img src="assets\images\brands\slack.png" alt="slack" />
-                            <span>Slack</span>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
+                    {/* git support */}
+                    <GitSP />
+
                   </div>
                 </div>
                 <div className="dropdown d-none d-lg-inline-block ml-1">
@@ -253,87 +176,12 @@ console.log(code);
                   </button>
                 </div>
                 <div className="dropdown d-inline-block">
-                  <button type="button" className="btn header-item noti-icon waves-effect" id="page-header-notifications-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i className="bx bx-bell bx-tada" />
-                    <span className="badge badge-danger badge-pill">3</span>
-                  </button>
-                  <div className="dropdown-menu dropdown-menu-lg dropdown-menu-right p-0" aria-labelledby="page-header-notifications-dropdown">
-                    <div className="p-3">
-                      <div className="row align-items-center">
-                        <div className="col">
-                          <h6 className="m-0"> Notifications </h6>
-                        </div>
-                        <div className="col-auto">
-                          <a href="# " className="small"> View All</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div data-simplebar style={{ maxHeight: '230px' }}>
-                      <a href="# " className="text-reset notification-item">
-                        <div className="media">
-                          <div className="avatar-xs mr-3">
-                            <span className="avatar-title bg-primary rounded-circle font-size-16">
-                              <i className="bx bx-cart" />
-                            </span>
-                          </div>
-                          <div className="media-body">
-                            <h6 className="mt-0 mb-1">Your order is placed</h6>
-                            <div className="font-size-12 text-muted">
-                              <p className="mb-1">If several languages coalesce the grammar</p>
-                              <p className="mb-0"><i className="mdi mdi-clock-outline" /> 3 min ago</p>
-                            </div>
-                          </div>
-                        </div>
-                      </a>
-                      <a href="# " className="text-reset notification-item">
-                        <div className="media">
-                          <img src="assets\images\users\avatar-3.jpg" className="mr-3 rounded-circle avatar-xs" alt="user-pic" />
-                          <div className="media-body">
-                            <h6 className="mt-0 mb-1">James Lemire</h6>
-                            <div className="font-size-12 text-muted">
-                              <p className="mb-1">It will seem like simplified English.</p>
-                              <p className="mb-0"><i className="mdi mdi-clock-outline" /> 1 hours ago</p>
-                            </div>
-                          </div>
-                        </div>
-                      </a>
-                      <a href="# " className="text-reset notification-item">
-                        <div className="media">
-                          <div className="avatar-xs mr-3">
-                            <span className="avatar-title bg-success rounded-circle font-size-16">
-                              <i className="bx bx-badge-check" />
-                            </span>
-                          </div>
-                          <div className="media-body">
-                            <h6 className="mt-0 mb-1">Your item is shipped</h6>
-                            <div className="font-size-12 text-muted">
-                              <p className="mb-1">If several languages coalesce the grammar</p>
-                              <p className="mb-0"><i className="mdi mdi-clock-outline" /> 3 min ago</p>
-                            </div>
-                          </div>
-                        </div>
-                      </a>
-                      <a href="# " className="text-reset notification-item">
-                        <div className="media">
-                          <img src="assets\images\users\avatar-4.jpg" className="mr-3 rounded-circle avatar-xs" alt="user-pic" />
-                          <div className="media-body">
-                            <h6 className="mt-0 mb-1">Salena Layfield</h6>
-                            <div className="font-size-12 text-muted">
-                              <p className="mb-1">As a skeptical Cambridge friend of mine occidental.</p>
-                              <p className="mb-0"><i className="mdi mdi-clock-outline" /> 1 hours ago</p>
-                            </div>
-                          </div>
-                        </div>
-                      </a>
-                    </div>
-                    <div className="p-2 border-top">
-                      <a className="btn btn-sm btn-link font-size-14 btn-block text-center" href="# ">
-                        <i className="mdi mdi-arrow-right-circle mr-1" /> View More..
-                      </a>
-                    </div>
-                  </div>
+                  {/* Notifications */}
+                  <Notifications />
+
                 </div>
                 <div className="dropdown d-inline-block">
+                  {/* profile */}
                   <button type="button" className="btn header-item waves-effect" id="page-header-user-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                     <img className="rounded-circle header-profile-user" src="assets\images\users\avatar-1.jpg" alt="Header Avatar" />
                     <span className="d-none d-xl-inline-block ml-1">Henry</span>
@@ -389,7 +237,7 @@ console.log(code);
                                       <div className="jss32">
 
                                         <div className="jss57 jss31 jss33 " >
-                                          <div className="jss58" onClick={()=>handlePlaceF(0)}>
+                                          <div className="jss58" onClick={onclickF}>
                                             <div className="jss59"><svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" className="jss1" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
                                               <path d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm8.94 3c-.46-4.17-3.77-7.48-7.94-7.94V1h-2v2.06C6.83 3.52 3.52 6.83 3.06 11H1v2h2.06c.46 4.17 3.77 7.48 7.94 7.94V23h2v-2.06c4.17-.46 7.48-3.77 7.94-7.94H23v-2h-2.06zM12 19c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z">
                                               </path>
@@ -411,7 +259,7 @@ console.log(code);
                                         </div>
 
                                         <div className="jss57 jss31 jss34 " >
-                                          <div className="jss58" onClick={()=>handlePlaceT(1)}>
+                                          <div className="jss58" onClick={onclickT}>
                                             <div className="jss60"><label className="jss61">Đến</label>
                                               <p className=" jss62 ">
                                                 {city} ({code})</p>
@@ -655,7 +503,8 @@ console.log(code);
                 {/*end nguoi lon tre em */}
                 
                 {/* place search */}
-                <div className={placeF=== 0 || placeT === 1? "placeShow" : "placeHidden"}>
+                <div className={hideFromSearch || hideToSearch || hideResult === true ? "placeShow":"placeHidden"}>
+                  <div className={hideResult === false ? "placeShow" : "placeHidden"}>
                   <div className="muds52 muds53">
                     <div className="muds405">
                       <div className="muds414 ">
@@ -726,6 +575,7 @@ console.log(code);
                         </div>
 
                     </div>
+                  </div>
                   </div>
                 </div>
 
